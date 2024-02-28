@@ -32,6 +32,7 @@ SECRET_KEY = "django-insecure-_3815k(6u9$9d4a)ps=-b^^8w!jp!xn^z5ex0**ry53)oo$s-s
 DEBUG = True
 MANAGE_DATABASE = True
 DEFAULT_PERMISSIONS = True
+ENABLE_ADMIN = True
 
 ALLOWED_HOSTS = []
 
