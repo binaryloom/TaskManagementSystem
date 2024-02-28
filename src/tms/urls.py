@@ -51,3 +51,7 @@ urlpatterns = urlpatterns + [
 urlpatterns = urlpatterns + [
     path("admin/", admin.site.urls),
 ]
+
+
+# login
+# logout
