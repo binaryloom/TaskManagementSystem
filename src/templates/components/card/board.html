@@ -1,6 +1,6 @@
 {% extends "components/card/base.html" %}
 {% block card_title %}
-    title
+    {{ item.name|default:"Card Title" }}
 {% endblock card_title %}
 {% block card_body %}
     body

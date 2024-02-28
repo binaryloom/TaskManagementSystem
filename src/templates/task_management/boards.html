@@ -1,6 +1,6 @@
 {% extends "layouts/list.html" %}
 {% block list_container %}
     {% for item in object_list %}
-        {% include "components/card/board.html" with item=item %}
+        {% include "components/card/board.html" with item=item card_link="facebook.com" %}
     {% endfor %}
 {% endblock list_container %}
