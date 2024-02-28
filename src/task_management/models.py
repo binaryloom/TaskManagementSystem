@@ -24,6 +24,8 @@ class Board(BaseModel):
         managed = settings.MANAGE_DATABASE
         db_table = "task_board"
         verbose_name_plural = "Boards"
+        if not settings.DEFAULT_PERMISSIONS:
+            default_permissions = []
 
 
 class List(BaseModel):
@@ -36,6 +38,8 @@ class List(BaseModel):
         managed = settings.MANAGE_DATABASE
         db_table = "task_list"
         verbose_name_plural = "Lists"
+        if not settings.DEFAULT_PERMISSIONS:
+            default_permissions = []
 
 
 class Task(BaseModel):
