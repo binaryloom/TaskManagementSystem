@@ -23,5 +23,5 @@ from task_management.urls import router
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/auth/", include("rest_framework.urls")),
-    path("api/task/", include(router.urls)),
+    path("", include(router.urls)),
 ]
