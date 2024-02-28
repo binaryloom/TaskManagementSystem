@@ -49,5 +49,8 @@ class BaseModel(BaseModelClass):
         self.status = False
         self.save(*args, **kwargs)
 
-    class Meta(BaseModelClass.Meta):
-        pass
+    class Meta:
+        abstract = True
+        ordering = ["-updated_at"]
+        if not settings.DEFAULT_PERMISSIONS:
+            default_permissions = []
