@@ -1,0 +1,15 @@
+{
+  "indent_size": "4",
+  "format_attribute_template_tags": true,
+  "max_line_length": "120",
+  "ignore": "H025,H029,H006,H021,D018",
+  "format_css": true,
+  "css": {
+    "indent_size": "4"
+  },
+  "format_js": true,
+  "js": {
+    "indent_size": "4"
+  },
+  "use_gitignore": true
+}
