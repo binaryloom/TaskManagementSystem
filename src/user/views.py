@@ -1,3 +1,5 @@
+from rest_framework.permissions import AllowAny
+
 from abstract.views import CreateAPIView
 from user.models import User
 from user.serializers import RegistrationSerializer
@@ -6,6 +8,6 @@ from user.serializers import RegistrationSerializer
 
 
 class RegistrationView(CreateAPIView):
+    permission_classes = [AllowAny]
     queryset = User.objects.all()
-    permission_classes = (AllowAny,)
     serializer_class = RegistrationSerializer
