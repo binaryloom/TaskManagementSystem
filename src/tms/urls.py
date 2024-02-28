@@ -60,4 +60,6 @@ urlpatterns = urlpatterns + [
 # URL SECTION
 urlpatterns = urlpatterns + [
     path("admin/", admin.site.urls),
+    # browser reload
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
