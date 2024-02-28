@@ -14,7 +14,8 @@ from os import mkdir, path
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 DEV_DIR = Path(path.join(BASE_DIR, "dev_junk"))
 
 if not path.exists(DEV_DIR):
@@ -131,3 +132,8 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# custom configs for user & bulk import
+AUTH_USER_MODEL = "user.User"
+FIXTURE_DIRS = [Path(path.join(BASE_DIR, "fixtures"))]
