@@ -17,8 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
+from rest_framework.routers import DefaultRouter
 
 from task_management.urls import router
+
+router = DefaultRouter()
 
 urlpatterns = [
     path("admin/", admin.site.urls),
