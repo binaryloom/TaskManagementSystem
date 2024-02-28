@@ -50,9 +50,9 @@ class Task(BaseModel):
     assigned_list = ForeignKey(
         "task_management.List", related_name="tasks", on_delete=CASCADE
     )
-    # assigned_to = models.ManyToManyField(
-    #     User, related_name="tasks_assigned_to", blank=True
-    # )
+    assigned_to = ManyToManyField(
+        "user.User", related_name="assigned_tasks", blank=True
+    )
     due_date = DateField(null=True, blank=True)
 
     def __str__(self):
