@@ -20,9 +20,7 @@ class Board(BaseModel):
 
 class List(BaseModel):
     name = CharField(max_length=CellSize.LARGE)
-    board = ForeignKey(
-        "task_management.board", related_name="lists", on_delete=DO_NOTHING
-    )
+    board = ForeignKey("task_management.board", related_name="lists", on_delete=CASCADE)
 
     class Meta:
         managed = settings.MANAGE_DATABASE
@@ -31,7 +29,7 @@ class List(BaseModel):
 
 
 class Task(BaseModel):
-    title = models.CharField(max_length=100)
+    title = CharField(max_length=100)
     description = models.TextField()
     list = models.ForeignKey(List, related_name="tasks", on_delete=models.CASCADE)
     assigned_to = models.ManyToManyField(
