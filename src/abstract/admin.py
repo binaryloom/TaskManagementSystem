@@ -17,7 +17,7 @@ def mark_undo(modeladmin, request, queryset):
 class ModelAdmin(admin.ModelAdmin):
     list_per_page = 12
 
-    # exclude = ['status']
+    exclude = ["status"]
     # actions_on_top = False
     # def delete_queryset(self, request, queryset):
     #     queryset.update(status=False)
