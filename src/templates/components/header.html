@@ -5,13 +5,16 @@
         <nav>
             <ul class="flex space-x-4">
                 <li>
-                    <a href="#" class="hover:text-gray-200">Boards</a>
+                    <a href="{% url "task_management:boardlist_view" %}"
+                       class="hover:text-gray-200">Boards</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:text-gray-200">Lists</a>
+                    <a href="{% url "task_management:listlist_view" %}"
+                       class="hover:text-gray-200">Lists</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:text-gray-200">Tasks</a>
+                    <a href="{% url "task_management:tasklist_view" %}"
+                       class="hover:text-gray-200">Tasks</a>
                 </li>
                 <li>
                     <a href="#" class="hover:text-gray-200">Logout</a>
