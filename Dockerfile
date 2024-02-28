@@ -7,7 +7,7 @@ WORKDIR /src
 
 RUN python3 -m pip install --upgrade --force-reinstall pip && python3 -m pip install pipenv
 
-COPY Pipfile .
+COPY ./Pipfile.lock .
 # RUN pipenv lock && pipenv install --system --deploy
 RUN pipenv sync
 
