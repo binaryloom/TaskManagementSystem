@@ -37,7 +37,6 @@ from user.urls import router as user_router
 from user.views import RegistrationView
 
 urlpatterns = [
-    # path("auth/", include("rest_framework.urls", namespace="basic_auth")),
     path("auth/login/", login, name="login"),
     path("auth/logout/", logout, name="logout"),
     path("auth/profile/", profile, name="profile"),
@@ -47,7 +46,6 @@ urlpatterns = [
     path("auth/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"),
     path("auth/verify/", TokenVerifyView.as_view(), name="token_verify"),
     path("auth/registration/", RegistrationView.as_view(), name="registration"),
-    path("accounts/", include("rest_registration.api.urls")),
 ]
 
 
@@ -63,9 +61,3 @@ urlpatterns = urlpatterns + [
 urlpatterns = urlpatterns + [
     path("admin/", admin.site.urls),
 ]
-
-
-# login
-# logout
-# profile
-# change Password
