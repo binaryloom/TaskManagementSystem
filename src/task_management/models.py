@@ -1,5 +1,5 @@
 from abstract.models import BaseModel
-from abstract.enums import CellSize
+
 from django.db.models import (
     CharField,
     ForeignKey,
@@ -9,6 +9,7 @@ from django.db.models import (
     DateField,
 )
 from django.conf import settings
+from abstract.enums import CellSize
 
 # Create your models here.
 
