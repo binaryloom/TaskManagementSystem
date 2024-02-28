@@ -15,8 +15,8 @@ class BoardListView(ListView):
 
 
 class ListListView(ListView):
-    model = Board
+    model = List
 
 
 class TaskListView(ListView):
-    model = Board
+    model = Task
