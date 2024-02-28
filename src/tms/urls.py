@@ -27,19 +27,23 @@ from rest_framework_simplejwt.views import (
 from task_management.urls import router as task_management_router
 from user.urls import router as user_router
 
+urlpatterns = [
+    path("auth/basic/", include("rest_framework.urls")),
+    path("auth/jwt/", TokenObtainPairView.as_view(), name="jwt_auth"),
+    path("auth/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"),
+    path("auth/verify/", TokenVerifyView.as_view(), name="token_verify"),
+]
+
+
 router = DefaultRouter()
 router.registry.extend(task_management_router.registry)
 router.registry.extend(user_router.registry)
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
+urlpatterns = urlpatterns + [
     path("api/", include(router.urls)),
-    path("api/auth/", include("rest_framework.urls")),
 ]
 
-
-urlpatterns = [
-    path("auth/jwt", TokenObtainPairView.as_view(), name="jwt_auth"),
-    path("auth/refresh", TokenRefreshView.as_view(), name="jwt_refresh"),
-    path("auth/verify", TokenVerifyView.as_view(), name="token_verify"),
+# URL SECTION
+urlpatterns = urlpatterns + [
+    path("admin/", admin.site.urls),
 ]
