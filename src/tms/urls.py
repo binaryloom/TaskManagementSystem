@@ -31,3 +31,12 @@ urlpatterns = [
     path("api/", include(router.urls)),
     path("api/auth/", include("rest_framework.urls")),
 ]
+
+
+from rest_framework_simplejwt.views import TokenRefreshView, TokenVerifyView
+
+urlpatterns = [
+    path("auth/jwt", AuthView.as_view(), name="jwt_auth"),
+    path("auth/refresh", TokenRefreshView.as_view(), name="jwt_refresh"),
+    path("auth/verify", TokenVerifyView.as_view(), name="token_verify"),
+]
