@@ -1,10 +1,5 @@
 from django.conf import settings
-
-# GuardedModelAdmin, SimpleHistoryAdmin
 from django.contrib import admin, messages
-from django.http.request import HttpRequest
-
-from abstract.enums import Status
 
 # Register your models here.
 
@@ -24,8 +19,8 @@ class ModelAdmin(admin.ModelAdmin):
 
     # exclude = ['status']
     # actions_on_top = False
-    def delete_queryset(self, request, queryset):
-        queryset.update(status=Status.DELETED)
+    # def delete_queryset(self, request, queryset):
+    #     queryset.update(status=False)
 
     list_display = ["__str__", "status"]
     actions = [mark_undo]
