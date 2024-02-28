@@ -19,15 +19,13 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from task_management.urls import router
+from task_management.urls import router as task_management_router
 
 router = DefaultRouter()
+router.registry.extend(task_management_router.registry)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("api/", include(router.urls)),
     path("api/auth/", include("rest_framework.urls")),
-    path("api/task/", include(router.urls)),
 ]
-
-
-urlpatterns += router.urls
