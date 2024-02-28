@@ -19,12 +19,15 @@
   },
   "cSpell.words": [
     "authtoken",
+    "boardlist",
     "dontlognull",
     "forwardfor",
     "httplog",
+    "listlist",
     "maxconn",
     "roundrobin",
     "simplejwt",
+    "tasklist",
     "viewsets"
   ]
 }
