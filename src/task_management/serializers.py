@@ -5,7 +5,7 @@ from task_management.models import Board, List, Task
 class BoardSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Board
-        fields = "__all__"
+        fields = ["name"]
 
 
 class ListSerializer(HyperlinkedModelSerializer):
