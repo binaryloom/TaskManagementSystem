@@ -43,7 +43,7 @@ class List(BaseModel):
 
 class Task(BaseModel):
     title = CharField(max_length=100)
-    description = TextField(max_length=CellSize.XXXL)
+    description = TextField(max_length=CellSize.XXXL, null=True, blank=True)
     list = ForeignKey(
         "task_management.task_list", related_name="tasks", on_delete=CASCADE
     )
@@ -54,3 +54,10 @@ class Task(BaseModel):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        managed = settings.MANAGE_DATABASE
+        db_table = "task_task"
+        verbose_name_plural = "Tasks"
+        if not settings.DEFAULT_PERMISSIONS:
+            default_permissions = []
