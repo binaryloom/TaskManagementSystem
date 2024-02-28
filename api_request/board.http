@@ -1,2 +1,5 @@
+# Request the board list
+
 curl \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA5MTQ1NTIzLCJpYXQiOjE3MDkxNDUyMjMsImp0aSI6ImI4MjE3MTA4NTdhMjRkNjU5NThhMjk3NmIwOTJiMjQwIiwidXNlcl9pZCI6MX0.n8UK-hR1Jnfznt2GS09BWgBipEg7Bg6mFurwA4-RrmE" \
   http://localhost:8000/api/board
