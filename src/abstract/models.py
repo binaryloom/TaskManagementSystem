@@ -38,9 +38,15 @@ class BaseClass(BaseModelClass):
             # model definition
     """
 
+    operating_user = None
+
     objects = BaseManager()
 
     status = models.BooleanField(default=True)
+
+    def delete(self, *args, **kwargs):
+        self.status = False
+        self.save(*args, **kwargs)
 
     class Meta(BaseModelClass.Meta):
         pass
