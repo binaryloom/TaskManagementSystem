@@ -1,5 +1,9 @@
 from abstract.models import BaseModel
 
+
+from django.conf import settings
+from abstract.enums import CellSize
+
 from django.db.models import (
     CharField,
     ForeignKey,
@@ -8,12 +12,9 @@ from django.db.models import (
     DO_NOTHING,
     DateField,
 )
-from django.conf import settings
-from abstract.enums import CellSize
+
 
 # Create your models here.
-
-
 class Board(BaseModel):
     name = CharField(max_length=CellSize.XL)
 
