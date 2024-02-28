@@ -1,2 +1,29 @@
 <h1 class="text-3xl font-semibold mb-4">{{ page_title|default:"Wellcome to Task Management System" }}</h1>
-<hr class="bg-blue-400">
+<!-- Breadcrumb -->
+<nav class="bg-gray-200 py-2 px-4">
+    <ol class="list-none p-0 inline-flex">
+        <li class="flex items-center">
+            <a href="#" class="text-gray-600">Home</a>
+            <svg class="h-5 w-auto text-gray-400 mx-2"
+                 fill="none"
+                 stroke="currentColor"
+                 viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </li>
+        <li class="flex items-center">
+            <a href="#" class="text-blue-600">Category</a>
+            <svg class="h-5 w-auto text-gray-400 mx-2"
+                 fill="none"
+                 stroke="currentColor"
+                 viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </li>
+        <li class="flex items-center">
+            <a href="#" class="text-blue-600">Subcategory</a>
+        </li>
+    </ol>
+</nav>
