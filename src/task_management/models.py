@@ -1,6 +1,6 @@
 from abstract.models import BaseModel
 from abstract.enums import CellSize
-from django.db.models import CharField
+from django.db.models import CharField, ForeignKey, CASCADE, DO_NOTHING
 from django.conf import settings
 
 # Create your models here.
@@ -14,18 +14,20 @@ class Board(BaseModel):
 
     class Meta:
         managed = settings.MANAGE_DATABASE
-        db_table = "board"
+        db_table = "task_board"
         verbose_name_plural = "Boards"
 
 
 class List(BaseModel):
-    name = models.CharField(max_length=100)
-    board = models.ForeignKey(
-        "task_management.Board", related_name="lists", on_delete=models.CASCADE
+    name = CharField(max_length=CellSize.LARGE)
+    board = ForeignKey(
+        "task_management.board", related_name="lists", on_delete=DO_NOTHING
     )
 
-    def __str__(self):
-        return self.name
+    class Meta:
+        managed = settings.MANAGE_DATABASE
+        db_table = "task_list"
+        verbose_name_plural = "Lists"
 
 
 class Task(BaseModel):
