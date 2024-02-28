@@ -3,5 +3,6 @@
     {{ item.name|default:"Card Title" }}
 {% endblock card_title %}
 {% block card_body %}
-    body
+    {{ item.lists }}
+    {% for item in item.assigned_list %}{{ item }}{% endfor %}
 {% endblock card_body %}
