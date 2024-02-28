@@ -2,8 +2,17 @@ from django.conf import settings
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from abstract.admin import mark_undo
 from user.models import User
+
+
+@admin.action(description="Recover Selected Items")
+def mark_undo(modeladmin, request, queryset):
+    updated_count = queryset.update(status=True)
+    modeladmin.message_user(
+        request,
+        f"Successfully Recovered {updated_count} {modeladmin.model._meta.verbose_name_plural}",
+        messages.SUCCESS,
+    )
 
 
 class UserAdmin(UserAdmin):
@@ -12,6 +21,7 @@ class UserAdmin(UserAdmin):
 
     fieldsets = UserAdmin.fieldsets + (("Custom Fields", {"fields": ("mobile_no",)}),)
     add_fieldsets = UserAdmin.add_fieldsets + ((None, {"fields": ("mobile_no",)}),)
+    actions = [mark_undo]
 
 
 if settings.ENABLE_ADMIN:
