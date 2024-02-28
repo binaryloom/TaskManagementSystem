@@ -9,6 +9,9 @@ class UserAdmin(UserAdmin):
     search_fields = ("username", "password")
     ordering = ("username", "email")
 
+    fieldsets = UserAdmin.fieldsets + (("Custom Field", {"fields": ("mobile_no",)}),)
+    add_fieldsets = UserAdmin.add_fieldsets + ((None, {"fields": ("mobile_no",)}),)
+
 
 if settings.ENABLE_ADMIN:
     admin.site.register(User, UserAdmin)
