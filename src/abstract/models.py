@@ -15,8 +15,6 @@ class BaseModelClass(models.Model):
             # model definition
     """
 
-    objects = BaseManager()
-
     created_at = models.DateTimeField(auto_now_add=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True)
 
@@ -39,6 +37,8 @@ class BaseClass(BaseModelClass):
         class <CLASS_NAME> (BaseClass):
             # model definition
     """
+
+    objects = BaseManager()
 
     status = models.BooleanField(default=True)
 
