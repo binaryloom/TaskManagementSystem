@@ -14,6 +14,8 @@ services:
       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     networks:
       - tms_net
+    ports:
+      - 8001:80
 
   tms_server:
     image: tms_server
@@ -26,25 +28,4 @@ services:
     volumes:
       - ./src:/src
     networks:
-      - versity_net
-    ports:
-      - 8000:80
-    # TODO: Add the dependencies
-    # depends_on:
-    environment:
-      SECRET_KEY: django_insecure_project_please_replace_it_base512_encoded_string
-      POSTGRES_HOST: postgres_server
-      POSTGRES_PORT: 5432
-      POSTGRES_DB: postgres_db
-      POSTGRES_USER: G453f8r8
-      POSTGRES_PASSWORD: J5r6F7udfBa2nnHsHjJ2YJCf
-      CACHE_HOST: cache_server
-      CACHE_PORT: 11211
-      ES_HOST: elasticsearch_server
-      ES_PORT: 9200
-      ES_INDEX: versity_info
-      CHANEL_HOST: chanel_server
-      CHANEL_PORT: 6379
-      MINIO_HOST: cdn.studygiveway.com
-      MINIO_ACCESS_KEY: 4W7r39Ge
-      MINIO_SECRET_KEY: 66rW4AC4pzVsPaFgpz8aepED
+      - tms_net
