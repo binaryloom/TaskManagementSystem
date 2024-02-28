@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.db.models import CharField
 
-from abstract.enums import CellSize
+# from abstract.enums import CellSize
 
 # from .managers import UserManager
 
@@ -11,9 +11,7 @@ class User(AbstractUser):
     USERNAME_FIELD = "username"
     # REQUIRED_FIELDS = ["password"]
     # objects = UserManager()
-    mobile_no = CharField(
-        unique=True, max_length=CellSize.MEDIUM, null=True, blank=True
-    )
+    mobile_no = CharField(unique=True, max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.username
