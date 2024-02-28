@@ -6,10 +6,10 @@ from user.models import User
 
 
 class UserAdmin(UserAdmin):
-    search_fields = ("username", "password")
+    search_fields = ("username", "mobile_no", "email")
     ordering = ("username", "email")
 
-    fieldsets = UserAdmin.fieldsets + (("Custom Field", {"fields": ("mobile_no",)}),)
+    fieldsets = UserAdmin.fieldsets + (("Custom Fields", {"fields": ("mobile_no",)}),)
     add_fieldsets = UserAdmin.add_fieldsets + ((None, {"fields": ("mobile_no",)}),)
 
 
