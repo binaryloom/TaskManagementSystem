@@ -1,6 +1,7 @@
-from django.db import models
-from abstract.managers import BaseManager
 from django.conf import settings
+from django.db import models
+
+from abstract.managers import BaseManager
 
 
 class BaseModelClass(models.Model):

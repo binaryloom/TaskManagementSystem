@@ -1,17 +1,16 @@
-from abstract.models import BaseModel
-
-
 from django.conf import settings
-from abstract.enums import CellSize
-
 from django.db.models import (
-    CharField,
-    ForeignKey,
-    TextField,
     CASCADE,
     DO_NOTHING,
+    CharField,
     DateField,
+    ForeignKey,
+    ManyToManyField,
+    TextField,
 )
+
+from abstract.enums import CellSize
+from abstract.models import BaseModel
 
 
 # Create your models here.
@@ -48,7 +47,7 @@ class Task(BaseModel):
     assigned_to = models.ManyToManyField(
         User, related_name="tasks_assigned_to", blank=True
     )
-    due_date = models.DateField(null=True, blank=True)
+    due_date = DateField(null=True, blank=True)
 
     def __str__(self):
         return self.title
