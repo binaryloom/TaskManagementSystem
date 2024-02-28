@@ -12,7 +12,6 @@ class BoardViewSet(ModelViewSet):
 
     queryset = Board.objects.all()
     serializer_class = BoardSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 
 class ListViewSet(ModelViewSet):
@@ -22,7 +21,6 @@ class ListViewSet(ModelViewSet):
 
     queryset = List.objects.all()
     serializer_class = ListSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 
 class TaskViewSet(ModelViewSet):
@@ -32,4 +30,3 @@ class TaskViewSet(ModelViewSet):
 
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    permission_classes = [permissions.IsAuthenticated]
