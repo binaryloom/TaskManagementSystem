@@ -30,7 +30,6 @@ from user.urls import router as user_router
 
 urlpatterns = [
     path("auth/", include("rest_framework.urls", namespace="basic_auth")),
-    # path("auth/token/", ObtainAuthToken.as_view()),
     # path("auth/jwt/", TokenObtainPairView.as_view(), name="jwt_auth"),
     # path("auth/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"),
     # path("auth/verify/", TokenVerifyView.as_view(), name="token_verify"),
