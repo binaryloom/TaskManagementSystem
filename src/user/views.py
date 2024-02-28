@@ -7,5 +7,5 @@ from user.serializers import RegistrationSerializer
 
 class RegistrationView(CreateAPIView):
     queryset = User.objects.all()
-    # permission_classes = (AllowAny,)
+    permission_classes = (AllowAny,)
     serializer_class = RegistrationSerializer
