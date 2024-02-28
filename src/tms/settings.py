@@ -165,3 +165,11 @@ REST_REGISTRATION = {
     "REGISTER_EMAIL_VERIFICATION_ENABLED": False,
     "RESET_PASSWORD_VERIFICATION_ENABLED": False,
 }
+
+
+# Tailwind Config
+
+TAILWIND_APP_NAME = "tailwind_theme"
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
