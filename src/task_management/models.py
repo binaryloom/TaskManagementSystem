@@ -14,7 +14,7 @@ from abstract.models import BaseModel
 
 
 class Board(BaseModel):
-    name = CharField(max_length=CellSize.XL)
+    name = CharField(max_length=255)
 
     def __str__(self):
         return self.name
@@ -28,7 +28,7 @@ class Board(BaseModel):
 
 
 class List(BaseModel):
-    name = CharField(max_length=CellSize.LARGE)
+    name = CharField(max_length=100)
     assigned_board = ForeignKey(
         "task_management.Board", related_name="lists", on_delete=CASCADE
     )
@@ -43,7 +43,7 @@ class List(BaseModel):
 
 class Task(BaseModel):
     title = CharField(max_length=100)
-    description = TextField(max_length=CellSize.XXL, null=True, blank=True)
+    description = TextField(max_length=1000, null=True, blank=True)
     # list = ForeignKey(
     #     "task_management.task_list", related_name="tasks", on_delete=CASCADE
     # )
