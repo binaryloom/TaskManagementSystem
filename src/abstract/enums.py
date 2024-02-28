@@ -1,5 +1,4 @@
-from enum import IntEnum, StrEnum
-
+from enum import IntEnum
 
 
 class CellSize(IntEnum):
@@ -23,4 +22,4 @@ class CellSize(IntEnum):
     LARGE = 100
     XL = 255
     XXL = 500
-    XXXL =  10485760
+    XXXL = 10485760
