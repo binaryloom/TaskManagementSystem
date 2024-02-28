@@ -1,6 +1,6 @@
 from abstract.models import BaseModel
 from abstract.enums import CellSize
-from django.db.models import CharField, ForeignKey, CASCADE, DO_NOTHING
+from django.db.models import CharField, ForeignKey, TextField, CASCADE, DO_NOTHING
 from django.conf import settings
 
 # Create your models here.
@@ -30,8 +30,8 @@ class List(BaseModel):
 
 class Task(BaseModel):
     title = CharField(max_length=100)
-    description = models.TextField()
-    list = models.ForeignKey(List, related_name="tasks", on_delete=models.CASCADE)
+    description = TextField()
+    list = models.ForeignKey(List, related_name="tasks", on_delete=CASCADE)
     assigned_to = models.ManyToManyField(
         User, related_name="tasks_assigned_to", blank=True
     )
