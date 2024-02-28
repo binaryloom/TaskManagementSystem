@@ -18,6 +18,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+    TokenVerifyView,
+)
 
 from task_management.urls import router as task_management_router
 from user.urls import router as user_router
@@ -33,10 +38,8 @@ urlpatterns = [
 ]
 
 
-from rest_framework_simplejwt.views import TokenRefreshView, TokenVerifyView
-
 urlpatterns = [
-    path("auth/jwt", AuthView.as_view(), name="jwt_auth"),
+    path("auth/jwt", TokenObtainPairView.as_view(), name="jwt_auth"),
     path("auth/refresh", TokenRefreshView.as_view(), name="jwt_refresh"),
     path("auth/verify", TokenVerifyView.as_view(), name="token_verify"),
 ]
