@@ -30,7 +30,6 @@ from rest_registration.api.views import (
     logout,
     profile,
     register,
-    reset_password,
 )
 
 from task_management.urls import router as task_management_router
@@ -43,7 +42,6 @@ urlpatterns = [
     path("auth/logout/", logout, name="logout"),
     path("auth/profile/", profile, name="profile"),
     path("auth/register/", register, name="register"),
-    path("auth/password/reset/", reset_password, name="reset_password"),
     path("auth/password/change/", change_password, name="change_password"),
     path("auth/jwt/", TokenObtainPairView.as_view(), name="jwt_auth"),
     path("auth/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"),
