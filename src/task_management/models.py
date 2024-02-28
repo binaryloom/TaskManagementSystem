@@ -29,7 +29,9 @@ class Board(BaseModel):
 
 class List(BaseModel):
     name = CharField(max_length=CellSize.LARGE)
-    board = ForeignKey("task_management.Board", related_name="lists", on_delete=CASCADE)
+    assigned_board = ForeignKey(
+        "task_management.Board", related_name="lists", on_delete=CASCADE
+    )
 
     class Meta:
         managed = settings.MANAGE_DATABASE
