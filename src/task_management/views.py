@@ -12,6 +12,7 @@ class DashboardView(TemplateView):
 
 class BoardListView(ListView):
     model = Board
+    template_name = "task_management/boards.html"
 
 
 class ListListView(ListView):
