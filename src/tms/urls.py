@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
+from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -29,9 +30,10 @@ from user.urls import router as user_router
 
 urlpatterns = [
     path("auth/", include("rest_framework.urls", namespace="basic_auth")),
-    path("auth/jwt/", TokenObtainPairView.as_view(), name="jwt_auth"),
-    path("auth/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"),
-    path("auth/verify/", TokenVerifyView.as_view(), name="token_verify"),
+    # path("auth/token/", ObtainAuthToken.as_view()),
+    # path("auth/jwt/", TokenObtainPairView.as_view(), name="jwt_auth"),
+    # path("auth/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"),
+    # path("auth/verify/", TokenVerifyView.as_view(), name="token_verify"),
 ]
 
 
