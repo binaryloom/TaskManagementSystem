@@ -10,6 +10,7 @@ markdown = "*"
 django-filter = "*"
 djangorestframework-simplejwt = {extras = ["crypto"], version = "*"}
 django-rest-registration = "*"
+django-tailwind = {extras = ["reload"], version = "*"}
 
 [dev-packages]
 black = "*"
