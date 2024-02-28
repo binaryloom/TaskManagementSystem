@@ -1,0 +1,12 @@
+{% extends "components/card/base.html" %}
+{% block card_title %}
+    {{ item.name|default:"Card Title" }}
+{% endblock card_title %}
+{% block card_body %}
+    <h3 class="text-2xl font-semibold">Lists</h3>
+    {% for item in item.lists.all %}
+        <span class="inline-block px-2 py-1 bg-violet-500 text-white rounded-md">{{ item }}</span>
+    {% empty %}
+        <span class="inline-block px-2 py-1 bg-gray-500 text-white rounded-md">No List in this board</span>
+    {% endfor %}
+{% endblock card_body %}

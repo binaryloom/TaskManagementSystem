@@ -17,7 +17,9 @@ class BoardListView(ListView):
 
 class ListListView(ListView):
     model = List
+    template_name = "task_management/lists.html"
 
 
 class TaskListView(ListView):
     model = Task
+    template_name = "task_management/tasks.html"
