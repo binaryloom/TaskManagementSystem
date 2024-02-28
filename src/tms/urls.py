@@ -20,9 +20,11 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
 from task_management.urls import router as task_management_router
+from user.urls import router as user_router
 
 router = DefaultRouter()
 router.registry.extend(task_management_router.registry)
+router.registry.extend(user_router.registry)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
