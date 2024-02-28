@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "rest_registration",
     "tailwind",
+    "tailwind_theme",
 ]
 
 MIDDLEWARE = [
