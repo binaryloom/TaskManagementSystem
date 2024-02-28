@@ -23,8 +23,8 @@ from task_management.urls import router
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/auth/", include("rest_framework.urls")),
-    path("", include(router.urls)),
+    path("api/task/", include(router.urls)),
 ]
 
 
-urlpatterns += router.urls
+# urlpatterns += router.urls
