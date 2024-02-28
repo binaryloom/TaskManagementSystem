@@ -1,0 +1,56 @@
+version: "3.7"
+networks:
+  tms_net:
+    driver: bridge
+    name: tms_net
+
+services:
+  proxy_server:
+    image: haproxy:2.7
+    container_name: proxy_server
+    hostname: proxy_server
+    restart: unless-stopped
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    networks:
+      - tms_net
+
+  vi_server:
+    image: vi_server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vi_server
+    hostname: vi_server
+    restart: unless-stopped
+    volumes:
+      - ./src:/src
+    networks:
+      - versity_net
+    ports:
+      - 8000:80
+    # TODO: Add the dependencies
+    # depends_on:
+    environment:
+      SECRET_KEY: django_insecure_project_please_replace_it_base512_encoded_string
+      POSTGRES_HOST: postgres_server
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: postgres_db
+      POSTGRES_USER: G453f8r8
+      POSTGRES_PASSWORD: J5r6F7udfBa2nnHsHjJ2YJCf
+      CACHE_HOST: cache_server
+      CACHE_PORT: 11211
+      ES_HOST: elasticsearch_server
+      ES_PORT: 9200
+      ES_INDEX: versity_info
+      CHANEL_HOST: chanel_server
+      CHANEL_PORT: 6379
+      MINIO_HOST: cdn.studygiveway.com
+      MINIO_ACCESS_KEY: 4W7r39Ge
+      MINIO_SECRET_KEY: 66rW4AC4pzVsPaFgpz8aepED
+
+    healthcheck:
+      test: ls
+      interval: 1s
+      timeout: 1s
+      retries: 5
