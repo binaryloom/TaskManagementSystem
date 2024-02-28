@@ -9,6 +9,7 @@ djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
 djangorestframework-simplejwt = {extras = ["crypto"], version = "*"}
+django-rest-registration = "*"
 
 [dev-packages]
 black = "*"

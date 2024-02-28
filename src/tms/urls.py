@@ -35,6 +35,7 @@ urlpatterns = [
     path("auth/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"),
     path("auth/verify/", TokenVerifyView.as_view(), name="token_verify"),
     path("auth/registration/", RegistrationView.as_view(), name="registration"),
+    path("accounts/", include("rest_registration.api.urls")),
 ]
 
 
