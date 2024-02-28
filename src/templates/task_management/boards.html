@@ -1,38 +1,6 @@
 {% extends "layouts/list.html" %}
 {% block list_container %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
-    {% include "components/card/board.html" %}
+    {% for item in object_list %}
+        {% include "components/card/board.html" with item=item %}
+    {% endfor %}
 {% endblock list_container %}
