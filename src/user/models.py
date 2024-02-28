@@ -6,8 +6,6 @@ from abstract.enums import CellSize
 
 # from .managers import UserManager
 
-# Create your models here.
-
 
 class User(AbstractUser):
     USERNAME_FIELD = "username"

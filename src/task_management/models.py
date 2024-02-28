@@ -13,7 +13,6 @@ from abstract.enums import CellSize
 from abstract.models import BaseModel
 
 
-# Create your models here.
 class Board(BaseModel):
     name = CharField(max_length=CellSize.XL)
 
