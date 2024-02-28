@@ -18,9 +18,10 @@ class ModelAdmin(admin.ModelAdmin):
     list_per_page = 12
 
     exclude = ["status"]
+
     # actions_on_top = False
-    # def delete_queryset(self, request, queryset):
-    #     queryset.update(status=False)
+    def delete_queryset(self, request, queryset):
+        queryset.update(status=False)
 
     list_display = ["__str__", "status"]
     actions = [mark_undo]
