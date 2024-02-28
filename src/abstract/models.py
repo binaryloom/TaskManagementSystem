@@ -1,11 +1,12 @@
 from django.db import models
 from abstract.managers import BaseManager
+from django.conf import settings
+
 
 # from user.models import User
 # from versity_info.enums import CellSize
 # from versity_info.abstract_managers import BaseManager
 # from phonenumber_field import modelfields
-from django.conf import settings
 
 
 class BaseClass(models.Model):
@@ -27,3 +28,9 @@ class BaseClass(models.Model):
     status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True)
+
+    class Meta:
+        abstract = True
+        ordering = ["-updated_at"]
+        if not settings.DEFAULT_PERMISSIONS:
+            default_permissions = []
