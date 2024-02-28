@@ -15,13 +15,13 @@ services:
     networks:
       - tms_net
 
-  vi_server:
-    image: vi_server
+  tms_server:
+    image: tms_server
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: vi_server
-    hostname: vi_server
+    container_name: tms_server
+    hostname: tms_server
     restart: unless-stopped
     volumes:
       - ./src:/src
@@ -48,9 +48,3 @@ services:
       MINIO_HOST: cdn.studygiveway.com
       MINIO_ACCESS_KEY: 4W7r39Ge
       MINIO_SECRET_KEY: 66rW4AC4pzVsPaFgpz8aepED
-
-    healthcheck:
-      test: ls
-      interval: 1s
-      timeout: 1s
-      retries: 5
