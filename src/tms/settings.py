@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "task_management",
     # 3rd party app
     "rest_framework",
+    "rest_framework.authtoken",
 ]
 
 MIDDLEWARE = [
