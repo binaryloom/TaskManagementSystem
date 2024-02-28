@@ -33,6 +33,9 @@ class List(BaseModel):
         "task_management.Board", related_name="lists", on_delete=CASCADE
     )
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         managed = settings.MANAGE_DATABASE
         db_table = "task_list"
@@ -44,9 +47,9 @@ class List(BaseModel):
 class Task(BaseModel):
     title = CharField(max_length=100)
     description = TextField(max_length=1000, null=True, blank=True)
-    # list = ForeignKey(
-    #     "task_management.task_list", related_name="tasks", on_delete=CASCADE
-    # )
+    assigned_list = ForeignKey(
+        "task_management.List", related_name="tasks", on_delete=CASCADE
+    )
     # assigned_to = models.ManyToManyField(
     #     User, related_name="tasks_assigned_to", blank=True
     # )
