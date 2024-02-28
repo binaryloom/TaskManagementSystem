@@ -5,15 +5,17 @@ networks:
     name: tms_net
 
 services:
-  proxy_server:
+  lb_server:
     image: haproxy:2.7
-    container_name: proxy_server
-    hostname: proxy_server
+    container_name: lb_server
+    hostname: lb_server
     restart: unless-stopped
     volumes:
       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     networks:
       - tms_net
+    depends_on:
+      - tms_server
     ports:
       - 8001:80
 
