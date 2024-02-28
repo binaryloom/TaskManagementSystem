@@ -12,12 +12,9 @@ from .managers import UserManager
 class User(AbstractUser):
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = ["password"]
-    objects = UserManager()
+    # objects = UserManager()
     mobile_no = models.CharField(
         unique=True, max_length=CellSize.MEDIUM, null=True, blank=True
-    )
-    user_type = models.CharField(
-        choices=UserType, max_length=CellSize.XM, default=UserType.STUDENT  # type: ignore
     )
 
     def __str__(self):
