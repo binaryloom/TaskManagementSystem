@@ -12,3 +12,11 @@ class DashboardView(TemplateView):
 
 class BoardListView(ListView):
     model = Board
+
+
+class ListListView(ListView):
+    model = Board
+
+
+class TaskListView(ListView):
+    model = Board
