@@ -1,8 +1,9 @@
 {% extends "root.html" %}
 {% block main_body %}
-    this is main body
-    <div class="bg-red-400">
+    {% include "components/header.html" %}
+    <div class="flex-1">
         {% block content %}
         {% endblock content %}
     </div>
+    {% include "components/footer.html" %}
 {% endblock main_body %}
