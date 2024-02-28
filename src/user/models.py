@@ -23,6 +23,11 @@ class User(AbstractUser):
     #         else f"{self.first_name} {self.last_name}"
     #     )
 
+    def delete(self, *args, **kwargs):
+        if self.is_staff:
+            self.is_staff = False
+            self.save()
+
     class Meta:
         managed = settings.MANAGE_DATABASE
         db_table = "user"
