@@ -139,3 +139,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # custom configs for user & bulk import
 AUTH_USER_MODEL = "user.User"
 FIXTURE_DIRS = [Path(path.join(BASE_DIR, "fixtures"))]
+
+# Rest Framework
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
+    ]
+}
