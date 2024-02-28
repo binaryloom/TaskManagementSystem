@@ -11,10 +11,10 @@ class BoardSerializer(HyperlinkedModelSerializer):
 class ListSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = List
-        fields = "__all__"
+        fields = ["name", "assigned_board"]
 
 
 class TaskSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Task
-        fields = "__all__"
+        fields = ["title", "description", "assigned_list", "due_date"]
