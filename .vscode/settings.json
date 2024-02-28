@@ -19,6 +19,7 @@
     "forwardfor",
     "httplog",
     "maxconn",
-    "roundrobin"
+    "roundrobin",
+    "viewsets"
   ]
 }
