@@ -27,7 +27,7 @@ class User(AbstractUser):
 
     class Meta:
         managed = settings.MANAGE_DATABASE
-        db_table = "task_board"
-        verbose_name_plural = "Boards"
+        db_table = "user"
+        verbose_name_plural = "Users"
         if not settings.DEFAULT_PERMISSIONS:
             default_permissions = []
