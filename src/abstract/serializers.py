@@ -1,5 +1,5 @@
 from rest_framework import serializers
 
 
-class ModelSerializer(serializers.HyperlinkedModelSerializer):
+class HyperlinkedModelSerializer(serializers.HyperlinkedModelSerializer):
     pass
