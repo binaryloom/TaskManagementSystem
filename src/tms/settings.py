@@ -10,11 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+from os import mkdir, path
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 DEV_DIR = Path(path.join(BASE_DIR, "dev_junk"))
+
 if not path.exists(DEV_DIR):
     mkdir(DEV_DIR)
 
@@ -84,7 +86,7 @@ WSGI_APPLICATION = "tms.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": DEV_DIR / "dev_db.sqlite3",
     }
 }
 
