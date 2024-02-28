@@ -1,3 +1,16 @@
 {
-  "gitdoc.enabled": true
+  "gitdoc.enabled": true,
+  "files.associations": {
+    "*.cfg": "config_files"
+  },
+  "[config_files]": {
+    "editor.formatOnSave": false
+  },
+  "cSpell.words": [
+    "dontlognull",
+    "forwardfor",
+    "httplog",
+    "maxconn",
+    "roundrobin"
+  ]
 }
