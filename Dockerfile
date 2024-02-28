@@ -12,4 +12,4 @@ RUN pipenv lock && pipenv install --system --deploy
 
 EXPOSE 80
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:80", "--settings", "versity_info.settings.production" ]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:80", "--settings", "tms.settings_prod" ]
