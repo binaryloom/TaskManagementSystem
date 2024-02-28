@@ -11,15 +11,15 @@ from abstract.enums import Status
 
 @admin.action(description="Recover Selected Items")
 def mark_undo(modeladmin, request, queryset):
-    updated_count = queryset.update(status=Status.PUBLISHED)
+    updated_count = queryset.update(status=True)
     modeladmin.message_user(
         request,
-        f"Successfully published {updated_count} {modeladmin.model._meta.verbose_name_plural}",
+        f"Successfully Recovered {updated_count} {modeladmin.model._meta.verbose_name_plural}",
         messages.SUCCESS,
     )
 
 
-class BaseAdmin(admin.ModelAdmin):
+class ModelAdmin(admin.ModelAdmin):
     list_per_page = 12
 
     # exclude = ['status']
