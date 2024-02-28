@@ -9,10 +9,13 @@ from django.conf import settings
 class Board(BaseModel):
     name = CharField(max_length=CellSize.XL)
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         managed = settings.MANAGE_DATABASE
         db_table = "board"
-        verbose_name_plural = "boards"
+        verbose_name_plural = "Boards"
 
 
 class List(BaseModel):
