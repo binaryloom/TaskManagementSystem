@@ -43,7 +43,7 @@ class List(BaseModel):
 
 class Task(BaseModel):
     title = CharField(max_length=100)
-    description = TextField(max_length=CellSize.XXXL, null=True, blank=True)
+    description = TextField(max_length=CellSize.XXL, null=True, blank=True)
     # list = ForeignKey(
     #     "task_management.task_list", related_name="tasks", on_delete=CASCADE
     # )
