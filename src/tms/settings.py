@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "rest_registration",
     "tailwind",
     "tailwind_theme",
+    "django_browser_reload",
 ]
 
 MIDDLEWARE = [
