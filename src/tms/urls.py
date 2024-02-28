@@ -55,3 +55,5 @@ urlpatterns = urlpatterns + [
 
 # login
 # logout
+# profile
+# change Password
