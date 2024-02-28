@@ -7,7 +7,7 @@ from user.models import User
 class UserSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = "__all__"
+        fields = ["slug", "first_name", "last_name", "mobile_no"]
 
 
 class GroupSerializer(HyperlinkedModelSerializer):
