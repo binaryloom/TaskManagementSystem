@@ -24,6 +24,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView,
 )
+from rest_registration.api.views import login, logout, profile, register, reset_password
 
 from task_management.urls import router as task_management_router
 from user.urls import router as user_router
@@ -31,6 +32,7 @@ from user.views import RegistrationView
 
 urlpatterns = [
     # path("auth/", include("rest_framework.urls", namespace="basic_auth")),
+    path("auth/registration", register, name="register"),
     path("auth/jwt/", TokenObtainPairView.as_view(), name="jwt_auth"),
     path("auth/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"),
     path("auth/verify/", TokenVerifyView.as_view(), name="token_verify"),
