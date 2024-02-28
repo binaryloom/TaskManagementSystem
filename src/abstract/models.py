@@ -25,7 +25,7 @@ class BaseModelClass(models.Model):
             default_permissions = []
 
 
-class BaseClass(BaseModelClass):
+class BaseModel(BaseModelClass):
     """This is the base class model for all state full models of the database tables.
 
     Contains:
