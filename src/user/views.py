@@ -19,7 +19,7 @@ class DashboardView(TemplateView):
 
 
 class LoginView(views.LoginView):
-    template_name = "login.html"
+    template_name = "default/form.html"
     authentication_form = AuthForm
 
     def form_invalid(self, form):

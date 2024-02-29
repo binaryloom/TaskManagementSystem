@@ -186,4 +186,6 @@ NPM_BIN_PATH = "npm.cmd"
 
 # Logout
 
-LOGOUT_REDIRECT_URL = "user:dashboard_view"
+LOGOUT_REDIRECT_URL = "user:login_view"
+
+LOGIN_REDIRECT_URL = "user:dashboard_view"

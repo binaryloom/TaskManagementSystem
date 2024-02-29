@@ -15,6 +15,9 @@ def meta_processor(request):
         page_title = "List Details"
     if page_title == "tasklist_view":
         page_title = "Tasks"
+
+    if page_title == "login_view":
+        page_title = "LOGIN"
     return {
         "page_title": page_title,
     }
