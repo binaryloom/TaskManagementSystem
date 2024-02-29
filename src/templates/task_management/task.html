@@ -14,10 +14,21 @@
                 <td class="border px-4 py-2">{{ object.title }}</td>
             </tr>
             <tr>
-                <td class="border px-4 py-2">Board</td>
+                <td class="border px-4 py-2">Due Date</td>
+                <td class="border px-4 py-2">{{ object.due_date }}</td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">List</td>
                 <td class="border px-4 py-2">
-                    <a href="{{ object.assigned_board.get_absolute_url }}"
-                       class="text-blue-500 hover:underline">{{ object.assigned_board.name }}</a>
+                    <a href="{{ object.assigned_list.get_absolute_url }}"
+                       class="text-blue-500 hover:underline">{{ object.assigned_list.name }}</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">Assigned Persons</td>
+                <td class="border px-4 py-2">
+                    <a href="{{ object.assigned_list.get_absolute_url }}"
+                       class="text-blue-500 hover:underline">{{ object.assigned_list.name }}</a>
                 </td>
             </tr>
         </tbody>
