@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
-        {% block list_container %}
-        {% endblock list_container %}
-    </div
+    <div class="flex flex-col flex-1 gap-4">
+        <h3 class="text-2xl font-semibold">{{ child_header|default:"Childs" }}</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
+            {% block list_container %}
+            {% endblock list_container %}
+        </div>
+        {% block action_container %}
+        {% endblock action_container %}
+    </div>
 {% endblock content %}
