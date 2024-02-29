@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from abstract.views import ListView, TemplateView
+from abstract.views import DetailView, ListView, TemplateView
 from task_management.models import Board, List, Task
 
 # Create your views here.
@@ -23,3 +23,7 @@ class ListListView(ListView):
 class TaskListView(ListView):
     model = Task
     template_name = "task_management/tasks.html"
+
+
+class BoardDetailView(DetailView):
+    model = Board
