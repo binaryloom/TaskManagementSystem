@@ -36,6 +36,8 @@ class DetailChildView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.field and hasattr(context["object"], self.field):
+            if self.child_header:
+                context["child_header"] = self.child_header
             context["object_list"] = getattr(context["object"], self.field).all()
         return context
 
