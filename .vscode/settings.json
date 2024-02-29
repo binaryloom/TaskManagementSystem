@@ -22,6 +22,8 @@
     "boardcreate",
     "boarddetail",
     "boardlist",
+    "boardlistcreate",
+    "boardtaskcreate",
     "dontlognull",
     "forwardfor",
     "httplog",
