@@ -15,6 +15,8 @@ class BaseManager(models.Manager):
         attrs_with_values = vars(self.model)
         for attr, value in attrs_with_values.items():
             print(f"{attr}: {value}")
+        print("-------------")
+        print(dir(self.model))
         print("******")
 
         return (
