@@ -40,6 +40,9 @@ class List(BaseModel):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse_lazy("task_management:listdetail_view", kwargs={"pk": self.pk})
+
     class Meta:
         managed = settings.MANAGE_DATABASE
         db_table = "task_list"

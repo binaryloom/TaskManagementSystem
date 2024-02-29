@@ -24,10 +24,12 @@
     "dontlognull",
     "forwardfor",
     "httplog",
+    "listdetail",
     "listlist",
     "maxconn",
     "roundrobin",
     "simplejwt",
+    "taskdetail",
     "tasklist",
     "viewsets"
   ]
