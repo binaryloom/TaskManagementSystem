@@ -12,7 +12,7 @@ class BaseManager(models.Manager):
             self.operating_user if hasattr(self, "operating_user") else None
         )
         print("******")
-        x = self.operating_user
+        x = dir(self)
         print(x)
         print("******")
 
