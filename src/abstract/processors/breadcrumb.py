@@ -8,4 +8,6 @@ def breadcrumb(request):
                 {"title": fragment, "link": link_segments + str(fragment)}
             )
             link_segments += f"{str(fragment)}/"
+    else:
+        breadcrumb = [{"title": "Home", "link": "/"}]
     return {"breadcrumb": breadcrumb}
