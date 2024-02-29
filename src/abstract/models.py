@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 
 from abstract.managers import BaseManager
+from user.models import User
 
 
 class BaseModel(models.Model):
@@ -24,6 +25,19 @@ class BaseModel(models.Model):
     status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True)
+
+    created_by = models.ForeignKey(
+        "user.User",
+        related_name="created_by",
+        on_delete=models.DO_NOTHING,
+        blank=True,
+    )
+    updated_by = models.ForeignKey(
+        User,
+        related_name="updated_by",
+        on_delete=models.DO_NOTHING,
+        blank=True,
+    )
 
     def delete(self, *args, **kwargs):
         self.status = False
