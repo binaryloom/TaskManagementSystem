@@ -2,6 +2,8 @@ from django.db import models
 
 
 class BaseManager(models.Manager):
+    operating_user = None
+
     def get_queryset(self):
         return super().get_queryset()
 
