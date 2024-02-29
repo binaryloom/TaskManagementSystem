@@ -6,7 +6,6 @@ from task_management.views import (
     BoardDetailView,
     BoardListView,
     BoardUpdateView,
-    DashboardView,
     ListCreateView,
     ListDetailView,
     ListListView,
@@ -26,7 +25,6 @@ router.register(r"task", TaskViewSet)
 
 # fmt: off
 urlpatterns = [
-    path(route="", view=DashboardView.as_view(), name="dashboard_view"),
     path(route="boards/", view=BoardListView.as_view(), name="boardlist_view"),
     path(route="boards/add", view=BoardCreateView.as_view(), name="boardcreate_view"),
     path(route="boards/<int:pk>",view=BoardDetailView.as_view(),name="boarddetail_view"),
