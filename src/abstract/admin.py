@@ -23,5 +23,5 @@ class ModelAdmin(admin.ModelAdmin):
     def delete_queryset(self, request, queryset):
         queryset.update(status=False)
 
-    list_display = ["__str__", "status"]
+    list_display = ["__str__", "status", "created_by", "updated_by"]
     actions = [mark_undo]
