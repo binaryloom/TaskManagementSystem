@@ -2,6 +2,7 @@ import contextlib
 
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
+from abstract.managers import BaseManager
 from abstract.models import BaseModel
 
 
@@ -17,7 +18,7 @@ class InjectUserObj:
                     request.user = JWTAuthentication().get_user(
                         JWTAuthentication().get_validated_token(auth_header[1])
                     )
-        BaseModel.operating_user = (
-            request.user if request.user.is_authenticated else None
-        )
+        operating_user = request.user if request.user.is_authenticated else None
+        BaseModel.operating_user = operating_user
+        BaseManager.operating_user = operating_user
         return self.get_response(request)
