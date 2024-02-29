@@ -24,18 +24,21 @@
     "boardlist",
     "boardlistcreate",
     "boardtaskcreate",
+    "boardupdate",
     "dontlognull",
     "forwardfor",
     "httplog",
     "listcreate",
     "listdetail",
     "listlist",
+    "listupdate",
     "maxconn",
     "roundrobin",
     "simplejwt",
     "taskcreate",
     "taskdetail",
     "tasklist",
+    "taskupdate",
     "viewsets"
   ]
 }
