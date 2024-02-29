@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+    {% block detail_container %}
+    {% endblock detail_container %}
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
         {% block list_container %}
         {% endblock list_container %}
     </div>
+    {% block action_container %}
+    {% endblock action_container %}
 {% endblock content %}
