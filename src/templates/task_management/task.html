@@ -27,9 +27,7 @@
             <tr>
                 <td class="border px-4 py-2">Assigned Persons</td>
                 <td class="border px-4 py-2">
-                    {% for item in object.assigned_to.all %}{{ item }}{% endfor %}
-                    <a href="{{ object.assigned_list.get_absolute_url }}"
-                       class="text-blue-500 hover:underline">{{ object.assigned_list.name }}</a>
+                    {% for item in object.assigned_to.all %}{{ item }},{% endfor %}
                 </td>
             </tr>
         </tbody>
