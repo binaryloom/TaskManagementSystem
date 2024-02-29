@@ -20,6 +20,7 @@ router.register(r"task", TaskViewSet)
 urlpatterns = [
     path(route="", view=DashboardView.as_view(), name="dashboard_view"),
     path(route="boards/", view=BoardListView.as_view(), name="boardlist_view"),
+    path(route="boards/<int:pk>",view=BoardDetailView.as_view(),name="boarddetail_view"),
     path(route="lists/", view=ListListView.as_view(), name="listlist_view"),
     path(route="tasks/", view=TaskListView.as_view(), name="tasklist_view"),
 ]
