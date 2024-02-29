@@ -5,12 +5,16 @@ class BaseManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset()
 
+    def filter(self, *args, **kwargs):
+        return (
+            super()
+            .filter(*args, **kwargs, created_by=self.model.operating_user)
+            .exclude(status=False)
+        )
+
     def all(self):
         print(self.model)
-        return super().all().exclude(status=True)
-
-    def filter(self, *args, **kwargs):
-        return super().filter(*args, **kwargs).exclude(status=False)
+        return super().filter()
 
     def count(self):
-        return self.filter().count()
+        return self.all().count()
