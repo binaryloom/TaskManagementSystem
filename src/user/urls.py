@@ -1,13 +1,14 @@
 from django.urls import path
 from rest_framework import routers
 
-from user.views import DashboardView, LoginView, LogoutView
+from user.views import DashboardView, LoginView
 from user.viewsets import GroupViewSet, UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r"user", UserViewSet)
 router.register(r"group", GroupViewSet)
 
+from django.contrib.auth.views import LogoutView
 
 # fmt: off
 urlpatterns = [
