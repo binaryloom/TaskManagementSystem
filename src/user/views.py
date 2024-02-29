@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import views
 from rest_framework.permissions import AllowAny
 
 from abstract.views import CreateAPIView, TemplateView
@@ -18,7 +18,7 @@ class DashboardView(TemplateView):
     template_name = "task_management/dashboard.html"
 
 
-class LoginView(LoginView):
+class LoginView(views.LoginView):
     template_name = "login.html"
     authentication_form = AuthForm
 
@@ -27,5 +27,5 @@ class LoginView(LoginView):
         return self.render_to_response(self.get_context_data(form=form))
 
 
-class LogoutView(LogoutView):
+class LogoutView(views.LogoutView):
     pass
