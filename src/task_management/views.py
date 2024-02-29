@@ -30,9 +30,11 @@ class BoardDetailView(DetailChildView):
     field = "lists"
 
 
-class ListDetailView(DetailView):
+class ListDetailView(DetailChildView):
     model = List
+    field = "tasks"
 
 
-class TaskDetailView(DetailView):
+class TaskDetailView(DetailChildView):
     model = Task
+    field = "assigned_to"
