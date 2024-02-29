@@ -8,10 +8,13 @@ class BaseManager(models.Manager):
         return super().get_queryset()
 
     def filter(self, *args, **kwargs):
+        operating_user = (
+            self.operating_user if hasattr(self, "operating_user") else None
+        )
         print("******")
-        print(self.model.operating_user)
+        print(operating_user)
         print("******")
-        print("this is filter method", self.model.operating_user)
+
         return (
             super()
             .filter(*args, **kwargs, created_by=self.model.operating_user)
