@@ -33,11 +33,20 @@ class BaseModel(models.Model):
         blank=True,
     )
     updated_by = models.ForeignKey(
-        User,
+        "user.User",
         related_name="updated_by",
         on_delete=models.DO_NOTHING,
         blank=True,
     )
+
+    def save(self, *args, **kwargs):
+        operating_user = (
+            self.operating_user if hasattr(self, "operating_user") else None
+        )
+        self.updated_by = operating_user
+        if not self.pk:
+            self.created_by = operating_user
+        super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
         self.status = False
