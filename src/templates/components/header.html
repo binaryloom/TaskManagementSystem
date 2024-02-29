@@ -2,24 +2,34 @@
     <div class="container mx-auto flex justify-between items-center px-4">
         <a href="{% url "task_management:dashboard_view" %}"
            class="text-lg font-semibold"><i class="fas fa-terminal"></i> Task Management System</a>
-        <nav>
-            <ul class="flex space-x-4">
-                <li>
-                    <a href="{% url "task_management:boardlist_view" %}"
-                       class="hover:text-gray-200">Boards</a>
-                </li>
-                <li>
-                    <a href="{% url "task_management:listlist_view" %}"
-                       class="hover:text-gray-200">Lists</a>
-                </li>
-                <li>
-                    <a href="{% url "task_management:tasklist_view" %}"
-                       class="hover:text-gray-200">Tasks</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:text-gray-200">Logout</a>
-                </li>
-            </ul>
-        </nav>
+        {% if request.user.is_authenticated %}
+            <nav>
+                <ul class="flex space-x-4">
+                    <li>
+                        <a href="{% url "task_management:boardlist_view" %}"
+                           class="hover:text-gray-200">Boards</a>
+                    </li>
+                    <li>
+                        <a href="{% url "task_management:listlist_view" %}"
+                           class="hover:text-gray-200">Lists</a>
+                    </li>
+                    <li>
+                        <a href="{% url "task_management:tasklist_view" %}"
+                           class="hover:text-gray-200">Tasks</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-gray-200">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        {% else %}
+            <nav>
+                <ul class="flex space-x-4">
+                    <li>
+                        <a href="#" class="hover:text-gray-200">Login</a>
+                    </li>
+                </ul>
+            </nav>
+        {% endif %}
     </div>
 </header>
