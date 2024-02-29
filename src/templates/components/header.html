@@ -17,7 +17,10 @@
                            class="hover:text-gray-200">Tasks</a>
                     </li>
                     <li>
-                        <a href="{% url "user:logout_view" %}" class="hover:text-gray-200">Logout</a>
+                        <form action="{% url 'user:logout_view' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="hover:text-gray-200">Logout</button>
+                        </form>
                     </li>
                 </ul>
             </nav>
@@ -25,7 +28,7 @@
             <nav>
                 <ul class="flex space-x-4">
                     <li>
-                        <a href="#" class="hover:text-gray-200">Login</a>
+                        <a href="{% url 'user:login_view' %}" class="hover:text-gray-200">Login</a>
                     </li>
                 </ul>
             </nav>
