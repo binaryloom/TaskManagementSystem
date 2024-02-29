@@ -1,9 +1,8 @@
 from django.shortcuts import render
 
-from abstract.views import DetailChildView, DetailView, ListView, TemplateView
+from abstract.views import CreateView, DetailChildView, ListView, TemplateView
+from task_management.forms import BoardForm, ListForm, TaskForm
 from task_management.models import Board, List, Task
-
-# Create your views here.
 
 
 class DashboardView(TemplateView):
@@ -42,3 +41,18 @@ class TaskDetailView(DetailChildView):
     model = Task
     field = "assigned_to"
     template_name = "task_management/task.html"
+
+
+class BoardCreate(CreateView):
+    model = Board
+    form_class = BoardForm
+
+
+class ListCreate(CreateView):
+    model = List
+    form_class = ListForm
+
+
+class TaskCreate(CreateView):
+    model = Task
+    form_class = TaskForm
