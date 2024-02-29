@@ -29,8 +29,14 @@ class DetailView(generic.DetailView):
 
 
 class DetailChildView(DetailView):
-    template_name = "default/detail.html"
+    template_name = "default/detail_child.html"
     field = None
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.field and hasattr(context["object"], self.field):
+            context["object_list"] = getattr(context["object"], self.field)
+        return context
 
 
 class CreateView(edit.CreateView):
