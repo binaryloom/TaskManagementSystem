@@ -1,42 +1,45 @@
-from rest_framework.generics import CreateAPIView
+from django.views import generic
+from django.views.generic import edit
+from rest_framework import generics
 
 
-class CreateAPIView(CreateAPIView):
+class CreateAPIView(generics.CreateAPIView):
     pass
 
 
-from django.views.generic import DetailView, FormView, ListView, TemplateView, View
-from django.views.generic.edit import CreateView, DeleteView, UpdateView
-
-
-class View(View):
+class View(generic.View):
     pass
 
 
-class TemplateView(TemplateView):
+class TemplateView(generic.TemplateView):
     pass
 
 
-class FormView(FormView):
+class FormView(generic.FormView):
     pass
 
 
-class ListView(ListView):
+class ListView(generic.ListView):
     paginate_by = 12
     template_name = "default/list.html"
 
 
-class DetailView(DetailView):
+class DetailView(generic.DetailView):
     template_name = "default/detail.html"
 
 
-class CreateView(CreateView):
+class DetailChildView(DetailView):
+    template_name = "default/detail.html"
+    field = None
+
+
+class CreateView(edit.CreateView):
     template_name = "default/form.html"
 
 
-class DeleteView(DeleteView):
+class DeleteView(edit.DeleteView):
     template_name = "default/form_delete.html"
 
 
-class UpdateView(UpdateView):
+class UpdateView(edit.UpdateView):
     template_name = "default/form.html"
