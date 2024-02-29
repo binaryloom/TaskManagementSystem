@@ -6,7 +6,7 @@ class BaseManager(models.Manager):
         return super().get_queryset()
 
     def filter(self, *args, **kwargs):
-        print("this is filter method")
+        print("this is filter method", self.model.operating_user)
         return (
             super()
             .filter(*args, **kwargs, created_by=self.model.operating_user)
