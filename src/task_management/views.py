@@ -28,13 +28,16 @@ class TaskListView(ListView):
 class BoardDetailView(DetailChildView):
     model = Board
     field = "lists"
+    template_name = "task_management/board.html"
 
 
 class ListDetailView(DetailChildView):
     model = List
     field = "tasks"
+    template_name = "task_management/list.html"
 
 
 class TaskDetailView(DetailChildView):
     model = Task
     field = "assigned_to"
+    template_name = "task_management/task.html"
