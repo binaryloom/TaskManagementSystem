@@ -16,7 +16,8 @@
             <tr>
                 <td class="border px-4 py-2">Board</td>
                 <td class="border px-4 py-2">
-                    <a href="https://example.com" class="text-blue-500 hover:underline">{{ object.assigned_board.name }}</a>
+                    <a href="{{ object.assigned_board.get_absulate_url }}"
+                       class="text-blue-500 hover:underline">{{ object.assigned_board.name }}</a>
                 </td>
             </tr>
         </tbody>
