@@ -43,16 +43,16 @@ class TaskDetailView(DetailChildView):
     template_name = "task_management/task.html"
 
 
-class BoardCreate(CreateView):
+class BoardCreateView(CreateView):
     model = Board
     form_class = BoardForm
 
 
-class ListCreate(CreateView):
+class ListCreateView(CreateView):
     model = List
     form_class = ListForm
 
 
-class TaskCreate(CreateView):
+class TaskCreateView(CreateView):
     model = Task
     form_class = TaskForm
