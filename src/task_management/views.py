@@ -43,6 +43,7 @@ class BoardDetailView(DetailChildView):
 class ListDetailView(DetailChildView):
     model = List
     field = "tasks"
+    child_header = "Linked Tasks"
     template_name = "task_management/list.html"
 
 
