@@ -65,6 +65,9 @@ class Task(BaseModel):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse_lazy("task_management:taskdetail_view", kwargs={"pk": self.pk})
+
     class Meta:
         managed = settings.MANAGE_DATABASE
         db_table = "task_task"
