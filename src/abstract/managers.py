@@ -6,7 +6,7 @@ class BaseManager(models.Manager):
         return super().get_queryset()
 
     def all(self):
-        return super().all().exclude(status=False)
+        return super().all().exclude(status=True)
 
     def filter(self, *args, **kwargs):
         return super().filter(*args, **kwargs).exclude(status=False)
