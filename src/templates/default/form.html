@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
     <form action="#" method="POST" class=" flex flex-col gap-2">
-        {% for field in form %}{{ field.label }}{% endfor %}
-        {{ form.as_p }}
+        {% for field in form %}
+            <div class="flex flex-row gap-6">
+                <div class="basis-1/4">{{ field.label }}</div>
+                <div class="grow flex-1">{{ field }}</div>
+            </div>
+        {% endfor %}
         <button type="submit"
                 class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit the Form</button>
     </form>
