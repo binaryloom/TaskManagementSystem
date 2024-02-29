@@ -1,6 +1,12 @@
 from django.shortcuts import render
 
-from abstract.views import CreateView, DetailChildView, ListView, TemplateView
+from abstract.views import (
+    CreateView,
+    DetailChildView,
+    ListView,
+    TemplateView,
+    UpdateView,
+)
 from task_management.forms import BoardForm, ListForm, TaskForm
 from task_management.models import Board, List, Task
 
@@ -54,5 +60,20 @@ class ListCreateView(CreateView):
 
 
 class TaskCreateView(CreateView):
+    model = Task
+    form_class = TaskForm
+
+
+class BoardUpdateView(UpdateView):
+    model = Board
+    form_class = BoardForm
+
+
+class ListUpdateView(UpdateView):
+    model = List
+    form_class = ListForm
+
+
+class TaskUpdateView(UpdateView):
     model = Task
     form_class = TaskForm
