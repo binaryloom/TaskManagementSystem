@@ -25,7 +25,7 @@
 {% endblock detail_container %}
 {% block list_container %}
     {% for item in object_list %}
-        {% include "components/card/board.html" with item=item card_link=item.get_absolute_url %}
+        {% include "components/card/task.html" with item=item card_link=item.get_absolute_url %}
     {% endfor %}
 {% endblock list_container %}
 {% block action_container %}
