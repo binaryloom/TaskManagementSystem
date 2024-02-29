@@ -27,3 +27,11 @@ class TaskListView(ListView):
 
 class BoardDetailView(DetailView):
     model = Board
+
+
+class ListDetailView(DetailView):
+    model = List
+
+
+class TaskDetailView(DetailView):
+    model = Task
