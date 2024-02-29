@@ -12,8 +12,9 @@ class BaseManager(models.Manager):
             self.operating_user if hasattr(self, "operating_user") else None
         )
         print("******")
-        x = dir(self)
-        print(x)
+        attrs_with_values = vars(self.model)
+        for attr, value in attrs_with_values.items():
+            print(f"{attr}: {value}")
         print("******")
 
         return (
