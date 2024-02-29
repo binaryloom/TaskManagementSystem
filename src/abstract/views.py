@@ -22,6 +22,13 @@ class FormView(generic.FormView):
 class ListView(generic.ListView):
     paginate_by = 12
     template_name = "default/list.html"
+    child_header = None
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.child_header:
+            context["child_header"] = self.child_header
+        return context
 
 
 class DetailView(generic.DetailView):

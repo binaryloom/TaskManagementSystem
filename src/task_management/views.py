@@ -17,16 +17,19 @@ class DashboardView(TemplateView):
 
 class BoardListView(ListView):
     model = Board
+    child_header = "Boards List"
     template_name = "task_management/boards.html"
 
 
 class ListListView(ListView):
     model = List
+    child_header = "Lists"
     template_name = "task_management/lists.html"
 
 
 class TaskListView(ListView):
     model = Task
+    child_header = "Task List"
     template_name = "task_management/tasks.html"
 
 
