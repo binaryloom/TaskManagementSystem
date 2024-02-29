@@ -7,6 +7,8 @@ def meta_processor(request):
         page_title = "Dashboard"
     if page_title == "boardlist_view":
         page_title = "Boards"
+    if page_title == "boarddetail_view":
+        page_title = "Board Details"
     if page_title == "listlist_view":
         page_title = "Lists"
     if page_title == "tasklist_view":

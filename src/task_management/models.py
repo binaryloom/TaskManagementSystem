@@ -8,6 +8,7 @@ from django.db.models import (
     ManyToManyField,
     TextField,
 )
+from django.urls import reverse_lazy
 
 from abstract.enums import CellSize
 from abstract.models import BaseModel
@@ -18,6 +19,9 @@ class Board(BaseModel):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse_lazy("task_management:boarddetail_view", kwargs={"pk": self.pk})
 
     class Meta:
         managed = settings.MANAGE_DATABASE
