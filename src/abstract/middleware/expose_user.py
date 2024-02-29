@@ -18,7 +18,7 @@ class InjectUserObj:
                     request.user = JWTAuthentication().get_user(
                         JWTAuthentication().get_validated_token(auth_header[1])
                     )
-        operating_user = request.user if request.user.is_authenticated else None
-        BaseModel.operating_user = operating_user
-        BaseManager.operating_user = operating_user
+        BaseModel.operating_user = (
+            request.user if request.user.is_authenticated else None
+        )
         return self.get_response(request)

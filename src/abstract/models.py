@@ -28,24 +28,24 @@ class BaseModel(models.Model):
 
     created_by = models.ForeignKey(
         "user.User",
-        related_name="%(class)s_created_by",
+        related_name="created_by",
         on_delete=models.DO_NOTHING,
         blank=True,
     )
     updated_by = models.ForeignKey(
         "user.User",
-        related_name="%(class)s_updated_by",
+        related_name="updated_by",
         on_delete=models.DO_NOTHING,
         blank=True,
     )
 
-    def get_operating_user(self):
-        return self.operating_user if hasattr(self, "operating_user") else None
-
     def save(self, *args, **kwargs):
-        self.updated_by = self.get_operating_user()
+        operating_user = (
+            self.operating_user if hasattr(self, "operating_user") else None
+        )
+        self.updated_by = operating_user
         if not self.pk:
-            self.created_by = self.get_operating_user()
+            self.created_by = operating_user
         super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
