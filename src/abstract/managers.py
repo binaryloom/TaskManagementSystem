@@ -12,7 +12,8 @@ class BaseManager(models.Manager):
             self.operating_user if hasattr(self, "operating_user") else None
         )
         print("******")
-        print(operating_user)
+        x = self.operating_user
+        print(x)
         print("******")
 
         return (
@@ -22,9 +23,6 @@ class BaseManager(models.Manager):
         )
 
     def all(self):
-        print(self.model)
-        print("---------------------------")
-
         return self.filter()
 
     def count(self):
