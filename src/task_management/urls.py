@@ -2,6 +2,7 @@ from django.urls import path
 from rest_framework import routers
 
 from task_management.views import (
+    BoardDetailView,
     BoardListView,
     DashboardView,
     ListListView,
