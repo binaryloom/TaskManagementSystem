@@ -31,6 +31,7 @@ class DetailView(generic.DetailView):
 class DetailChildView(DetailView):
     template_name = "default/detail_child.html"
     field = None
+    child_header = None
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
