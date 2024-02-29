@@ -19,7 +19,7 @@ class BaseManager(models.Manager):
         print(dir(self.model))
 
         print("5454545454565451-------------------------------------")
-        print(self.model.get_operating_user())
+        print(self.model.get_operating_user(self.model))
         print("******")
 
         return (
