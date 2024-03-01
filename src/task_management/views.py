@@ -56,7 +56,7 @@ class BoardListCreateView(CreateView):
 
     def get_initial(self):
         initial = super().get_initial()
-        initial["assigned_board"] = Board.objects.get(pk=1)
+        initial["assigned_board"] = Board.objects.get(pk=self.kwargs.get("pk"))
         return initial
 
 
