@@ -65,7 +65,7 @@ class CreateView(edit.CreateView):
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs["user"] = self.request.user
+        kwargs["operating_user"] = self.request.user
         return kwargs
 
 
@@ -75,8 +75,8 @@ class DeleteView(edit.DeleteView):
 
 class UpdateView(edit.UpdateView):
     template_name = "default/form.html"
-    # TODO: update it
-    # def get_form_kwargs(self):
-    #     kwargs = super().get_form_kwargs()
-    #     kwargs["user"] = self.request.user
-    #     return kwargs
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs["operating_user"] = self.request.user
+        return kwargs
