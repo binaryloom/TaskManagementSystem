@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.views.generic import edit
 from rest_framework import generics
@@ -15,11 +16,11 @@ class TemplateView(generic.TemplateView):
     pass
 
 
-class FormView(generic.FormView):
+class FormView(generic.FormView, LoginRequiredMixin):
     pass
 
 
-class ListView(generic.ListView):
+class ListView(generic.ListView, LoginRequiredMixin):
     paginate_by = 12
     template_name = "default/list.html"
     child_header = None
@@ -34,11 +35,11 @@ class ListView(generic.ListView):
         return context
 
 
-class DetailView(generic.DetailView):
+class DetailView(generic.DetailView, LoginRequiredMixin):
     template_name = "default/detail.html"
 
 
-class DetailChildView(DetailView):
+class DetailChildView(DetailView, LoginRequiredMixin):
     template_name = "default/detail_child.html"
     field = None
     child_header = None
@@ -60,7 +61,7 @@ class DetailChildView(DetailView):
         return context
 
 
-class CreateView(edit.CreateView):
+class CreateView(edit.CreateView, LoginRequiredMixin):
     template_name = "default/form.html"
 
     def get_form_kwargs(self):
@@ -69,11 +70,11 @@ class CreateView(edit.CreateView):
         return kwargs
 
 
-class DeleteView(edit.DeleteView):
+class DeleteView(edit.DeleteView, LoginRequiredMixin):
     template_name = "default/form_delete.html"
 
 
-class UpdateView(edit.UpdateView):
+class UpdateView(edit.UpdateView, LoginRequiredMixin):
     template_name = "default/form.html"
 
     def get_form_kwargs(self):
