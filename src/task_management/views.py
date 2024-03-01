@@ -41,6 +41,7 @@ class TaskDetailView(DetailChildView):
     model = Task
     filter_by_user = False
     field = "assigned_to"
+    child_header = "Assigned Peoples"
     template_name = "task_management/task.html"
 
 
