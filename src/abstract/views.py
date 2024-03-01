@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import base, edit
 from rest_framework import generics
@@ -86,4 +87,5 @@ class UpdateView(LoginRequiredMixin, edit.UpdateView):
 
 
 class RedirectView(base.RedirectView):
-    pass
+    permanent = False
+    url = reverse_lazy("user:login_view")

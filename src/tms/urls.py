@@ -34,7 +34,7 @@ from rest_registration.api.views import (
 
 from task_management.urls import router as task_management_router
 from user.urls import router as user_router
-from user.views import RegistrationView
+from user.views import RedirectView, RegistrationView
 
 urlpatterns = [
     path("auth/login/", login, name="login"),
