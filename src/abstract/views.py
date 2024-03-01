@@ -26,7 +26,9 @@ class ListView(generic.ListView, LoginRequiredMixin):
     child_header = None
 
     def get_queryset(self):
-        return super().get_queryset().filter(created_by=self.request.user)
+        if self.request.user.is_authenticated:
+            return super().get_queryset().filter(created_by=self.request.user)
+        return super().get_queryset()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
