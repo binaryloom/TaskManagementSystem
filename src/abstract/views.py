@@ -8,7 +8,7 @@ class CreateAPIView(generics.CreateAPIView):
     pass
 
 
-class View(generic.View, LoginRequiredMixin):
+class View(LoginRequiredMixin, generic.View):
     pass
 
 
@@ -16,11 +16,11 @@ class TemplateView(LoginRequiredMixin, generic.TemplateView):
     pass
 
 
-class FormView(generic.FormView, LoginRequiredMixin):
+class FormView(LoginRequiredMixin, generic.FormView):
     pass
 
 
-class ListView(generic.ListView, LoginRequiredMixin):
+class ListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 12
     template_name = "default/list.html"
     child_header = None
@@ -63,7 +63,7 @@ class DetailChildView(DetailView):
         return context
 
 
-class CreateView(edit.CreateView, LoginRequiredMixin):
+class CreateView(LoginRequiredMixin, edit.CreateView):
     template_name = "default/form.html"
 
     def get_form_kwargs(self):
@@ -72,11 +72,11 @@ class CreateView(edit.CreateView, LoginRequiredMixin):
         return kwargs
 
 
-class DeleteView(edit.DeleteView, LoginRequiredMixin):
+class DeleteView(LoginRequiredMixin, edit.DeleteView):
     template_name = "default/form_delete.html"
 
 
-class UpdateView(edit.UpdateView, LoginRequiredMixin):
+class UpdateView(LoginRequiredMixin, edit.UpdateView):
     template_name = "default/form.html"
 
     def get_form_kwargs(self):
