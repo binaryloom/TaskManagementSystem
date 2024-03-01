@@ -28,13 +28,13 @@ class BaseModel(models.Model):
 
     created_by = models.ForeignKey(
         "user.User",
-        related_name="created_by",
+        related_name="%(class)s_created_by",
         on_delete=models.DO_NOTHING,
         blank=True,
     )
     updated_by = models.ForeignKey(
         "user.User",
-        related_name="updated_by",
+        related_name="%(class)s_updated_by",
         on_delete=models.DO_NOTHING,
         blank=True,
     )
