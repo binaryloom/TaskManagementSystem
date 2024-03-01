@@ -56,9 +56,7 @@ class DetailChildView(DetailView):
         if self.field and hasattr(context["object"], self.field):
             if self.child_header:
                 context["child_header"] = self.child_header
-            context["object_list"] = getattr(context["object"], self.field).filter(
-                created_by=self.request.user
-            )
+            context["object_list"] = self.get_objects(context=context)
         return context
 
 
