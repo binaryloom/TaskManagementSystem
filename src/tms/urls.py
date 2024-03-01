@@ -56,7 +56,7 @@ router.registry.extend(user_router.registry)
 urlpatterns = urlpatterns + [
     path("api/", include(router.urls)),
     path(
-        route="task/",
+        route="board/",
         view=include(
             arg=("task_management.urls", "task_management"),
             namespace="task_management",
