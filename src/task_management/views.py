@@ -54,6 +54,11 @@ class BoardListCreateView(CreateView):
     model = List
     form_class = ListForm
 
+    def get_initial(self):
+        initial = super().get_initial()
+        initial["assigned_board"] = Board.objects.get(pk=1)
+        return initial
+
 
 class ListCreateView(CreateView):
     model = List
