@@ -65,6 +65,11 @@ class ListCreateView(CreateView):
     form_class = ListForm
 
 
+class ListTaskCreateView(CreateView):
+    model = Task
+    form_class = TaskForm
+
+
 class TaskCreateView(CreateView):
     model = Task
     form_class = TaskForm
