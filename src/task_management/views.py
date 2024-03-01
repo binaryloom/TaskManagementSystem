@@ -69,6 +69,11 @@ class ListTaskCreateView(CreateView):
     model = Task
     form_class = TaskForm
 
+    def get_initial(self):
+        initial = super().get_initial()
+        initial["assigned_list"] = List.objects.get(pk=self.kwargs.get("pk"))
+        return initial
+
 
 class TaskCreateView(CreateView):
     model = Task
