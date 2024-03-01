@@ -48,11 +48,11 @@ class DetailChildView(DetailView, LoginRequiredMixin):
     filter_by_user = True
 
     def get_objects(self, context):
-        return (
-            getattr(context["object"], self.field).filter(created_by=self.request.user)
-            if self.filter_by_user
-            else getattr(context["object"], self.field).all()
-        )
+        if self.request.user.is_authenticated and self.filter_by_user:
+            return getattr(context["object"], self.field).filter(
+                created_by=self.request.user
+            )
+        return getattr(context["object"], self.field).all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
