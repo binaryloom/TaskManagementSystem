@@ -49,4 +49,6 @@
        class="inline-flex items-center justify-center text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Update List</a>
     <a href="{% url "task_management:listtaskcreate_view" object.pk %}"
        class="inline-flex items-center justify-center text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Add Task</a>
+    <a href="{% url "task_management:listdelete_view" object.pk %}"
+       class="inline-flex items-center justify-center text-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Delete List</a>
 {% endblock action_container %}

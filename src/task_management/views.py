@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 
-from abstract.views import CreateView, DetailChildView, ListView, UpdateView
+from abstract.views import CreateView, DeleteView, DetailChildView, ListView, UpdateView
 from task_management.forms import BoardForm, ListForm, TaskForm
 from task_management.models import Board, List, Task
 
@@ -93,3 +94,15 @@ class ListUpdateView(UpdateView):
 class TaskUpdateView(UpdateView):
     model = Task
     form_class = TaskForm
+
+
+class BoardDeleteView(DeleteView):
+    success_url = reverse_lazy("some_success_url")
+
+
+class ListDeleteView(DeleteView):
+    success_url = reverse_lazy("some_success_url")
+
+
+class TaskDeleteView(DeleteView):
+    success_url = reverse_lazy("some_success_url")

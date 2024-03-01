@@ -20,6 +20,7 @@
   "cSpell.words": [
     "authtoken",
     "boardcreate",
+    "boarddelete",
     "boarddetail",
     "boardlist",
     "boardlistcreate",
@@ -29,6 +30,7 @@
     "forwardfor",
     "httplog",
     "listcreate",
+    "listdelete",
     "listdetail",
     "listlist",
     "listtaskcreate",
@@ -37,6 +39,7 @@
     "roundrobin",
     "simplejwt",
     "taskcreate",
+    "taskdelete",
     "taskdetail",
     "tasklist",
     "taskupdate",
