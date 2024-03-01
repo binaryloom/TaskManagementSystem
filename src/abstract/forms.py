@@ -14,9 +14,18 @@ class ModelForm(forms.ModelForm):
                 and f"{field.related_model._meta.app_label}.{field.related_model._meta.object_name}"
                 not in self.exclude_models
             ):
-                self.fields[field.name].queryset = self.fields[
-                    field.name
-                ].queryset.filter(created_by=operating_user)
+
+                print(field.name)
+                print(self.fields[field.name].queryset)
+                print(operating_user)
+                for x in self.fields[field.name].queryset:
+                    print(x.created_by)
+                print(
+                    self.fields[field.name].queryset.filter(created_by=operating_user)
+                )
+                # self.fields[field.name].queryset = self.fields[
+                #     field.name
+                # ].queryset.filter(created_by=operating_user)
 
     class Meta:
         exclude = ["status", "created_by", "updated_by"]
