@@ -1,5 +1,5 @@
 {
-  "gitdoc.enabled": false,
+  "gitdoc.enabled": true,
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
@@ -18,9 +18,11 @@
     "editor.defaultFormatter": "monosans.djlint"
   },
   "cSpell.words": [
+    "apidoc",
     "authtoken",
     "automodule",
     "autosectionlabel",
+    "autosummary",
     "boardcreate",
     "boarddelete",
     "boarddetail",
