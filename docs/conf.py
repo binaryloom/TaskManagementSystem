@@ -26,7 +26,7 @@ extensions = [
     #  new
     # "sphinx.ext.autosectionlabel",
     # "sphinx.ext.autosummary",
-    "myst_parser",
+    # "myst_parser",
 ]
 
 django_settings = "tms.settings"
