@@ -14,7 +14,7 @@ class User(AbstractUser):
     def get_full_name(self):
         return (
             self.username
-            if not self.first_name and self.last_name
+            if not self.first_name and not self.last_name
             else f"{self.first_name} {self.last_name}"
         )
 
