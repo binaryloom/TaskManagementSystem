@@ -3,18 +3,20 @@ from task_management.models import Board, List, Task
 
 
 class BoardForm(ModelForm):
-    class Meta:
+    class Meta(ModelForm.Meta):
         model = Board
         fields = "__all__"
 
 
 class ListForm(ModelForm):
-    class Meta:
+
+    class Meta(ModelForm.Meta):
         model = List
         fields = "__all__"
 
 
 class TaskForm(ModelForm):
-    class Meta:
+
+    class Meta(ModelForm.Meta):
         model = Task
         fields = "__all__"
