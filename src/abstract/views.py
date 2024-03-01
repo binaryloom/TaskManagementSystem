@@ -8,11 +8,11 @@ class CreateAPIView(generics.CreateAPIView):
     pass
 
 
-class View(generic.View):
+class View(generic.View, LoginRequiredMixin):
     pass
 
 
-class TemplateView(generic.TemplateView):
+class TemplateView(generic.TemplateView, LoginRequiredMixin):
     pass
 
 
