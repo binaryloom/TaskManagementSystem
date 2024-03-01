@@ -23,16 +23,22 @@ class ModelForm(forms.ModelForm):
         # task_management.Task.due_date
         # task_management.Task.assigned_to
 
-        for field in self._meta.model._meta.get_fields():
-            if isinstance(field, ForeignKey):
+        # for field in self._meta.model._meta.get_fields():
+        #     if (
+        #         isinstance(field, ForeignKey)
+        #         and f"{field.related_model._meta.app_label}.{field.related_model._meta.object_name}"
+        #         not in self._meta.exclude_models
+        #     ):
+        #         model_str = f"{field.related_model._meta.app_label}.{field.related_model._meta.object_name}"
+        #         # for field in fields:
+        #         print(field, model_str)
+        # if field.is_relation:
+        #     model_str = f"{field.related_model._meta.app_label}.{field.related_model._meta.object_name}"
+        #     print("field_name", field.name)
 
-                # for field in fields:
-                print(field)
-            # if field.is_relation:
-            #     model_str = f"{field.related_model._meta.app_label}.{field.related_model._meta.object_name}"
-            #     print("field_name", field.name)
+        #     print("related model", model_str)
 
-            #     print("related model", model_str)
+        print(self._meta.exclude_models)
         super().__init__(*args, **kwargs)
         # if user is not None:
         #     self.fields['user'].queryset = Book.objects.filter(user=user)

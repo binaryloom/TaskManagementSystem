@@ -19,4 +19,5 @@ class TaskForm(ModelForm):
 
     class Meta(ModelForm.Meta):
         model = Task
+        exclude_models = ["user.User"]
         fields = "__all__"
