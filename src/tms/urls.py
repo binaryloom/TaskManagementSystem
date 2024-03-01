@@ -69,6 +69,7 @@ urlpatterns = urlpatterns + [
             namespace="user",
         ),
     ),
+    path("accounts/login/", RedirectView.as_view(), name="redirect_view"),
 ]
 
 # URL SECTION
