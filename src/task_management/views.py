@@ -97,12 +97,15 @@ class TaskUpdateView(UpdateView):
 
 
 class BoardDeleteView(DeleteView):
-    success_url = reverse_lazy("some_success_url")
+    model = Board
+    success_url = reverse_lazy("task_management:boardlist_view")
 
 
 class ListDeleteView(DeleteView):
-    success_url = reverse_lazy("some_success_url")
+    model = List
+    success_url = reverse_lazy("task_management:listlist_view")
 
 
 class TaskDeleteView(DeleteView):
-    success_url = reverse_lazy("some_success_url")
+    model = Task
+    success_url = reverse_lazy("task_management:tasklist_view")
