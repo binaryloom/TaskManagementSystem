@@ -24,6 +24,9 @@ class ListView(generic.ListView):
     template_name = "default/list.html"
     child_header = None
 
+    def get_queryset(self):
+        return super().get_queryset().filter(created_by=self.request.user)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.child_header:
