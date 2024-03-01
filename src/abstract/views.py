@@ -44,7 +44,12 @@ class DetailChildView(DetailView):
     child_header = None
     filter_by_user = True
 
-    def get_objects ()
+    def get_objects(self, context):
+        return (
+            getattr(context["object"], self.field).filter(created_by=self.request.user)
+            if self.filter_by_user
+            else getattr(context["object"], self.field).all()
+        )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
