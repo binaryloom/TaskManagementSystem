@@ -6,6 +6,7 @@ class ModelForm(forms.ModelForm):
     exclude_models = ["user.User"]
 
     def __init__(self, *args, **kwargs):
+        operating_user = kwargs.pop("user", None)
         super().__init__(*args, **kwargs)
         for field in self._meta.model._meta.get_fields():
             if (
@@ -15,7 +16,7 @@ class ModelForm(forms.ModelForm):
             ):
                 self.fields[field.name].queryset = self.fields[
                     field.name
-                ].queryset.filter(created_by=kwargs.pop("user", None))
+                ].queryset.filter(created_by=operating_user)
 
     class Meta:
         exclude = ["status", "created_by", "updated_by"]
