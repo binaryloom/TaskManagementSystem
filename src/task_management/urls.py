@@ -32,11 +32,13 @@ urlpatterns = [
     path(route="<int:pk>",view=BoardDetailView.as_view(),name="boarddetail_view"),
     path(route="<int:pk>/add", view=BoardListCreateView.as_view(), name="boardlistcreate_view"),
     path(route="<int:pk>/update",view=BoardUpdateView.as_view(),name="boardupdate_view"),
+
     path(route="lists/", view=ListListView.as_view(), name="listlist_view"),
     path(route="lists/add", view=ListCreateView.as_view(), name="listcreate_view"),
     path(route="lists/<int:pk>",view=ListDetailView.as_view(),name="listdetail_view"),
     path(route="lists/<int:pk>/add", view=ListTaskCreateView.as_view(), name="listtaskcreate_view"),
     path(route="lists/<int:pk>/update",view=ListUpdateView.as_view(),name="listupdate_view"),
+    
     path(route="lists/tasks/", view=TaskListView.as_view(), name="tasklist_view"),
     path(route="lists/tasks/add", view=TaskCreateView.as_view(), name="taskcreate_view"),
     path(route="lists/tasks/<int:pk>",view=TaskDetailView.as_view(),name="taskdetail_view"),
