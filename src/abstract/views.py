@@ -1,6 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
-from django.views.generic import edit
+from django.views.generic import base, edit
 from rest_framework import generics
 
 
@@ -83,3 +83,7 @@ class UpdateView(LoginRequiredMixin, edit.UpdateView):
         kwargs = super().get_form_kwargs()
         kwargs["operating_user"] = self.request.user
         return kwargs
+
+
+class RedirectView(base.RedirectView):
+    pass
