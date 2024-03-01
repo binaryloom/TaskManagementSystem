@@ -49,9 +49,9 @@
         </tbody>
     </table>
 {% endblock detail_container %}
-{% block list_container %}
+{% block body_container %}
     {{ object.description }}
-{% endblock list_container %}
+{% endblock body_container %}
 {% block action_container %}
     <a href="{% url "task_management:taskupdate_view" object.pk %}"
        class="inline-flex items-center justify-center text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">update Task</a>
