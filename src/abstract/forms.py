@@ -7,6 +7,7 @@ class ModelForm(forms.ModelForm):
         user = kwargs.pop("user", None)
         print("-----------------------------------------")
         print(user)
+        print(self._meta.model)
         super().__init__(*args, **kwargs)
         # if user is not None:
         #     self.fields['user'].queryset = Book.objects.filter(user=user)
