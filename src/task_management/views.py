@@ -50,6 +50,11 @@ class BoardCreateView(CreateView):
     form_class = BoardForm
 
 
+class BoardListCreateView(CreateView):
+    model = List
+    form_class = ListForm
+
+
 class ListCreateView(CreateView):
     model = List
     form_class = ListForm
