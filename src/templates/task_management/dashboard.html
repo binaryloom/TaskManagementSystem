@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="flex flex-row gap-4">
-        <a href=""
+        <a href="{% url "task_management:boardlist_view" %}"
            class="flex-1 text-center p-12 bg-blue-400 rounded-md hover:bg-gray-200">
             <span class="text-3xl font-bold">Board</span>
         </a>
-        <a href=""
+        <a href="{% url "task_management:listlist_view" %}"
            class="flex-1 text-center p-12 bg-violet-400 rounded-md hover:bg-gray-200">
             <span class="text-3xl font-bold">List</span>
         </a>
-        <a href=""
+        <a href="{% url "task_management:tasklist_view" %}"
            class="flex-1 text-center p-12 bg-amber-400 rounded-md hover:bg-gray-200">
             <span class="text-3xl font-bold">Task</span>
         </a>
