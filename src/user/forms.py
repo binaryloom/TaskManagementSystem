@@ -1,6 +1,8 @@
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.forms import CharField, PasswordInput
 
+from user.models import User
+
 
 class AuthForm(AuthenticationForm):
     username = CharField()
@@ -8,6 +10,7 @@ class AuthForm(AuthenticationForm):
 
 
 class RegistrationForm(UserCreationForm):
-    username = CharField()
-    password1 = PasswordInput()
-    password2 = PasswordInput()
+
+    class Meta:
+        model = User
+        fields = ["username", "password1", "password2"]

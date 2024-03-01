@@ -1,9 +1,11 @@
 from django.contrib import messages
 from django.contrib.auth import views
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView
 from rest_framework.permissions import AllowAny
 
 from abstract.views import CreateAPIView, RedirectView, TemplateView
-from user.forms import AuthForm
+from user.forms import AuthForm, RegistrationForm
 from user.models import User
 from user.serializers import RegistrationSerializer
 
@@ -33,3 +35,10 @@ class LoginView(views.LoginView):
 
 class LogoutView(views.LogoutView):
     pass
+
+
+class RegistrationView(CreateView):
+    model = User
+    form_class = RegistrationForm
+    template_name = "default/form.html"
+    success_url = reverse_lazy("user:login_view")
