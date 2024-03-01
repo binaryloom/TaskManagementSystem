@@ -10,6 +10,9 @@ Welcome to Task MS's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   modules
+   src
+
 
 
 Indices and tables

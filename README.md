@@ -60,3 +60,44 @@ The API will provide endpoints for creating, retrieving, updating, and deleting 
 - **Board:** Represents a project or workflow.
 - **List:** Represents a stage or category within a board.
 - **Task:** Represents a unit of work or activity within a list.
+
+# Configuration file for the Sphinx documentation builder.
+
+#
+
+# For the full list of built-in configuration values, see the documentation:
+
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+# -- Project information -----------------------------------------------------
+
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+
+import os
+import sys
+
+project = "TMS"
+copyright = "2024, Sabbir Ahmed Shourov"
+author = "Sabbir Ahmed Shourov"
+
+# -- General configuration ---------------------------------------------------
+
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+
+sys.path.insert(0, os.path.abspath("../src"))
+extensions = [
+"sphinxcontrib_django",
+"myst_parser",
+]
+
+django_settings = "tms.settings"
+
+templates_path = ["_templates"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+
+# -- Options for HTML output -------------------------------------------------
+
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+
+html_theme = "furo"
+html_static_path = ["_static"]
