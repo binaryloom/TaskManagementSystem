@@ -9,5 +9,5 @@ class AuthForm(AuthenticationForm):
 
 class RegistrationForm(UserCreationForm):
     username = CharField()
-    password1 = CharField()
-    password2 = CharField()
+    password1 = PasswordInput()
+    password2 = PasswordInput()
