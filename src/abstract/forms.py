@@ -30,9 +30,14 @@ class ModelForm(forms.ModelForm):
                 and f"{field.related_model._meta.app_label}.{field.related_model._meta.object_name}"
                 not in self.exclude_models
             ):
+
                 model_str = f"{field.related_model._meta.app_label}.{field.related_model._meta.object_name}"
                 # for field in fields:
                 print(field, model_str)
+
+                self.fields[field.name].queryset = self.fields[
+                    "author"
+                ].queryset.filter(created_by=user)
         # if field.is_relation:
         #     model_str = f"{field.related_model._meta.app_label}.{field.related_model._meta.object_name}"
         #     print("field_name", field.name)
