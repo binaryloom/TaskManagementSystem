@@ -13,9 +13,11 @@ class ModelForm(forms.ModelForm):
 
         for field in fields:
             if field.is_relation:
+
+                model_str = f"{field.related_model._meta.app_label}.{field.related_model._meta.object_name}"
                 print("field_name", field.name)
 
-                print("related model", field.related_model._meta.object_name)
+                print("related model", model_str)
         super().__init__(*args, **kwargs)
         # if user is not None:
         #     self.fields['user'].queryset = Book.objects.filter(user=user)
