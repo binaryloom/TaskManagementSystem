@@ -31,6 +31,7 @@
     "listcreate",
     "listdetail",
     "listlist",
+    "listtaskcreate",
     "listupdate",
     "maxconn",
     "roundrobin",
