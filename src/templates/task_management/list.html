@@ -20,6 +20,22 @@
                        class="text-blue-500 hover:underline">{{ object.assigned_board.name }}</a>
                 </td>
             </tr>
+            <tr>
+                <td class="border px-4 py-2">Created at</td>
+                <td class="border px-4 py-2">{{ object.created_at }}</td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">Updated at</td>
+                <td class="border px-4 py-2">{{ object.created_at }}</td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">Created by</td>
+                <td class="border px-4 py-2">{{ object.created_by }}</td>
+            </tr>
+            <tr>
+                <td class="border px-4 py-2">Updated by</td>
+                <td class="border px-4 py-2">{{ object.created_by }}</td>
+            </tr>
         </tbody>
     </table>
 {% endblock detail_container %}
