@@ -19,6 +19,7 @@
   },
   "cSpell.words": [
     "authtoken",
+    "automodule",
     "boardcreate",
     "boarddelete",
     "boarddetail",
@@ -28,6 +29,8 @@
     "boardupdate",
     "dontlognull",
     "forwardfor",
+    "furo",
+    "genindex",
     "httplog",
     "listcreate",
     "listdelete",
@@ -36,13 +39,22 @@
     "listtaskcreate",
     "listupdate",
     "maxconn",
+    "maxdepth",
+    "modindex",
+    "quickstart",
     "roundrobin",
+    "Sabbir",
+    "Shourov",
     "simplejwt",
+    "sphinxcontrib",
     "taskcreate",
     "taskdelete",
     "taskdetail",
     "tasklist",
     "taskupdate",
-    "viewsets"
+    "toctree",
+    "viewcode",
+    "viewsets",
+    "yourapp"
   ]
 }

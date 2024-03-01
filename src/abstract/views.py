@@ -68,6 +68,11 @@ class CreateView(LoginRequiredMixin, edit.CreateView):
     template_name = "default/form.html"
 
     def get_form_kwargs(self):
+        """_summary_
+
+        Returns:
+            _type_: _description_
+        """
         kwargs = super().get_form_kwargs()
         kwargs["operating_user"] = self.request.user
         return kwargs

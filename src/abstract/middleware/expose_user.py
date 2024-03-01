@@ -7,10 +7,19 @@ from abstract.models import BaseModel
 
 
 class InjectUserObj:
+
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
+        """_summary_
+
+        Args:
+            request (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         if not request.user.is_authenticated:
             auth_header = request.headers.get("Authorization", "").split()
             if len(auth_header) == 2 and auth_header[0].lower() == "bearer":
