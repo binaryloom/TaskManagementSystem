@@ -32,7 +32,7 @@ urlpatterns = [
     path(route="<int:pk>/add", view=BoardListCreateView.as_view(), name="boardlistcreate_view"),
     path(route="<int:pk>/update",view=BoardUpdateView.as_view(),name="boardupdate_view"),
     path(route="lists/", view=ListListView.as_view(), name="listlist_view"),
-    # path(route="lists/add", view=ListCreateView.as_view(), name="listcreate_view"),
+    path(route="lists/add", view=ListCreateView.as_view(), name="listcreate_view"),
     path(route="lists/<int:pk>",view=ListDetailView.as_view(),name="listdetail_view"),
     path(route="lists/task/add", view=BoardCreateView.as_view(), name="boardcreate_view"),
     path(route="lists/<int:pk>/update",view=ListUpdateView.as_view(),name="listupdate_view"),
