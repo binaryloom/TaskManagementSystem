@@ -42,9 +42,11 @@ class DetailChildView(DetailView):
     template_name = "default/detail_child.html"
     field = None
     child_header = None
-    filter_by_user = True
+    filter_by_user = None
 
     def get_objects(self, context):
+        print(self.filter_by_user)
+        return []
         return (
             getattr(context["object"], self.field).filter(created_by=self.request.user)
             if self.filter_by_user
