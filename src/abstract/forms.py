@@ -12,7 +12,7 @@ class ModelForm(forms.ModelForm):
         fields = self._meta.model._meta.get_fields()
 
         for field in fields:
-            if field.is_relation and field.many_to_one:
+            if field.is_relation:
                 print(field.name)
         super().__init__(*args, **kwargs)
         # if user is not None:
