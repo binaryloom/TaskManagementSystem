@@ -63,6 +63,11 @@ class DetailChildView(DetailView):
 class CreateView(edit.CreateView):
     template_name = "default/form.html"
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs["user"] = self.request.user
+        return kwargs
+
 
 class DeleteView(edit.DeleteView):
     template_name = "default/form_delete.html"
@@ -70,3 +75,8 @@ class DeleteView(edit.DeleteView):
 
 class UpdateView(edit.UpdateView):
     template_name = "default/form.html"
+    # TODO: update it
+    # def get_form_kwargs(self):
+    #     kwargs = super().get_form_kwargs()
+    #     kwargs["user"] = self.request.user
+    #     return kwargs
