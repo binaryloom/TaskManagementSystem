@@ -1,4 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-    task_management/dashboard.html hot reload
+    <div class="flex flex-row gap-4">
+        <a href=""
+           class="flex-1 text-center p-12 bg-blue-400 rounded-md hover:bg-gray-200">
+            <span class="text-3xl font-bold">Board</span>
+        </a>
+        <a href=""
+           class="flex-1 text-center p-12 bg-violet-400 rounded-md hover:bg-gray-200">
+            <span class="text-3xl font-bold">List</span>
+        </a>
+        <a href=""
+           class="flex-1 text-center p-12 bg-amber-400 rounded-md hover:bg-gray-200">
+            <span class="text-3xl font-bold">Task</span>
+        </a>
+    </div>
 {% endblock content %}
