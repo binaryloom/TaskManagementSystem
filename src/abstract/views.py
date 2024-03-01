@@ -12,7 +12,7 @@ class View(generic.View, LoginRequiredMixin):
     pass
 
 
-class TemplateView(generic.TemplateView, LoginRequiredMixin):
+class TemplateView(LoginRequiredMixin, generic.TemplateView):
     pass
 
 
@@ -37,11 +37,11 @@ class ListView(generic.ListView, LoginRequiredMixin):
         return context
 
 
-class DetailView(generic.DetailView, LoginRequiredMixin):
+class DetailView(LoginRequiredMixin, generic.DetailView):
     template_name = "default/detail.html"
 
 
-class DetailChildView(DetailView, LoginRequiredMixin):
+class DetailChildView(DetailView):
     template_name = "default/detail_child.html"
     field = None
     child_header = None
