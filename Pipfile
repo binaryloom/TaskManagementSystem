@@ -11,6 +11,7 @@ django-filter = "*"
 djangorestframework-simplejwt = {extras = ["crypto"], version = "*"}
 django-rest-registration = "*"
 django-tailwind = {extras = ["reload"], version = "*"}
+whitenoise = {extras = ["brotli"], version = "*"}
 
 [dev-packages]
 black = "*"
