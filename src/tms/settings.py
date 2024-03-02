@@ -171,3 +171,7 @@ STATICFILES_DIRS = [BASE_DIR / "src/tailwind_theme/static"]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # STATIC_HOST = "https://d4663kmspf1sqa.cloudfront.net" if not DEBUG else ""
+
+
+x = path.join(BASE_DIR, "src")
+print(x)
