@@ -35,6 +35,7 @@
     "forwardfor",
     "furo",
     "genindex",
+    "healthcheck",
     "httplog",
     "intersphinx",
     "listcreate",
@@ -46,12 +47,14 @@
     "maxconn",
     "maxdepth",
     "modindex",
+    "nostatic",
     "quickstart",
     "roundrobin",
     "Sabbir",
     "Shourov",
     "simplejwt",
     "sphinxcontrib",
+    "tailwindcss",
     "taskcreate",
     "taskdelete",
     "taskdetail",
@@ -61,6 +64,7 @@
     "viewcode",
     "viewset",
     "viewsets",
+    "whitenoise",
     "yourapp"
   ]
 }

@@ -4,3 +4,4 @@ LICENSE
 Pipfile.lock
 README.md
 docs/
+static_files/
