@@ -1,5 +1,7 @@
 # Software Requirements Specification (SRS) for Task Management REST API
 
+[![Deploy Task MS documentation to Github Pages](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml/badge.svg)](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml)
+
 ## 1. Introduction
 
 The Task Management REST API is a backend service designed to handle task organization, assignment, and tracking for individuals and teams. This document outlines the essential functional requirements of the API.
