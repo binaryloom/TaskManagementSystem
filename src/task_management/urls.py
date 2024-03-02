@@ -55,6 +55,7 @@ Each URL pattern maps to a specific view in the application. The urlpatterns lis
     - taskupdate_view: Renders form for updating a specific task.
     - taskdelete_view: Renders confirmation page for deleting a specific task.
 """
+
 # fmt: off
 urlpatterns = [
     path(route="", view=BoardListView.as_view(), name="boardlist_view"),
