@@ -5,5 +5,5 @@ Task Management
    :maxdepth: 2
    :caption: Contents:
 
-    admin.rst
-    forms.rst
+    apps/task_management/admin.rst
+    apps/task_management/forms.rst
