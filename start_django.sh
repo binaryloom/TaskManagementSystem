@@ -2,5 +2,6 @@
 
 python manage.py collectstatic --noinput
 python manage.py makemigrations
-python3 manage.py migrate
+python manage.py migrate
 python manage.py initadmin
+python manage.py runserver 0.0.0.0:80 --settings tms.settings_prod
