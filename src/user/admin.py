@@ -24,6 +24,22 @@ def mark_undo(modeladmin, request, queryset):
 
 
 class UserAdmin(UserAdmin):
+    """
+    Custom UserAdmin configuration.
+
+    This class extends the default UserAdmin provided by Django to customize the admin interface for managing users.
+
+    Attributes:
+        search_fields (tuple): Fields to be used in search queries within the admin interface.
+        ordering (tuple): Fields to determine the default ordering of user objects in the admin interface.
+        fieldsets (tuple): Fieldsets to organize the fields displayed in the user detail view.
+        add_fieldsets (tuple): Fieldsets to organize the fields displayed in the user creation form.
+        actions (list): List of admin actions available for user management, including the custom action 'mark_undo'.
+
+    Usage:
+        This class should be used to register the User model with the Django admin interface.
+    """
+
     search_fields = ("username", "mobile_no", "email")
     ordering = ("username", "email", "first_name", "last_name")
 
