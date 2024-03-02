@@ -35,6 +35,7 @@
     "forwardfor",
     "furo",
     "genindex",
+    "healthcheck",
     "httplog",
     "intersphinx",
     "listcreate",
