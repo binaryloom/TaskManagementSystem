@@ -203,3 +203,6 @@ ADMINS = {
         "EMAIL": "extinctCoder@outlook.com",
     }
 }
+
+
+# static Files Config
