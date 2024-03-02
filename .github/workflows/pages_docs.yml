@@ -2,7 +2,7 @@ name: Deploy Task MS docs to pages
 
 on:
   push:
-    branches: [master] # branch to trigger deployment
+    branches: [master]
 
 jobs:
   pages:
@@ -14,5 +14,5 @@ jobs:
       pages: write
       id-token: write
     steps:
-    - id: deployment
-      uses: sphinx-notes/pages@v3
+      - id: deployment
+        uses: sphinx-notes/pages@v3
