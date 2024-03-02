@@ -164,3 +164,4 @@ cython_debug/
 Pipfile.lock
 docs/_build
 static_files/
+src_tmp/
