@@ -87,16 +87,60 @@ class FormView(LoginRequiredMixin, generic.FormView):
 
 
 class ListView(LoginRequiredMixin, generic.ListView):
+    """
+    A view rendering a list of objects, with login required, inheriting from Django's generic ListView.
+
+    Inherits:
+        generic.ListView
+
+    Attributes:
+        paginate_by (int): Number of objects to display per page.
+        template_name (str): Path to the template for rendering the list view.
+        child_header (str): Header for the child view, if applicable.
+
+    Methods:
+        get_queryset(): Returns the queryset of objects to display.
+        get_context_data(**kwargs): Returns the context data to pass to the template.
+
+    Usage:
+        Define your view class inheriting from this class and specify the model attribute
+        with the model to list.
+
+    Example:
+        class MyListView(ListView):
+            model = MyModel
+
+    Notes:
+        - The template for rendering the list view is determined by the 'template_name' attribute.
+        - Pagination is enabled by default and can be adjusted using the 'paginate_by' attribute.
+        - Additional context data can be provided to the template by overriding the 'get_context_data' method.
+    """
+
     paginate_by = 12
     template_name = "default/list.html"
     child_header = None
 
     def get_queryset(self):
+        """
+        Retrieve objects related to the main object based on the specified field.
+
+        Args:
+            context (dict): The context containing the main object.
+
+        Returns:
+            queryset: A queryset containing the related objects filtered based on the user if applicable.
+        """
         if self.request.user.is_authenticated:
             return super().get_queryset().filter(created_by=self.request.user)
         return super().get_queryset()
 
     def get_context_data(self, **kwargs):
+        """
+        Retrieve keyword arguments for form instantiation.
+
+        Returns:
+            dict: Keyword arguments for form instantiation including the operating user.
+        """
         context = super().get_context_data(**kwargs)
         if self.child_header:
             context["child_header"] = self.child_header
@@ -104,16 +148,79 @@ class ListView(LoginRequiredMixin, generic.ListView):
 
 
 class DetailView(LoginRequiredMixin, generic.DetailView):
+    """
+    A view rendering the details of a single object, with login required, inheriting from Django's generic DetailView.
+
+    Inherits:
+        generic.DetailView
+
+    Attributes:
+        template_name (str): Path to the template for rendering the detail view.
+
+    Usage:
+        Define your view class inheriting from this class and specify the model attribute
+        with the model whose details are to be displayed.
+
+    Example:
+        class MyDetailView(DetailView):
+            model = MyModel
+
+    Notes:
+        - The template for rendering the detail view is determined by the 'template_name' attribute.
+        - The object to display details for is fetched automatically based on the URL parameters.
+    """
+
     template_name = "default/detail.html"
 
 
 class DetailChildView(DetailView):
+    """
+    A view rendering details of child objects related to a main object,
+    with login required, inheriting from DetailView.
+
+    Inherits:
+        DetailView
+
+    Attributes:
+        template_name (str): Path to the template for rendering the detail view.
+        field (str): The field name specifying the relationship to the child objects.
+        child_header (str): Header for the child view, if applicable.
+        filter_by_user (bool): Flag indicating whether to filter child objects based on the user.
+
+    Methods:
+        get_objects(context): Retrieve child objects related to the main object.
+        get_context_data(**kwargs): Retrieve context data including child objects.
+
+    Usage:
+        Define your view class inheriting from this class and specify the model attribute
+        with the model whose details are to be displayed, along with other necessary attributes.
+
+    Example:
+        class MyDetailChildView(DetailChildView):
+            model = MyModel
+            field = 'related_objects'
+
+    Notes:
+        - The template for rendering the detail view is determined by the 'template_name' attribute.
+        - Child objects are fetched automatically based on the relationship specified in 'field'.
+        - Child objects can be filtered based on the user if 'filter_by_user' is set to True.
+    """
+
     template_name = "default/detail_child.html"
     field = None
     child_header = None
     filter_by_user = True
 
     def get_objects(self, context):
+        """
+        Retrieve child objects related to the main object based on the specified field.
+
+        Args:
+            context (dict): The context containing the main object.
+
+        Returns:
+            queryset: A queryset containing the related child objects, optionally filtered based on the user.
+        """
         if self.request.user.is_authenticated and self.filter_by_user:
             return getattr(context["object"], self.field).filter(
                 created_by=self.request.user
@@ -121,6 +228,15 @@ class DetailChildView(DetailView):
         return getattr(context["object"], self.field).all()
 
     def get_context_data(self, **kwargs):
+        """
+        Retrieve context data including child objects related to the main object.
+
+        Args:
+            **kwargs: Additional keyword arguments.
+
+        Returns:
+            dict: Context data including child objects.
+        """
         context = super().get_context_data(**kwargs)
         if self.field and hasattr(context["object"], self.field):
             if self.child_header:
@@ -130,13 +246,40 @@ class DetailChildView(DetailView):
 
 
 class CreateView(LoginRequiredMixin, edit.CreateView):
+    """
+    A view for creating new instances of a model, with login required, inheriting from Django's generic CreateView.
+
+    Inherits:
+        edit.CreateView
+
+    Attributes:
+        template_name (str): Path to the template for rendering the create view.
+
+    Methods:
+        get_form_kwargs(): Retrieve keyword arguments for form instantiation.
+
+    Usage:
+        Define your view class inheriting from this class and specify the model and form_class attributes.
+
+    Example:
+        class MyCreateView(CreateView):
+            model = MyModel
+            form_class = MyForm
+
+    Notes:
+        - The template for rendering the create view is determined by the 'template_name' attribute.
+        - The form for creating instances is automatically generated based on the 'form_class' attribute.
+        - Additional keyword arguments for form instantiation can be retrieved by overriding the 'get_form_kwargs' method.
+    """
+
     template_name = "default/form.html"
 
     def get_form_kwargs(self):
-        """_summary_
+        """
+        Retrieve keyword arguments for form instantiation.
 
         Returns:
-            _type_: _description_
+            dict: Keyword arguments for form instantiation including the operating user.
         """
         kwargs = super().get_form_kwargs()
         kwargs["operating_user"] = self.request.user
@@ -144,10 +287,56 @@ class CreateView(LoginRequiredMixin, edit.CreateView):
 
 
 class DeleteView(LoginRequiredMixin, edit.DeleteView):
+    """
+    A view for deleting an instance of a model, with login required, inheriting from Django's generic DeleteView.
+
+    Inherits:
+        edit.DeleteView
+
+    Attributes:
+        template_name (str): Path to the template for rendering the delete view.
+
+    Usage:
+        Define your view class inheriting from this class and specify the model attribute.
+
+    Example:
+        class MyDeleteView(DeleteView):
+            model = MyModel
+
+    Notes:
+        - The template for rendering the delete view is determined by the 'template_name' attribute.
+        - Confirmation of deletion is handled by the associated template.
+    """
+
     template_name = "default/form_delete.html"
 
 
 class UpdateView(LoginRequiredMixin, edit.UpdateView):
+    """
+    A view for updating an instance of a model, with login required, inheriting from Django's generic UpdateView.
+
+    Inherits:
+        edit.UpdateView
+
+    Attributes:
+        template_name (str): Path to the template for rendering the update view.
+
+    Methods:
+        get_form_kwargs(): Retrieve keyword arguments for form instantiation.
+
+    Usage:
+        Define your view class inheriting from this class and specify the model attribute.
+
+    Example:
+        class MyUpdateView(UpdateView):
+            model = MyModel
+
+    Notes:
+        - The template for rendering the update view is determined by the 'template_name' attribute.
+        - The form for updating instances is automatically generated based on the model.
+        - Additional keyword arguments for form instantiation can be retrieved by overriding the 'get_form_kwargs' method.
+    """
+
     template_name = "default/form.html"
 
     def get_form_kwargs(self):
@@ -157,5 +346,27 @@ class UpdateView(LoginRequiredMixin, edit.UpdateView):
 
 
 class RedirectView(base.RedirectView):
+    """
+    A view for redirecting to a specified URL, inheriting from Django's generic RedirectView.
+
+    Inherits:
+        base.RedirectView
+
+    Attributes:
+        permanent (bool): Flag indicating whether the redirection is permanent.
+        url (str): URL to redirect to.
+
+    Usage:
+        Define your view class inheriting from this class and specify the 'url' attribute.
+
+    Example:
+        class MyRedirectView(RedirectView):
+            url = '/my-redirect-url/'
+
+    Notes:
+        - The 'permanent' attribute determines whether the redirection is permanent (HTTP status code 301) or temporary (HTTP status code 302).
+        - The 'url' attribute specifies the destination URL to redirect to.
+    """
+
     permanent = False
     url = reverse_lazy("user:login_view")
