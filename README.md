@@ -71,7 +71,7 @@ sphinx-apidoc -o . docs
 
 pages_docs.yml
 
-name: Deploy Task MS docs to pages
+name: Deploy docs to gh-pages
 
 on:
 push:

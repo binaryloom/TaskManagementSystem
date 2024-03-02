@@ -1,4 +1,4 @@
-name: Deploy Sphinx documentation to Pages
+name: Deploy docs to gh-pages
 
 on:
   - push
@@ -13,5 +13,5 @@ jobs:
       pages: write
       id-token: write
     steps:
-    - id: deployment
-      uses: sphinx-notes/pages@v3
+      - id: deployment
+        uses: sphinx-notes/pages@v3
