@@ -1,5 +1,5 @@
-FROM python:3.10-bullseye
 FROM node:20 AS tailwind_builder
+FROM python:3.10-bullseye
 
 LABEL maintainer="write2shourov@gmail.com" \
     vendor="Sabbir Ahmed Shourov"
