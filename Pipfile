@@ -12,6 +12,7 @@ djangorestframework-simplejwt = {extras = ["crypto"], version = "*"}
 django-rest-registration = "*"
 django-tailwind = {extras = ["reload"], version = "*"}
 whitenoise = {extras = ["brotli"], version = "*"}
+gunicorn = "*"
 
 [dev-packages]
 black = "*"
