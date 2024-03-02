@@ -51,3 +51,32 @@ urlpatterns = [
     path(route="lists/tasks/<int:pk>/delete",view=TaskDeleteView.as_view(),name="taskdelete_view"),
 ]
 # fmt: on
+
+"""
+This module defines URL patterns for task management application.
+
+Each URL pattern maps to a specific view in the application. The urlpatterns list contains individual URL patterns for various views:
+
+- For board-related views:
+    - boardlist_view: Lists all boards.
+    - boardcreate_view: Renders form for creating a new board.
+    - boarddetail_view: Displays details of a specific board.
+    - boardlistcreate_view: Renders form for creating a new list within a board.
+    - boardupdate_view: Renders form for updating a specific board.
+    - boarddelete_view: Renders confirmation page for deleting a specific board.
+
+- For list-related views:
+    - listlist_view: Lists all lists.
+    - listcreate_view: Renders form for creating a new list.
+    - listdetail_view: Displays details of a specific list.
+    - listtaskcreate_view: Renders form for creating a new task within a list.
+    - listupdate_view: Renders form for updating a specific list.
+    - listdelete_view: Renders confirmation page for deleting a specific list.
+
+- For task-related views:
+    - tasklist_view: Lists all tasks.
+    - taskcreate_view: Renders form for creating a new task.
+    - taskdetail_view: Displays details of a specific task.
+    - taskupdate_view: Renders form for updating a specific task.
+    - taskdelete_view: Renders confirmation page for deleting a specific task.
+"""
