@@ -177,7 +177,7 @@ ADMINS = {
 # static Files Config
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static_files"
-
+STATICFILES_DIRS = []
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
