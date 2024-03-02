@@ -166,7 +166,9 @@ LOGIN_REDIRECT_URL = "user:dashboard_view"
 # static Files Config
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static_files"
-STATICFILES_DIRS = [BASE_DIR / "src/tailwind_theme/static"]
+STATICFILES_DIRS = [
+    path.join(path.join(path.join(BASE_DIR, "src"), "tailwind_theme"), "static")
+]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
