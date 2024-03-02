@@ -1,14 +1,13 @@
+FROM python:3.10-bullseye
 FROM node:20 AS tailwind_builder
 
 LABEL maintainer="write2shourov@gmail.com" \
     vendor="Sabbir Ahmed Shourov"
 
-RUN cp /usr/local/bin/node /tmp/node
-RUN cp /usr/local/bin/npm /tmp/npm
+COPY --from=tailwind_builder /usr/local/bin/node /usr/local/bin/node
+COPY --from=tailwind_builder /usr/local/bin/npm /usr/local/bin/npm
 
-FROM python:3.10-bullseye
-
-
+ENV PATH="/usr/local/bin:${PATH}"
 
 WORKDIR /src
 
