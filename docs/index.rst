@@ -12,6 +12,7 @@ Welcome to Task MS's documentation!
 
    apps/abstract/base.rst
    apps/task_management/base.rst
+   apps/user/base.rst
 
 
 
