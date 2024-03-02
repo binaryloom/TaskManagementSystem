@@ -13,3 +13,4 @@ Abstract App
    managers.rst
    models.rst
    serializers.rst
+   views.rst
