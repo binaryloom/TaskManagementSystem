@@ -2,6 +2,16 @@ from django.urls import resolve, reverse
 
 
 def meta_processor(request):
+    """
+    Generate meta information for the current page based on the URL resolver.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        dict: A dictionary containing meta information for the current page with keys:
+            - 'page_title' (str): The title of the current page.
+    """
     page_title = resolve(request.path).url_name
     if page_title == "dashboard_view":
         page_title = "Dashboard"
