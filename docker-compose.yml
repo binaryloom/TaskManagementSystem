@@ -25,8 +25,8 @@ services:
     container_name: tms_server
     hostname: tms_server
     restart: unless-stopped
-    # volumes:
-    #   - ./src:/src
+    volumes:
+      - ./src_tmp:/src
     networks:
       - tms_net
     healthcheck:
