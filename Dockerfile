@@ -16,8 +16,8 @@ COPY ./src .
 COPY start_django.sh /start_django.sh
 RUN chmod +x /start_django.sh
 
+RUN mkdir -p /src/tailwind_theme/static
 
-RUN mkdir /src/tailwind_theme/static
 ENTRYPOINT "/start_django.sh"
 
 
