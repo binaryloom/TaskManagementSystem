@@ -2,7 +2,7 @@ name: Deploy Task MS documentation to Github Pages
 
 on:
   push:
-    branches: [master] # branch to trigger deployment
+    branches: [master] # branch to trigger deployment for github pages
 
 jobs:
   pages:
