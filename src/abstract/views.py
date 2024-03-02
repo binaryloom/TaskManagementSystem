@@ -6,14 +6,60 @@ from rest_framework import generics
 
 
 class CreateAPIView(generics.CreateAPIView):
+    """
+    A view for creating instances of a model using Django REST Framework's CreateAPIView.
+
+    Inherits:
+        generics.CreateAPIView
+
+    Usage:
+        Define your view class inheriting from this class and specify the serializer_class
+        attribute with the appropriate serializer for creating instances.
+
+    Example:
+        class MyCreateAPIView(CreateAPIView):
+            serializer_class = MyModelSerializer
+    """
+
     pass
 
 
 class View(LoginRequiredMixin, generic.View):
+    """
+    A base view class with login required, inheriting from Django's generic View.
+
+    Inherits:
+        generic.View
+
+    Usage:
+        Define your view class inheriting from this class and implement the appropriate
+        HTTP methods (e.g., get, post, etc.).
+
+    Example:
+        class MyView(View):
+            def get(self, request, *args, **kwargs):
+                # implement get method logic
+    """
+
     pass
 
 
 class TemplateView(LoginRequiredMixin, generic.TemplateView):
+    """
+    A view rendering a template, with login required, inheriting from Django's generic TemplateView.
+
+    Inherits:
+        generic.TemplateView
+
+    Usage:
+        Define your view class inheriting from this class and specify the template_name
+        attribute with the path to the template to render.
+
+    Example:
+        class MyTemplateView(TemplateView):
+            template_name = "my_template.html"
+    """
+
     pass
 
 
