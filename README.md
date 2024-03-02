@@ -68,3 +68,23 @@ sphinx-apidoc -o . ..
 
 sphinx-apidoc -o . docs
 ```
+
+pages_docs.yml
+
+name: Deploy Task MS docs to pages
+
+on:
+push:
+branches: [master] # branch to trigger deployment for github pages
+
+jobs:
+pages:
+runs-on: ubuntu-20.04
+environment:
+name: github-pages
+url: ${{ steps.deployment.outputs.page_url }}
+permissions:
+pages: write
+id-token: write
+steps: - id: deployment
+uses: sphinx-notes/pages@v3
