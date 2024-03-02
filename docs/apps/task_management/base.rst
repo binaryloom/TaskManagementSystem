@@ -8,3 +8,7 @@ Task Management
    admin.rst
    forms.rst
    models.rst
+   serializers.rst
+   urls.rst
+   views.rst
+   viewsets.rst
