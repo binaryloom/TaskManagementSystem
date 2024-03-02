@@ -12,3 +12,4 @@ Abstract App
    forms.rst
    managers.rst
    models.rst
+   serializers.rst
