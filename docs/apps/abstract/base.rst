@@ -10,3 +10,4 @@ Abstract App
    admin.rst
    enums.rst
    forms.rst
+   managers.rst
