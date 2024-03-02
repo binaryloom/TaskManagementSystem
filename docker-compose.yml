@@ -14,10 +14,11 @@ services:
       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     networks:
       - tms_net
-    depends_on:
-      - tms_server
     ports:
       - 8001:80
+    depends_on:
+      tms_server:
+        condition: service_healthy
 
   tms_server:
     image: tms_server
