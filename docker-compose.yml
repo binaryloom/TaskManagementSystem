@@ -32,7 +32,7 @@ services:
     networks:
       - tms_net
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/healthcheck"]
+      test: ["CMD", "curl", "-f", "http://localhost:80/healthcheck"]
       interval: 3s
       timeout: 2s
       retries: 10
