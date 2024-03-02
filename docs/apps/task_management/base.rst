@@ -7,3 +7,4 @@ Task Management
 
    admin.rst
    forms.rst
+   models.rst
