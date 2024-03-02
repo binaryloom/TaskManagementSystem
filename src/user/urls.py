@@ -10,6 +10,18 @@ router.register(r"group", GroupViewSet)
 
 from django.contrib.auth.views import LogoutView
 
+"""
+Defines urlpatterns for user-related views and endpoints.
+
+This module defines the URL patterns for various user-related views and endpoints, including dashboard, login, logout, and registration.
+
+Attributes:
+    router (DefaultRouter): Instance of DefaultRouter for registering viewsets.
+    urlpatterns (list): List of URL patterns for user-related views and endpoints.
+
+Note:
+    This module assumes the existence of views and viewsets imported from user.views and user.viewsets modules.
+"""
 # fmt: off
 urlpatterns = [
     path(route="", view=DashboardView.as_view(), name="dashboard_view"),
