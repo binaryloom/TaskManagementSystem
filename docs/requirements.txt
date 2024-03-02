@@ -7,3 +7,4 @@ django-rest-registration==0.8.3
 django-tailwind==3.8.0
 myst-parser==2.0.0
 Sphinx==7.2.6
+django-browser-reload==1.12.1
