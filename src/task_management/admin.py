@@ -6,14 +6,26 @@ from task_management.models import Board, List, Task
 
 
 class BoardAdmin(ModelAdmin):
+    """
+    Admin configuration for the Board model.
+    """
+
     pass
 
 
 class ListAdmin(ModelAdmin):
+    """
+    Admin configuration for the List model.
+    """
+
     pass
 
 
 class TaskAdmin(ModelAdmin):
+    """
+    Admin configuration for the Task model.
+    """
+
     pass
 
 
