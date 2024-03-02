@@ -1,4 +1,4 @@
-name: Deploy Task MS documentation to Github Pages
+name: Deploy Task MS docs to pages
 
 on:
   push:
