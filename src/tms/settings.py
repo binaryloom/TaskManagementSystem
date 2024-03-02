@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     "rest_registration",
     "tailwind",
     "tailwind_theme",
-    "django_browser_reload",
 ]
 
 MIDDLEWARE = [
@@ -50,8 +49,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # Custom middleware
     "abstract.middleware.InjectUserObj",
-    # browser reload middleware for dev
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 
