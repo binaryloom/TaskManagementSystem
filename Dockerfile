@@ -10,6 +10,7 @@ RUN python3 -m pip install --upgrade --force-reinstall pip && python3 -m pip ins
 COPY ./Pipfile .
 RUN pipenv lock && pipenv install --system --deploy
 
-EXPOSE 80
+COPY start_django.sh /start_django.sh
+RUN chmod +x /start_django.sh
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:80", "--settings", "tms.settings_prod" ]
+ENTRYPOINT "/start_django.sh"
