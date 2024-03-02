@@ -9,3 +9,4 @@ Abstract App
    processors.rst
    admin.rst
    enums.rst
+   forms.rst
