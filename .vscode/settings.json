@@ -46,6 +46,7 @@
     "maxconn",
     "maxdepth",
     "modindex",
+    "nostatic",
     "quickstart",
     "roundrobin",
     "Sabbir",
