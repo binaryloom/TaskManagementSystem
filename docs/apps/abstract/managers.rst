@@ -1,5 +1,5 @@
-Middleware
-==========
+Managers
+========
 
 .. automodule:: abstract.managers
     :members:

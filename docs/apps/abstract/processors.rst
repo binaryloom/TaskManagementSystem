@@ -1,4 +1,4 @@
-processors
+Processors
 ===========
 
 .. automodule:: abstract.processors.breadcrumb

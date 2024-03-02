@@ -1,5 +1,5 @@
-Middleware
-==========
+Forms
+=====
 
 .. automodule:: abstract.forms
     :members:
