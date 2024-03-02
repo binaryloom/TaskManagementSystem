@@ -15,12 +15,22 @@ from abstract.models import BaseModel
 
 
 class Board(BaseModel):
+    """
+    Model representing a board.
+    """
+
     name = CharField(max_length=255)
 
     def __str__(self):
+        """
+        Return string representation of the board.
+        """
         return self.name
 
     def get_absolute_url(self):
+        """
+        Return the absolute URL to view the board.
+        """
         return reverse_lazy("task_management:boarddetail_view", kwargs={"pk": self.pk})
 
     class Meta:
@@ -32,15 +42,25 @@ class Board(BaseModel):
 
 
 class List(BaseModel):
+    """
+    Model representing a list.
+    """
+
     name = CharField(max_length=100)
     assigned_board = ForeignKey(
         "task_management.Board", related_name="lists", on_delete=CASCADE
     )
 
     def __str__(self):
+        """
+        Return string representation of the list.
+        """
         return self.name
 
     def get_absolute_url(self):
+        """
+        Return the absolute URL to view the list.
+        """
         return reverse_lazy("task_management:listdetail_view", kwargs={"pk": self.pk})
 
     class Meta:
@@ -52,6 +72,10 @@ class List(BaseModel):
 
 
 class Task(BaseModel):
+    """
+    Model representing a task.
+    """
+
     title = CharField(max_length=100)
     description = TextField(max_length=1000, null=True, blank=True)
     assigned_list = ForeignKey(
@@ -63,9 +87,15 @@ class Task(BaseModel):
     due_date = DateField(null=True, blank=True)
 
     def __str__(self):
+        """
+        Return string representation of the task.
+        """
         return self.title
 
     def get_absolute_url(self):
+        """
+        Return the absolute URL to view the task.
+        """
         return reverse_lazy("task_management:taskdetail_view", kwargs={"pk": self.pk})
 
     class Meta:
