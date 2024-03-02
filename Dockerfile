@@ -1,4 +1,4 @@
-FROM python3.10-nodejs20-bullseye:latest
+FROM python3.10-nodejs20-bullseye
 
 
 LABEL maintainer="write2shourov@gmail.com" \
