@@ -11,3 +11,4 @@ Abstract App
    enums.rst
    forms.rst
    managers.rst
+   models.rst
