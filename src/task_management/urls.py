@@ -27,31 +27,6 @@ router.register(r"board", BoardViewSet)
 router.register(r"list", ListViewSet)
 router.register(r"task", TaskViewSet)
 
-
-# fmt: off
-urlpatterns = [
-    path(route="", view=BoardListView.as_view(), name="boardlist_view"),
-    path(route="add", view=BoardCreateView.as_view(), name="boardcreate_view"),
-    path(route="<int:pk>",view=BoardDetailView.as_view(),name="boarddetail_view"),
-    path(route="<int:pk>/add", view=BoardListCreateView.as_view(), name="boardlistcreate_view"),
-    path(route="<int:pk>/update",view=BoardUpdateView.as_view(),name="boardupdate_view"),
-    path(route="<int:pk>/delete",view=BoardDeleteView.as_view(),name="boarddelete_view"),
-
-    path(route="lists/", view=ListListView.as_view(), name="listlist_view"),
-    path(route="lists/add", view=ListCreateView.as_view(), name="listcreate_view"),
-    path(route="lists/<int:pk>",view=ListDetailView.as_view(),name="listdetail_view"),
-    path(route="lists/<int:pk>/add", view=ListTaskCreateView.as_view(), name="listtaskcreate_view"),
-    path(route="lists/<int:pk>/update",view=ListUpdateView.as_view(),name="listupdate_view"),
-    path(route="lists/<int:pk>/delete",view=ListDeleteView.as_view(),name="listdelete_view"),
-    
-    path(route="lists/tasks/", view=TaskListView.as_view(), name="tasklist_view"),
-    path(route="lists/tasks/add", view=TaskCreateView.as_view(), name="taskcreate_view"),
-    path(route="lists/tasks/<int:pk>",view=TaskDetailView.as_view(),name="taskdetail_view"),
-    path(route="lists/tasks/<int:pk>/update",view=TaskUpdateView.as_view(),name="taskupdate_view"),
-    path(route="lists/tasks/<int:pk>/delete",view=TaskDeleteView.as_view(),name="taskdelete_view"),
-]
-# fmt: on
-
 """
 This module defines URL patterns for task management application.
 
@@ -80,3 +55,26 @@ Each URL pattern maps to a specific view in the application. The urlpatterns lis
     - taskupdate_view: Renders form for updating a specific task.
     - taskdelete_view: Renders confirmation page for deleting a specific task.
 """
+# fmt: off
+urlpatterns = [
+    path(route="", view=BoardListView.as_view(), name="boardlist_view"),
+    path(route="add", view=BoardCreateView.as_view(), name="boardcreate_view"),
+    path(route="<int:pk>",view=BoardDetailView.as_view(),name="boarddetail_view"),
+    path(route="<int:pk>/add", view=BoardListCreateView.as_view(), name="boardlistcreate_view"),
+    path(route="<int:pk>/update",view=BoardUpdateView.as_view(),name="boardupdate_view"),
+    path(route="<int:pk>/delete",view=BoardDeleteView.as_view(),name="boarddelete_view"),
+
+    path(route="lists/", view=ListListView.as_view(), name="listlist_view"),
+    path(route="lists/add", view=ListCreateView.as_view(), name="listcreate_view"),
+    path(route="lists/<int:pk>",view=ListDetailView.as_view(),name="listdetail_view"),
+    path(route="lists/<int:pk>/add", view=ListTaskCreateView.as_view(), name="listtaskcreate_view"),
+    path(route="lists/<int:pk>/update",view=ListUpdateView.as_view(),name="listupdate_view"),
+    path(route="lists/<int:pk>/delete",view=ListDeleteView.as_view(),name="listdelete_view"),
+    
+    path(route="lists/tasks/", view=TaskListView.as_view(), name="tasklist_view"),
+    path(route="lists/tasks/add", view=TaskCreateView.as_view(), name="taskcreate_view"),
+    path(route="lists/tasks/<int:pk>",view=TaskDetailView.as_view(),name="taskdetail_view"),
+    path(route="lists/tasks/<int:pk>/update",view=TaskUpdateView.as_view(),name="taskupdate_view"),
+    path(route="lists/tasks/<int:pk>/delete",view=TaskDeleteView.as_view(),name="taskdelete_view"),
+]
+# fmt: on
