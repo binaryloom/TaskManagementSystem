@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # custom app
+    "tms",
     "user",
     "abstract",
     "task_management",
