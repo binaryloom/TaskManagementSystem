@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo -e 'hi'
+python manage.py collectstatic --noinput
