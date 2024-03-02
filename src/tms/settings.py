@@ -150,9 +150,7 @@ REST_REGISTRATION = {
 # Tailwind Config
 
 TAILWIND_APP_NAME = "tailwind_theme"
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+INTERNAL_IPS = ["127.0.0.1", "localhost"]
 NPM_BIN_PATH = "npm.cmd"
 
 
