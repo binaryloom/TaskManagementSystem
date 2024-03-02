@@ -3,20 +3,14 @@ from django.db import models
 
 class BaseManager(models.Manager):
     """
-    This is the base class model for all models of the database tables.
+    A custom manager class for models with a 'status' field, providing methods for
+    querying and filtering objects based on their status.
 
-    Attributes:
-        operating_user (object): The user operating on the model instance.
-        objects (BaseManager): The custom manager for BaseModel instances.
-        status (bool): Status of the record (active or not), default is True.
-        created_at (DateTime): Datetime of creation, auto-generated.
-        updated_at (DateTime): Last modification datetime, auto-updated.
-        created_by (ForeignKey): User who created the record.
-        updated_by (ForeignKey): User who last updated the record.
-
-    Usage:
-        class <CLASS_NAME>(BaseModel):
-            # model definition
+    Methods:
+        get_queryset(): Returns the base queryset.
+        all(): Returns all objects excluding those with status=False.
+        filter(*args, **kwargs): Filters objects based on given conditions, excluding those with status=False.
+        count(): Returns the count of objects excluding those with status=False.
     """
 
     def get_queryset(self):
