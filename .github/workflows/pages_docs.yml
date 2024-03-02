@@ -1,11 +1,13 @@
 name: Deploy docs to gh-pages
 
 on:
-  - push
+  pull_request:
+    types: [closed]
 
 jobs:
   build_deploy:
-    runs-on: ubuntu-20.04
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
