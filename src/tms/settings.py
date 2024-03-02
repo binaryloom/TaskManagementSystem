@@ -206,3 +206,4 @@ ADMINS = {
 
 
 # static Files Config
+STATIC_ROOT = BASE_DIR / "static_files"
