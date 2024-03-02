@@ -7,10 +7,11 @@ Welcome to Task MS's documentation!
 ===================================
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
    :caption: Contents:
 
    apps/abstract/base.rst
+   apps/task_management/base.rst
 
 
 
