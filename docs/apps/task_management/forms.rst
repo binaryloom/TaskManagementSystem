@@ -1,5 +1,5 @@
 Forms
 =====
 
-.. automodule:: abstract.forms
+.. automodule:: task_management.forms
     :members:
