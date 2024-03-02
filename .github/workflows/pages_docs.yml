@@ -1,8 +1,7 @@
 name: Deploy Task MS docs to pages
 
 on:
-  push:
-    branches: [master]
+  - push
 
 jobs:
   build_deploy_docs:
