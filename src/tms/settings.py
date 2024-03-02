@@ -192,3 +192,14 @@ NPM_BIN_PATH = "npm.cmd"
 LOGOUT_REDIRECT_URL = "user:login_view"
 
 LOGIN_REDIRECT_URL = "user:dashboard_view"
+
+
+# Admin Setup
+
+ADMINS = {
+    "default": {
+        "USER": "admin",
+        "PASSWORD": "password",
+        "EMAIL": "extinctCoder@outlook.com",
+    }
+}
