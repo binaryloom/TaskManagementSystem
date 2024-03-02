@@ -31,3 +31,9 @@ services:
       - ./src:/src
     networks:
       - tms_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/healthcheck"]
+      interval: 3s
+      timeout: 2s
+      retries: 10
+      start_period: 5s
