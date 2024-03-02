@@ -19,11 +19,3 @@ RUN chmod +x /start_django.sh
 RUN mkdir -p /src/tailwind_theme/static
 
 ENTRYPOINT "/start_django.sh"
-
-
-
-
-
-
-
-
