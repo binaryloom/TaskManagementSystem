@@ -10,7 +10,7 @@ Welcome to Task MS's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   apps/abstract/middleware.rst
+   apps/abstract.rst
 
 
 
