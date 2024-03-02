@@ -1,13 +1,35 @@
 from django.contrib import messages
 from django.contrib.auth import views
+from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from rest_framework.permissions import AllowAny
 
-from abstract.views import CreateAPIView, RedirectView, TemplateView
+from abstract.views import CreateAPIView, RedirectView, TemplateView, View
 from user.forms import AuthForm, RegistrationForm
 from user.models import User
 from user.serializers import RegistrationSerializer
+
+
+class HealthCheckView(View):
+    """
+    A class-based view for the health check endpoint.
+
+    This view responds with an HTTP 200 OK status code
+    when the application is healthy.
+    """
+
+    def get(self, request, *args, **kwargs):
+        """
+        Handle GET requests to the health check endpoint.
+
+        Parameters:
+            request (HttpRequest): The HTTP request object.
+
+        Returns:
+            HttpResponse: An HTTP response with an "OK" message.
+        """
+        return HttpResponse("OK")
 
 
 class RedirectView(RedirectView):
