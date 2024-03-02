@@ -12,5 +12,19 @@ class Command(BaseCommand):
                 User.objects.create_superuser(
                     superuser["USER"], superuser["EMAIL"], superuser["PASSWORD"]
                 )
+                self.stdout.write(
+                    self.style.SUCCESS("Super user account created successfully")
+                )
+                self.stdout.write(
+                    self.style.SUCCESS(f"username \t: {superuser["USER"]}")
+                )
+                self.stdout.write(
+                    self.style.SUCCESS(f"password \t: {superuser["PASSWORD"]}")
+                )
+
         else:
-            print("Admin accounts can only be initialized if no Accounts exist")
+            self.stdout.write(
+                self.style.ERROR(
+                    "Admin accounts can only be initialized if no Accounts exist"
+                )
+            )
