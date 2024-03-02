@@ -2,17 +2,18 @@ from enum import IntEnum
 
 
 class CellSize(IntEnum):
-    """This enum return the cell size of a attribute.
+    """
+    Enumeration representing cell sizes.
 
-    Usages:
-        CellSize.XXS: 1
-        CellSize.XS: 2
-        CellSize.SMALL: 3
-        CellSize.MEDIUM: 20
-        CellSize.LARGE: 100
-        CellSize.XL: 255
-        CellSize.XXL: 500
-        CellSize.XXXL: 10485760
+    Attributes:
+        XXS (int): Extra Extra Small cell size. Value: 1
+        XS (int): Extra Small cell size. Value: 2
+        SMALL (int): Small cell size. Value: 3
+        MEDIUM (int): Medium cell size. Value: 20
+        LARGE (int): Large cell size. Value: 100
+        XL (int): Extra Large cell size. Value: 255
+        XXL (int): Extra Extra Large cell size. Value: 500
+        XXXL (int): Extra Extra Extra Large cell size. Value: 10485760
     """
 
     XXS = 1
