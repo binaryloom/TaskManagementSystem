@@ -2,10 +2,11 @@ from django.contrib import messages
 from django.contrib.auth import views
 from django.http import HttpResponse
 from django.urls import reverse_lazy
+from django.views import View
 from django.views.generic.edit import CreateView
 from rest_framework.permissions import AllowAny
 
-from abstract.views import CreateAPIView, RedirectView, TemplateView, View
+from abstract.views import CreateAPIView, RedirectView, TemplateView
 from user.forms import AuthForm, RegistrationForm
 from user.models import User
 from user.serializers import RegistrationSerializer
