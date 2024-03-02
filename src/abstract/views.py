@@ -340,6 +340,12 @@ class UpdateView(LoginRequiredMixin, edit.UpdateView):
     template_name = "default/form.html"
 
     def get_form_kwargs(self):
+        """
+        Retrieve keyword arguments for form instantiation.
+
+        Returns:
+            dict: Keyword arguments for form instantiation including the operating user.
+        """
         kwargs = super().get_form_kwargs()
         kwargs["operating_user"] = self.request.user
         return kwargs

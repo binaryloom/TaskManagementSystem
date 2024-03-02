@@ -14,3 +14,4 @@ Abstract App
    models.rst
    serializers.rst
    views.rst
+   viewsets.rst
