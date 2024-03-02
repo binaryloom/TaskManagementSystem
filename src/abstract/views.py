@@ -64,6 +64,25 @@ class TemplateView(LoginRequiredMixin, generic.TemplateView):
 
 
 class FormView(LoginRequiredMixin, generic.FormView):
+    """
+    A view rendering a form, with login required, inheriting from Django's generic FormView.
+
+    Inherits:
+        generic.FormView
+
+    Usage:
+        Define your view class inheriting from this class and specify the form_class
+        attribute with the appropriate form class.
+
+    Example:
+        class MyFormView(FormView):
+            form_class = MyForm
+
+    Note:
+        Make sure to define the template_name attribute to specify the template for rendering
+        the form. By default, it looks for a template with the name <app>/<model>_form.html.
+    """
+
     pass
 
 
