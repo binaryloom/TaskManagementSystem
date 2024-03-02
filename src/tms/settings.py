@@ -163,17 +163,6 @@ LOGOUT_REDIRECT_URL = "user:login_view"
 LOGIN_REDIRECT_URL = "user:dashboard_view"
 
 
-# Admin Setup
-
-ADMINS = {
-    "default": {
-        "USER": "admin",
-        "PASSWORD": "password",
-        "EMAIL": "extinctCoder@outlook.com",
-    }
-}
-
-
 # static Files Config
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static_files"
