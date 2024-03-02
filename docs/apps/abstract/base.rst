@@ -8,3 +8,4 @@ Abstract App
    middleware.rst
    processors.rst
    admin.rst
+   enums.rst
