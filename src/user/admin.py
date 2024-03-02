@@ -7,6 +7,14 @@ from user.models import User
 
 @admin.action(description="Recover Selected Items")
 def mark_undo(modeladmin, request, queryset):
+    """
+    Custom admin action to mark selected users as recovered.
+
+    Args:
+        modeladmin: The ModelAdmin instance.
+        request (HttpRequest): The HTTP request object.
+        queryset (QuerySet): The queryset containing the selected users.
+    """
     updated_count = queryset.update(is_staff=True)
     modeladmin.message_user(
         request,
