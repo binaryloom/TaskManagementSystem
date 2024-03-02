@@ -1,9 +1,8 @@
-FROM python:3.10-bullseye
+FROM python3.10-nodejs20-bullseye:latest
+
 
 LABEL maintainer="write2shourov@gmail.com" \
     vendor="fiery.snowflake"
-
-RUN apt install -y node npm
 
 WORKDIR /src
 
