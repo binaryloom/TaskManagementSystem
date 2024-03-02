@@ -21,12 +21,15 @@ services:
         condition: service_healthy
 
   tms_server:
-    image: ghcr.io/binaryloom/taskmanagementsystem:main
+    image: tms_server
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: tms_server
     hostname: tms_server
     restart: unless-stopped
-    volumes:
-      - ./src_tmp:/src
+    # volumes:
+    #   - ./src:/src
     networks:
       - tms_net
     healthcheck:
