@@ -15,13 +15,6 @@ class ListAdmin(ModelAdmin):
 
 class TaskAdmin(ModelAdmin):
     pass
-    # list_display = BaseAdmin.list_display + [
-    #     "country",
-    #     "branch_count",
-    #     "faculty_count",
-    #     "discipline_count",
-    #     "session_count",
-    # ]
 
 
 if settings.ENABLE_ADMIN:
