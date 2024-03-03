@@ -39,12 +39,9 @@ services:
     restart: unless-stopped
     networks:
       - tms_net
-
     volumes:
       - ./postgresdb_data:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
     environment:
-      POSTGRES_DB: istl_imanager
-      POSTGRES_USER: istl_dbproxy
-      POSTGRES_PASSWORD: istl_dbpassword
+      POSTGRES_DB: Wu659S
+      POSTGRES_USER: nU4Y12
+      POSTGRES_PASSWORD: RBEE5h2s88BnG2VHyMW66DSN
