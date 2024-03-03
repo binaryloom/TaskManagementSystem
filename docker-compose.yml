@@ -33,3 +33,18 @@ services:
       timeout: 2s
       retries: 10
       start_period: 5s
+  postgres_db:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: unless-stopped
+    networks:
+      - tms_net
+
+    volumes:
+      - ./postgresdb_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: istl_imanager
+      POSTGRES_USER: istl_dbproxy
+      POSTGRES_PASSWORD: istl_dbpassword
