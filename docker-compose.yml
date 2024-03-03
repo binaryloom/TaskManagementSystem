@@ -34,10 +34,10 @@ services:
       db_server:
         condition: service_healthy
     environment:
-      DB_HOST: db_server
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      APP_DB_HOST: db_server
+      APP_DB_DATABASE: ${POSTGRES_DB}
+      APP_DB_USER: ${POSTGRES_USER}
+      APP_DB_PASSWORD: ${POSTGRES_PASSWORD}
     healthcheck:
       test: curl -f http://localhost/healthcheck
       interval: 3s

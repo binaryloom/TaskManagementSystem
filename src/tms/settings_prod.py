@@ -11,10 +11,10 @@ NPM_BIN_PATH = "/usr/local/bin/npm"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": environ["POSTGRES_DB"],
-        "USER": environ["CACHE_HOST"],
+        "NAME": environ["APP_DB_DATABASE"],
+        "USER": environ["APP_DB_USER"],
         "PASSWORD": environ["CACHE_HOST"],
-        "HOST": environ["CACHE_HOST"],
+        "HOST": environ["APP_DB_PASSWORD"],
         "PORT": "5432",
     }
 }
