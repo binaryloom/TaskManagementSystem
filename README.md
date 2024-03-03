@@ -1,76 +1,38 @@
-# Software Requirements Specification (SRS) for Task Management REST API
+# Task Management System Technical Documentation
 
-[![Deploy Task MS documentation to Github Pages](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml/badge.svg)](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml)
+## Introduction
 
-## 1. Introduction
+Welcome to the technical documentation for our Task Management System project! This document aims to provide a comprehensive overview of the project, including its architecture, technologies used, database schema, API documentation, frontend structure, deployment strategies, testing methodologies, security considerations, scalability, and performance measures.
 
-The Task Management REST API is a backend service designed to handle task organization, assignment, and tracking for individuals and teams. This document outlines the essential functional requirements of the API.
+### Purpose
 
-## 2. Scope
+The Task Management System serves as a demonstration project to showcase our technical capabilities in developing robust web applications. By leveraging industry-standard practices and technologies, this project aims to exhibit our proficiency in software engineering, web development, and system design. Through the Task Management System, we aim to illustrate our expertise in building scalable, secure, and user-friendly applications tailored to meet the needs of modern businesses and teams.
 
-The API will provide endpoints for creating, retrieving, updating, and deleting boards, lists, and tasks. It will support user authentication and authorization for secure access to resources.
+#### Project Goals
 
-## 3. Functional Requirements
+- Demonstrate proficiency in software engineering principles, including architecture design, code organization, and implementation.
+- Showcase expertise in frontend and backend development technologies, frameworks, and libraries.
+- Highlight skills in database design, data modeling, and query optimization.
+- Illustrate best practices in RESTful API design, documentation, and implementation.
+- Emphasize commitment to quality assurance through comprehensive testing methodologies.
+- Showcase knowledge of deployment strategies, scalability considerations, and performance optimizations.
+- Demonstrate a strong focus on security measures to protect data and ensure user privacy.
+- Provide a tangible example of our technical capabilities and expertise to potential clients, employers, and collaborators.
 
-### 3.1 User Management
+#### Audience
 
-- **FR-1:** Users can register a new account.
-- **FR-2:** Users can authenticate securely.
-- **FR-3:** Users can update their profile information.
-- **FR-4:** Users can reset their password.
+This documentation is targeted towards potential clients, employers, and collaborators interested in assessing our technical skills and capabilities. It also serves as a reference for developers and stakeholders involved in the project.
 
-### 3.2 Board Management
+### Document Structure
 
-- **FR-5:** Users can create a new board.
-- **FR-6:** Users can retrieve existing boards.
-- **FR-7:** Users can delete a board they own.
+The documentation is structured as follows:
 
-### 3.3 List Management
-
-- **FR-8:** Users can create a new list within a board.
-- **FR-9:** Users can retrieve existing lists within a board.
-- **FR-10:** Users can delete a list they own.
-
-### 3.4 Task Management
-
-- **FR-11:** Users can create a new task within a list.
-- **FR-12:** Users can retrieve existing tasks within a list.
-- **FR-13:** Users can update the details of a task they own.
-- **FR-14:** Users can assign a task to team members.
-- **FR-15:** Users can set due dates for tasks.
-- **FR-16:** Users can move tasks between lists.
-
-## 4. Non-functional Requirements
-
-- **NFR-1:** Security: The API must implement secure authentication mechanisms (e.g., JWT).
-- **NFR-2:** Performance: The API should respond to requests promptly, with minimal latency.
-- **NFR-3:** Scalability: The API should handle a growing number of users and tasks efficiently.
-- **NFR-4:** Reliability: The API should be highly available, with minimal downtime for maintenance.
-
-## 5. Constraints
-
-- The API will be developed using Django REST Framework.
-- The database management system will be PostgreSQL.
-
-## 6. Assumptions
-
-- Users have access to the internet for accessing the API endpoints.
-- Proper input validation will be enforced to ensure data integrity.
-
-## 7. Glossary
-
-- **Board:** Represents a project or workflow.
-- **List:** Represents a stage or category within a board.
-- **Task:** Represents a unit of work or activity within a list.
-
-```sh
-sphinx-apidoc -o . ..
-
-sphinx-apidoc -o . docs
-```
-
-# gunicorn tms.wsgi:application --bind 0.0.0.0:80 --workers 5
-
-# python manage.py runserver 0.0.0.0:8000 --settings tms.settings_prod
-
-# python manage.py runserver 0.0.0.0:8000 --settings tms.settings_dev
+1. **Project Architecture**: Describes the overall architecture of the project, including backend, frontend, and communication between components.
+2. **Technologies Used**: Lists the technologies, frameworks, and libraries utilized in the development of the Task Management System.
+3. **Database Schema**: Provides an overview of the database schema, including tables, relationships, and fields.
+4. **API Documentation**: Documents the RESTful API endpoints, request methods, parameters, and responses.
+5. **Frontend Structure**: Explains the structure and organization of the frontend application, including components, routes, and state management.
+6. **Deployment**: Discusses deployment strategies and considerations for hosting the application in production environments.
+7. **Testing**: Outlines the testing methodologies employed to ensure the reliability and functionality of the system.
+8. **Security Considerations**: Highlights security measures implemented to protect data, authenticate users, and prevent unauthorized access.
+9. **Scalability and Performance**: Addresses scalability challenges and performance optimizations to handle increased user load and maintain system responsiveness.
