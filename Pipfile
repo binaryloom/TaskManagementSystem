@@ -13,6 +13,7 @@ django-rest-registration = "*"
 django-tailwind = {extras = ["reload"], version = "*"}
 whitenoise = {extras = ["brotli"], version = "*"}
 gunicorn = "*"
+psycopg2 = "*"
 
 [dev-packages]
 black = "*"
