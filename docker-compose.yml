@@ -27,8 +27,11 @@ services:
     restart: unless-stopped
     networks:
       - tms_net
+    depends_on:
+      tms_server:
+        condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:80/healthcheck"]
+      test: ["CMD", "curl -f http://localhost:80/healthcheck"]
       interval: 3s
       timeout: 2s
       retries: 10
@@ -47,7 +50,11 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     healthcheck:
-      test: ["CMDL", "pg_isready -U myuser -d mydatabase -h localhost -p 5432"]
+      test:
+        [
+          "CMD",
+          "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB} -h localhost -p 5432",
+        ]
       interval: 10s
       timeout: 5s
       retries: 3
