@@ -46,16 +46,25 @@ graph TD;
     feature_request --> |denied| new_feature;
     feature_request --> |approved| main_checkout["Checkout from Main Branch"];
     main_checkout --> |development| dev_commit[Development Commit];
-    dev_commit --> |deploy test| test_env{Test Environment}
+    dev_commit --> |deploy test| test_env{Test Environment};
     test_env --> |failed| dev_commit;
     test_env --> |passed| pull_request["Pull request To Main"];
-    pull_request --> image_deploy["Deploy Image in GHCR"]
-    pull_request --> image_docs["Deploy docs in gh_pages"]
+    pull_request --> image_deploy["Deploy Image in GHCR"];
+    pull_request --> image_docs["Deploy docs in gh_pages"];
 ```
 
-- **Containerization**: The application is packaged into Docker containers to ensure consistency across different environments and simplify deployment.
-- **GitHub Container Registry**: Docker images are stored in the GitHub Container Registry, providing a centralized location for version-controlled images.
-- **CI/CD Pipeline**: Continuous Integration and Continuous Deployment (CI/CD) pipelines are implemented using GitHub Actions, automating the build, testing, and deployment processes.
+The deployment architecture of the Task Management System follows a streamlined process to deploy new features and updates. Here's an overview:
+
+- **New Feature**: Represents the implementation of a new feature in the application.
+- **Feature Request**: Indicates the process of submitting a feature request, which may be either approved or denied.
+- **Checkout from Main Branch**: Upon approval of a feature request, the codebase is checked out from the main branch for further development.
+- **Development Commit**: Commits are made to the development branch to implement the approved feature.
+- **Test Environment**: A test environment is deployed for testing the newly developed feature.
+- **Pull Request to Main**: After testing, a pull request is initiated to merge the feature into the main branch.
+- **Deploy Image in GHCR**: Upon merging into the main branch, the Docker image is deployed to the GitHub Container Registry (GHCR).
+- **Deploy docs in gh_pages**: Documentation updates are deployed to the gh_pages branch for publishing.
+
+This process ensures a systematic approach to deploying changes while maintaining code quality and consistency.
 
 ## Scalability Considerations
 
