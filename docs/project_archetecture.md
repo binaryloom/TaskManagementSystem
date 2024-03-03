@@ -44,15 +44,8 @@ graph LR;
 graph TD;
     new_feature["New Feature"] --> feature_request{Feature Request}
     feature_request --> |denied| new_feature;
-    feature_request --> |approved|
-    A[Docker Containers] --> B[GitHub];
-    B --> C[CI/CD Pipeline];
-    C --> D[Branch Creation];
-    D --> E[Tagging];
-    E --> F[Test Environment];
-    F --> G[Testing];
-    G --> H[Release];
-    H --> I[Main Branch Update];
+    feature_request --> |approved| main_checkout["Checkout from Main Branch"]
+    main_checkout --> |developement| dev_commit[Development Commit]
 ```
 
 - **Containerization**: The application is packaged into Docker containers to ensure consistency across different environments and simplify deployment.
