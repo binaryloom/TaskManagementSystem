@@ -13,16 +13,15 @@
 
 ### Default auth credentials
 
-```sh
-WEB_HIST: 127.0.0.1:8001
-API_HOST: 127.0.0.1:8001/api
-ADMIN_HOST: 127.0.0.1:8001/admin
-USERNAME: admin
-PASSWORD: password
+| KEY        | VALUE                |
+| ---------- | -------------------- |
+| WEB_HIST   | 127.0.0.1:8001       |
+| API_HOST   | 127.0.0.1:8001/api   |
+| ADMIN_HOST | 127.0.0.1:8001/admin |
+| USERNAME   | admin                |
+| PASSWORD   | password             |
 
-```
-
-> Note : please _follow_ `https://github.com/binaryloom/TaskManagementSystem/blob/main/deplyment.md` for _*deployment*_
+> Note : please _follow_ `https://github.com/binaryloom/TaskManagementSystem/blob/main/deplyment.md` for _deployment_
 
 ## Overview
 
