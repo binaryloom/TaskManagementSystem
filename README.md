@@ -32,8 +32,7 @@ The documentation is structured as follows:
 3. **Technologies Used**: Lists the technologies, frameworks, and libraries utilized in the development of the Task Management System.
 4. **Database Schema**: Provides an overview of the database schema, including tables, relationships, and fields.
 5. **API Documentation**: Documents the RESTful API endpoints, request methods, parameters, and responses.
-6. **Frontend Structure**: Explains the structure and organization of the frontend application, including components, routes, and state management.
-7. **Deployment**: Discusses deployment strategies and considerations for hosting the application in production environments.
-8. **Testing**: Outlines the testing methodologies employed to ensure the reliability and functionality of the system.
-9. **Security Considerations**: Highlights security measures implemented to protect data, authenticate users, and prevent unauthorized access.
-10. **Scalability and Performance**: Addresses scalability challenges and performance optimizations to handle increased user load and maintain system responsiveness.
+6. **Deployment**: Discusses deployment strategies and considerations for hosting the application in production environments.
+7. **Testing**: Outlines the testing methodologies employed to ensure the reliability and functionality of the system.
+8. **Security Considerations**: Highlights security measures implemented to protect data, authenticate users, and prevent unauthorized access.
+9. **Scalability and Performance**: Addresses scalability challenges and performance optimizations to handle increased user load and maintain system responsiveness.
