@@ -39,6 +39,7 @@
     "healthcheck",
     "httplog",
     "intersphinx",
+    "isready",
     "listcreate",
     "listdelete",
     "listdetail",

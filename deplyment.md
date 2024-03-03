@@ -4,7 +4,74 @@
 
 2. **Create Deployment Folder**: Make a folder in the desired location where you want to deploy the Task Management System.
 
-3. **Copy Docker Compose File**: Copy the Docker Compose file (`docker-compose.yml`) into the deployment folder you created in step 2.
+3. **Copy Docker Compose File**: Copy and past the bellow section Docker Compose file (`docker-compose.yml`) into the deployment folder you created in step 2.
+
+   ```yml
+   version: "3.7"
+   networks:
+   tms_net:
+     driver: bridge
+     name: tms_net
+
+   services:
+   lb_server:
+     image: haproxy:2.7
+     container_name: lb_server
+     hostname: lb_server
+     restart: unless-stopped
+     volumes:
+       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+     networks:
+       - tms_net
+     ports:
+       - 8001:80
+     depends_on:
+     tms_server:
+       condition: service_healthy
+
+   tms_server:
+     image: ghcr.io/binaryloom/taskmanagementsystem:main
+     container_name: tms_server
+     hostname: tms_server
+     restart: unless-stopped
+     networks:
+       - tms_net
+     depends_on:
+     db_server:
+       condition: service_healthy
+     environment:
+     APP_DB_HOST: db_server
+     APP_DB_DATABASE: ${POSTGRES_DB}
+     APP_DB_USER: ${POSTGRES_USER}
+     APP_DB_PASSWORD: ${POSTGRES_PASSWORD}
+     healthcheck:
+     test: curl -f http://localhost/healthcheck
+     interval: 3s
+     timeout: 2s
+     retries: 10
+     start_period: 5s
+
+   db_server:
+     image: postgres:latest
+     container_name: db_server
+     hostname: db_server
+     restart: unless-stopped
+     networks:
+       - tms_net
+     volumes:
+       - ./db_data:/var/lib/postgresql/data
+     ports:
+       - 5432:5432
+     environment:
+     POSTGRES_DB: ${POSTGRES_DB}
+     POSTGRES_USER: ${POSTGRES_USER}
+     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+     healthcheck:
+     test: pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}
+     interval: 10s
+     timeout: 5s
+     retries: 3
+   ```
 
 4. **Create Environment Variables File**: Create a `.env` file in the same directory as the Docker Compose file and paste the following environment variable configurations:
 
