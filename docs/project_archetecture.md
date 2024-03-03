@@ -4,7 +4,16 @@ The Task Management System follows a typical client-server architecture, with a 
 
 ## Backend Architecture
 
-- **Django Backend**: The backend is built using Django, a high-level Python web framework that facilitates rapid development and clean, pragmatic design.
+```mermaid
+graph TD;
+    A[Django Frontend] --> B[Django REST Framework (DRF)];
+    B --> C[Database];
+    B --> D[Models];
+    B --> E[Views and Serializers];
+    B --> F[Customized Django Admin Panel];
+```
+
+- **Django Frontend**: The frontend is built using Django, a high-level Python web framework that facilitates rapid development and clean, pragmatic design.
 - **Django REST Framework (DRF)**: DRF is used to build the RESTful API endpoints that handle communication between the frontend and backend.
 - **Database**: Django ORM is utilized to interact with the underlying relational database. PostgreSQL is the preferred choice for its robustness and scalability, but other databases supported by Django can also be used.
 - **Models**: The backend consists of Django models that define the structure of the database schema. These models include User, Board, List, and Task, as outlined in the Database Schema section.
