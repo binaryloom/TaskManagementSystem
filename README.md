@@ -2,7 +2,7 @@
 
 [![Deploy docs to gh-pages](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml/badge.svg)](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml) [![Docker image publication](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/deploy-image.yml/badge.svg)](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/deploy-image.yml)
 
-> **Note:** This case study and the project is a demonstration project created to showcase my technical skills in software development, web technologies, and project management. please check [deployment.md](https://github.com/binaryloom/TaskManagementSystem/blob/main/deplyment.md) for deployment guideline and [case_study.md](https://github.com/binaryloom/TaskManagementSystem/blob/main/case_study.md) for more information.
+> **Note:** This case study and the project is a demonstration project created to showcase my technical skills in software development, web technologies, and project management. please check [deployment.md](https://github.com/binaryloom/TaskManagementSystem/blob/main/deplyment.md) for deployment guideline to local machine and [case_study.md](https://github.com/binaryloom/TaskManagementSystem/blob/main/case_study.md) for more information.
 
 ## Introduction
 
