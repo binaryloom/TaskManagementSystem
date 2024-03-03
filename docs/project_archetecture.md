@@ -6,12 +6,15 @@ The Task Management System follows a typical client-server architecture, with a 
 
 ```mermaid
 graph TD;
-    A[Django Frontend] --> B["Django Backend"];
-    B --> C["Database"];
-    B --> D["Models"];
-    B --> E["Views and Serializers"];
-    B --> F["Customized Django Admin Panel"];
+    A["Django Frontend"] --> B["Django Backend"];
+    C["API SERVER (DRF)"] --> B;
+
 ```
+
+B --> C["Database"];
+B --> D["Models"];
+B --> E["Views and Serializers"];
+B --> F["Customized Django Admin Panel"];
 
 - **Django Frontend**: The frontend is built using Django, a high-level Python web framework that facilitates rapid development and clean, pragmatic design.
 - **Django REST Framework (DRF)**: DRF is used to build the RESTful API endpoints that handle communication between the frontend and backend.
