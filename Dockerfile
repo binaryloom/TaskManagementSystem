@@ -14,4 +14,8 @@ RUN chmod +x /start_django.sh
 
 RUN mkdir -p /src/tailwind_theme/static
 
+RUN python manage.py tailwind install --settings tms.settings_prod
+RUN python manage.py tailwind build --settings tms.settings_prod
+RUN python manage.py collectstatic --noinput --settings tms.settings_prod
+
 ENTRYPOINT "/start_django.sh"
