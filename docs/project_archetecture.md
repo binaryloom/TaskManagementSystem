@@ -52,6 +52,18 @@ graph TD;
     H --> I[Production Deployment];
 ```
 
+```mermaid
+graph TD;
+    A[Docker Containers] --> B[GitHub];
+    B --> C[CI/CD Pipeline];
+    C --> D[Branch Creation];
+    D --> E[Tagging];
+    E --> F[Test Environment];
+    F --> G[Testing];
+    G --> H[Release];
+    H --> I[Main Branch Update];
+```
+
 - **Containerization**: The application is packaged into Docker containers to ensure consistency across different environments and simplify deployment.
 - **GitHub Container Registry**: Docker images are stored in the GitHub Container Registry, providing a centralized location for version-controlled images.
 - **CI/CD Pipeline**: Continuous Integration and Continuous Deployment (CI/CD) pipelines are implemented using GitHub Actions, automating the build, testing, and deployment processes.
