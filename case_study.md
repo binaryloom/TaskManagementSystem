@@ -2,6 +2,10 @@
 
 **Note:** This case study and the project is a demonstration project created to showcase my technical skills in software development, web technologies, and project management.
 
+## Resources
+
+Project Repo : [binaryloom/TaskManagementSystem](https://github.com/binaryloom/TaskManagementSystem)
+
 ## Overview
 
 The Task Management System (TMS) is a web-based application designed to streamline task organization, collaboration, and tracking for teams and individuals. Developed with a focus on usability, scalability, and performance, TMS offers a comprehensive set of features to improve productivity and project management efficiency.

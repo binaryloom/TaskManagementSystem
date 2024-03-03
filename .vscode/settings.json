@@ -23,6 +23,7 @@
     "automodule",
     "autosectionlabel",
     "autosummary",
+    "binaryloom",
     "boardcreate",
     "boarddelete",
     "boarddetail",
