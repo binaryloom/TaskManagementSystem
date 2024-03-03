@@ -23,16 +23,12 @@ The Task Management System serves as a demonstration project to showcase our tec
 
 This documentation is targeted towards potential clients, employers, and collaborators interested in assessing our technical skills and capabilities. It also serves as a reference for developers and stakeholders involved in the project.
 
-### Document Structure
-
-The documentation is structured as follows:
-
-1. **Software Requirements Specification (SRS)**: Defines the functional and non-functional requirements of the Task Management System.
-2. **Project Architecture**: Describes the overall architecture of the project, including backend, frontend, and communication between components.
-3. **Technologies Used**: Lists the technologies, frameworks, and libraries utilized in the development of the Task Management System.
-4. **Database Schema**: Provides an overview of the database schema, including tables, relationships, and fields.
-5. **API Documentation**: Documents the RESTful API endpoints, request methods, parameters, and responses.
-6. **Deployment**: Discusses deployment strategies and considerations for hosting the application in production environments.
-7. **Testing**: Outlines the testing methodologies employed to ensure the reliability and functionality of the system.
-8. **Security Considerations**: Highlights security measures implemented to protect data, authenticate users, and prevent unauthorized access.
-9. **Scalability and Performance**: Addresses scalability challenges and performance optimizations to handle increased user load and maintain system responsiveness.
+1. [**Software Requirements Specification (SRS)**](#software-requirements-specification-srs): Defines the functional and non-functional requirements of the Task Management System.
+2. [**Project Architecture**](#project-architecture): Describes the overall architecture of the project, including backend, frontend, and communication between components.
+3. [**Technologies Used**](#technologies-used): Lists the technologies, frameworks, and libraries utilized in the development of the Task Management System.
+4. [**Database Schema**](#database-schema): Provides an overview of the database schema, including tables, relationships, and fields.
+5. [**API Documentation**](#api-documentation): Documents the RESTful API endpoints, request methods, parameters, and responses.
+6. [**Deployment**](#deployment): Discusses deployment strategies and considerations for hosting the application in production environments.
+7. [**Testing**](#testing): Outlines the testing methodologies employed to ensure the reliability and functionality of the system.
+8. [**Security Considerations**](#security-considerations): Highlights security measures implemented to protect data, authenticate users, and prevent unauthorized access.
+9. [**Scalability and Performance**](#scalability-and-performance): Addresses scalability challenges and performance optimizations to handle increased user load and maintain system responsiveness.
