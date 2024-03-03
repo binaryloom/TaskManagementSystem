@@ -32,6 +32,9 @@ services:
     #   - ./src:/src
     networks:
       - tms_net
+    ports:
+      - 8000:8000
+      - 8002:80
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:80/healthcheck"]
       interval: 3s
