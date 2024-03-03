@@ -21,7 +21,7 @@ services:
         condition: service_healthy
 
   tms_server:
-    image: ghcr.io/binaryloom/taskmanagementsystem:sha-8418488
+    image: ghcr.io/binaryloom/taskmanagementsystem:sha-7132ebe
     # build:
     #   context: .
     #   dockerfile: Dockerfile
