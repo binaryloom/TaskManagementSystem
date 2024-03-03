@@ -37,14 +37,15 @@ services:
       retries: 10
       start_period: 5s
 
-  postgres_db:
+  db_server:
     image: postgres:latest
-    container_name: postgres_db
+    container_name: db_server
+    hostname: db_server
     restart: unless-stopped
     networks:
       - tms_net
-    volumes:
-      - ./postgresdb_data:/var/lib/postgresql/data
+    # volumes:
+    #   - ./db_data:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
