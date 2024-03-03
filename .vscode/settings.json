@@ -48,6 +48,7 @@
     "maxdepth",
     "modindex",
     "nostatic",
+    "psycopg",
     "quickstart",
     "roundrobin",
     "Sabbir",
