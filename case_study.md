@@ -6,6 +6,8 @@
 
 ## Resources
 
+- SRS : [Software Requirement Analysis](https://github.com/binaryloom/TaskManagementSystem/blob/main/docs/project_srs.md)
+- Project Architecture : [TMS Architecture](https://github.com/binaryloom/TaskManagementSystem/blob/main/docs/project_archetecture.md)
 - Project Repo : [binaryloom/TaskManagementSystem](https://github.com/binaryloom/TaskManagementSystem)
 - Project Documentation : [TaskManagementSystem technical documentation](https://github.com/binaryloom/TaskManagementSystem/blob/main/README.md)
 - Source Code Documentation: [TaskManagementSystem Code documentation](https://binaryloom.github.io/TaskManagementSystem)
