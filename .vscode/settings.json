@@ -48,6 +48,7 @@
     "maxdepth",
     "modindex",
     "nostatic",
+    "pinia",
     "psycopg",
     "quickstart",
     "roundrobin",
