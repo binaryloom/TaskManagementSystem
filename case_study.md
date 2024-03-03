@@ -10,6 +10,16 @@
 - Published Package : [binaryloom/taskmanagementsystem GHCR](https://github.com/binaryloom/TaskManagementSystem/pkgs/container/taskmanagementsystem)
 - Test API : [API Examples](https://github.com/binaryloom/TaskManagementSystem/tree/main/api_request)
 
+### Default auth credentials
+
+```sh
+WEB_HIST: 127.0.0.1:8001
+API_HOST: 127.0.0.1:8001/api
+ADMIN_HOST: 127.0.0.1:8001/admin
+USERNAME: admin
+PASSWORD: password
+```
+
 ## Overview
 
 The Task Management System (TMS) is a web-based application designed to streamline task organization, collaboration, and tracking for teams and individuals. Developed with a focus on usability, scalability, and performance, TMS offers a comprehensive set of features to improve productivity and project management efficiency.
