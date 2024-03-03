@@ -22,7 +22,7 @@ PASSWORD: password
 
 ```
 
-> Note : please follow `https://github.com/binaryloom/TaskManagementSystem/blob/main/deplyment.md` for deployment
+> Note : please _follow_ `https://github.com/binaryloom/TaskManagementSystem/blob/main/deplyment.md` for _*deployment*_
 
 ## Overview
 
