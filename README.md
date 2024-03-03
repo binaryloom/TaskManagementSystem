@@ -23,7 +23,7 @@ The Task Management System serves as a demonstration project to showcase our tec
 
 This documentation is targeted towards potential clients, employers, and collaborators interested in assessing our technical skills and capabilities. It also serves as a reference for developers and stakeholders involved in the project.
 
-1. [**Software Requirements Specification (SRS)**](#docs/project_srs.md): Defines the functional and non-functional requirements of the Task Management System.
+1. [**Software Requirements Specification (SRS)**](docs/project_srs.md): Defines the functional and non-functional requirements of the Task Management System.
 2. [**Project Architecture**](#project-architecture): Describes the overall architecture of the project, including backend, frontend, and communication between components.
 3. [**Technologies Used**](#technologies-used): Lists the technologies, frameworks, and libraries utilized in the development of the Task Management System.
 4. [**Database Schema**](#database-schema): Provides an overview of the database schema, including tables, relationships, and fields.
