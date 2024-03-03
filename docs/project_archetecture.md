@@ -6,7 +6,7 @@ The Task Management System follows a typical client-server architecture, with a 
 
 ```mermaid
 graph TD;
-    A[Django Frontend] --> B["Django REST Framework (DRF)"];
+    A[Django Frontend] --> B["Django Backend"];
     B --> C["Database"];
     B --> D["Models"];
     B --> E["Views and Serializers"];
