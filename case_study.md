@@ -23,7 +23,7 @@
 | USERNAME   | admin                |
 | PASSWORD   | password             |
 
-> Note : please _follow_ `https://github.com/binaryloom/TaskManagementSystem/blob/main/deplyment.md` for _deployment_
+> Note : please _follow_ `https://github.com/binaryloom/TaskManagementSystem/blob/main/deplyment.md` for local _deployment_
 
 ## Overview
 
@@ -38,15 +38,14 @@ Prior to implementing TMS, the organization faced challenges in managing tasks e
 TMS was developed to address these challenges and provide a user-friendly platform for managing tasks. The key features of TMS include:
 
 - Task Creation and Assignment: Users can create new tasks, assign them to team members, and set priority levels and due dates.
-- Task Tracking: TMS allows users to track the progress of tasks, monitor deadlines, and receive notifications for upcoming deadlines.
-- Collaboration: Teams can collaborate on tasks by sharing comments, attachments, and updates within the platform.
-- Reporting and Analytics: TMS provides reporting and analytics tools to track task completion rates, identify bottlenecks, and optimize workflows.
+- Task Tracking: TMS allows users to track the progress of tasks, monitor deadlines.
+- Collaboration: Teams can collaborate on tasks within the platform.
 
 ## Implementation
 
 TMS was implemented using modern web technologies, including:
 
-- **Frontend**: Django's templating engine was used to generate the responsive and interactive user interface. Tailwind CSS was employed for styling and design consistency.
+- **Frontend**: Django's templateing engine was used to generate the responsive and interactive user interface. Tailwind CSS was employed for styling and design consistency.
 - **Backend**: Django framework was utilized for backend development, along with Django REST Framework for building RESTful APIs. PostgreSQL database was chosen for its reliability, scalability, and robustness.
 - **Database**: TMS utilizes PostgreSQL as the backend database, with Django ORM facilitating interactions with the database schema. The database schema includes tables for users, tasks, task lists, boards, and other related entities.
 - **Deployment**: The application was deployed using Docker containers for containerization, Kubernetes for orchestration, and AWS for hosting. Continuous Integration and Continuous Deployment (CI/CD) pipelines were set up using GitHub Actions for automated testing and deployment.
