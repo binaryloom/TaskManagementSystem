@@ -46,3 +46,8 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    healthcheck:
+      test: ["CMDL", "pg_isready -U myuser -d mydatabase -h localhost -p 5432"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
