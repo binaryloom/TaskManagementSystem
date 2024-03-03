@@ -1,0 +1,5 @@
+# Request the board list
+
+curl \
+  -H "Authorization: Bearer TOKEN" \
+  http://localhost:8000/api/task
