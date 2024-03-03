@@ -43,6 +43,7 @@ graph LR;
 ```mermaid
 graph TD;
     new_feature["New Feature"] --> feature_request{Feature Request}
+    feature_request --> |denied| new_feature
     A[Docker Containers] --> B[GitHub];
     B --> C[CI/CD Pipeline];
     C --> D[Branch Creation];
