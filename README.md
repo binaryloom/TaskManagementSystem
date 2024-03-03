@@ -1,5 +1,5 @@
 # Task Management System Technical Documentation
-
+[![Deploy docs to gh-pages](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml/badge.svg)](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml) [![Docker image publication](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/deploy-image.yml/badge.svg)](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/deploy-image.yml)
 ## Introduction
 
 Welcome to the technical documentation for our Task Management System project! This document aims to provide a comprehensive overview of the project, including its architecture, technologies used, database schema, API documentation, frontend structure, deployment strategies, testing methodologies, security considerations, scalability, performance measures, and Software Requirements Specification (SRS).
