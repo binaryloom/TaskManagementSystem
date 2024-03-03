@@ -92,3 +92,22 @@
    This command will start the Docker containers in detached mode, allowing them to run in the background.
 
 6. **Access the Task Management System**: Open a web browser and navigate to [http://127.0.0.1:8001](http://127.0.0.1:8001) to access the Task Management System.
+
+## Default auth credentials
+
+| KEY        | VALUE                |
+| ---------- | -------------------- |
+| WEB_HIST   | 127.0.0.1:8001       |
+| API_HOST   | 127.0.0.1:8001/api   |
+| ADMIN_HOST | 127.0.0.1:8001/admin |
+| USERNAME   | admin                |
+| PASSWORD   | password             |
+
+## Resources
+
+- Project Repo : [binaryloom/TaskManagementSystem](https://github.com/binaryloom/TaskManagementSystem)
+- Project Documentation : [TaskManagementSystem technical documentation](https://github.com/binaryloom/TaskManagementSystem/blob/main/README.md)
+- Source Code Documentation: [TaskManagementSystem Code documentation](https://binaryloom.github.io/TaskManagementSystem)
+- Published Package : [binaryloom/taskmanagementsystem GHCR](https://github.com/binaryloom/TaskManagementSystem/pkgs/container/taskmanagementsystem)
+- Test API : [API Examples](https://github.com/binaryloom/TaskManagementSystem/tree/main/api_request)
+- Deployment GUIDELINE: [deployment.md](https://github.com/binaryloom/TaskManagementSystem/blob/main/deplyment.md)
