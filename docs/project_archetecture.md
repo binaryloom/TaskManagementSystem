@@ -42,18 +42,7 @@ graph LR;
 
 ```mermaid
 graph TD;
-    A[Docker Containers] --> B[GitHub];
-    B --> C[CI/CD Pipeline];
-    C --> D[Testing];
-    D --> E[Deployment];
-    E --> F[Staging Environment];
-    F --> G[Manual Testing];
-    G --> H[Approval];
-    H --> I[Production Deployment];
-```
-
-```mermaid
-graph TD;
+    new_feature["Feature Request"]
     A[Docker Containers] --> B[GitHub];
     B --> C[CI/CD Pipeline];
     C --> D[Branch Creation];
