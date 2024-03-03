@@ -23,12 +23,17 @@ graph TD;
 
 ## Frontend Architecture
 
-- **Django Frontend**: The initial frontend is built using Django templates and Jinja, providing a traditional server-rendered user interface. It serves as a demonstration of Django frontend development skills.
 - **Vue.js Frontend (Future)**: There are plans to migrate to a Vue.js-based frontend in the future for improved interactivity and user experience. This frontend will be built using Vue.js components, pinia for state management, and Vue Router for client-side routing.
 - **Components**: Frontend components are organized using Django templates for the Django frontend and Vue.js components for the Vue.js frontend. Each component is responsible for rendering a specific part of the user interface.
 - **State Management**: Vuex is used for state management in the Vue.js frontend, while Django templates handle state management in the Django frontend.
 
 ## Communication
+
+```mermaid
+graph LR;
+    frontend[Frontend] --> backend[RESTful API Endpoints];
+    backend --> frontend;
+```
 
 - **RESTful API**: Both frontend applications communicate with the backend through RESTful API endpoints provided by Django REST Framework. These endpoints handle CRUD (Create, Read, Update, Delete) operations for tasks, boards, lists, and users.
 - **HTTP Protocol**: Communication between the frontend and backend occurs over HTTP protocol, with JSON payloads exchanged between client and server.
