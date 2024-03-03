@@ -33,6 +33,10 @@ services:
     depends_on:
       db_server:
         condition: service_healthy
+    environment:
+      DB_HOST: db_server
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     healthcheck:
       test: curl -f http://localhost/healthcheck
       interval: 3s
