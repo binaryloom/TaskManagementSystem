@@ -8,6 +8,8 @@ The Task Management System follows a typical client-server architecture, with a 
 graph TD;
     django_frontend["Django Frontend"] --> django_backend["Django Backend"];
     api_server["API SERVER (DRF)"] --> django_backend;
+    django_backend --> views["Views and Serializers"];
+    views["Views and Serializers"];
     D["Django Admin Panel"] --> B;
     B --> E["Django Model (ORM)"];
     E --> F["Database Server"];
