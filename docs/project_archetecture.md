@@ -6,11 +6,11 @@ The Task Management System follows a typical client-server architecture, with a 
 
 ```mermaid
 graph TD;
-    A["Django Frontend"] --> B["Django Backend"];
-    C["API SERVER (DRF)"] --> B;
+    django_frontend["Django Frontend"] --> django_backend["Django Backend"];
+    api_server["API SERVER (DRF)"] --> django_backend;
     D["Django Admin Panel"] --> B;
-    B --> E["Django Model (ORM)"]
-    E --> F["Database Server"]
+    B --> E["Django Model (ORM)"];
+    E --> F["Database Server"];
 
 ```
 
