@@ -22,9 +22,6 @@ services:
 
   tms_server:
     image: ghcr.io/binaryloom/taskmanagementsystem:sha-3cf4f59
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
     container_name: tms_server
     hostname: tms_server
     restart: unless-stopped
