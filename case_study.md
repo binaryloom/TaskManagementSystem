@@ -1,5 +1,7 @@
 # Task Management System Case Study
 
+**Note:** This case study and the project is a demonstration project created to showcase my technical skills in software development, web technologies, and project management.
+
 ## Overview
 
 The Task Management System (TMS) is a web-based application designed to streamline task organization, collaboration, and tracking for teams and individuals. Developed with a focus on usability, scalability, and performance, TMS offers a comprehensive set of features to improve productivity and project management efficiency.
@@ -21,8 +23,9 @@ TMS was developed to address these challenges and provide a user-friendly platfo
 
 TMS was implemented using modern web technologies, including:
 
-- **Frontend**: Django's templateing engine was used to generate the responsive and interactive user interface. Tailwind CSS was employed for styling and design consistency.
+- **Frontend**: Django's templating engine was used to generate the responsive and interactive user interface. Tailwind CSS was employed for styling and design consistency.
 - **Backend**: Django framework was utilized for backend development, along with Django REST Framework for building RESTful APIs. PostgreSQL database was chosen for its reliability, scalability, and robustness.
+- **Database**: TMS utilizes PostgreSQL as the backend database, with Django ORM facilitating interactions with the database schema. The database schema includes tables for users, tasks, task lists, boards, and other related entities.
 - **Deployment**: The application was deployed using Docker containers for containerization, Kubernetes for orchestration, and AWS for hosting. Continuous Integration and Continuous Deployment (CI/CD) pipelines were set up using GitHub Actions for automated testing and deployment.
 
 ## Results
