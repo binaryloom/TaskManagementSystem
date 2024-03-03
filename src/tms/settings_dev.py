@@ -1,7 +1,7 @@
 from .settings import *
 
 DEBUG = True
-
+NPM_BIN_PATH = "npm.cmd"
 
 INSTALLED_APPS = INSTALLED_APPS + ["django_browser_reload"]
 
