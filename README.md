@@ -27,7 +27,7 @@ This documentation is targeted towards potential clients, employers, and collabo
 2. [**Project Architecture**](docs/project_archetecture.md): Describes the overall architecture of the project, including backend, frontend, and communication between components.
 3. [**Technologies Used**](docs/technologies_used.md): Lists the technologies, frameworks, and libraries utilized in the development of the Task Management System.
 4. [**Database Schema**](docs/database_schema.md): Provides an overview of the database schema, including tables, relationships, and fields.
-5. [**API Documentation**](docs/api-documentation): Documents the RESTful API endpoints, request methods, parameters, and responses.
+5. [**API Documentation**](https://binaryloom.github.io/TaskManagementSystem): Documents the RESTful API endpoints, request methods, parameters, and responses.
 6. [**Deployment**](docs/deployment.md): Discusses deployment strategies and considerations for hosting the application in production environments.
 7. [**Testing**](docs/testing.md): Outlines the testing methodologies employed to ensure the reliability and functionality of the system.
 8. [**Security Considerations**](docs/security_considerations.md): Highlights security measures implemented to protect data, authenticate users, and prevent unauthorized access.
