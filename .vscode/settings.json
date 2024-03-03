@@ -62,6 +62,7 @@
     "taskdelete",
     "taskdetail",
     "tasklist",
+    "taskmanagementsystem",
     "taskupdate",
     "templateing",
     "toctree",
