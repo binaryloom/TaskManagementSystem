@@ -1,9 +1,5 @@
 FROM nikolaik/python-nodejs:python3.10-nodejs20-bullseye
 
-
-LABEL maintainer="write2shourov@gmail.com" \
-    vendor="fiery.snowflake"
-
 WORKDIR /src
 
 RUN python3 -m pip install --upgrade --force-reinstall pip && python3 -m pip install pipenv

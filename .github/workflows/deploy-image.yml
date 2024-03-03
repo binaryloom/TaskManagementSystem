@@ -1,8 +1,7 @@
 name: Docker image publication
 
 on:
-  pull_request:
-    types: [closed]
+  - release
 
 env:
   REGISTRY: ghcr.io
@@ -10,7 +9,6 @@ env:
 
 jobs:
   build-and-push-image:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     permissions:
       contents: read

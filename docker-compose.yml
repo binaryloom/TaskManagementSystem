@@ -21,20 +21,12 @@ services:
         condition: service_healthy
 
   tms_server:
-    # image: ghcr.io/binaryloom/taskmanagementsystem:sha-7132ebe
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/binaryloom/taskmanagementsystem:sha-3cf4f59
     container_name: tms_server
     hostname: tms_server
     restart: unless-stopped
-    # volumes:
-    #   - ./src:/src
     networks:
       - tms_net
-    ports:
-      - 8000:8000
-      - 8002:80
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:80/healthcheck"]
       interval: 3s
