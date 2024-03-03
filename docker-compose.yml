@@ -14,20 +14,22 @@ services:
       - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     networks:
       - tms_net
-    depends_on:
-      - tms_server
     ports:
       - 8001:80
+    depends_on:
+      tms_server:
+        condition: service_healthy
 
   tms_server:
-    image: tms_server
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/binaryloom/taskmanagementsystem:sha-3cf4f59
     container_name: tms_server
     hostname: tms_server
     restart: unless-stopped
-    volumes:
-      - ./src:/src
     networks:
       - tms_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/healthcheck"]
+      interval: 3s
+      timeout: 2s
+      retries: 10
+      start_period: 5s
