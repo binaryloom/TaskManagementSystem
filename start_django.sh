@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo -e "Strating django task management Server"
+echo "Strating django task management Server"
 python manage.py tailwind build --settings tms.settings_prod
 python manage.py collectstatic --noinput --settings tms.settings_prod
 python manage.py makemigrations --settings tms.settings_prod
