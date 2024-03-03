@@ -19,7 +19,10 @@ API_HOST: 127.0.0.1:8001/api
 ADMIN_HOST: 127.0.0.1:8001/admin
 USERNAME: admin
 PASSWORD: password
+
 ```
+
+# note : please follow `https://github.com/binaryloom/TaskManagementSystem/blob/main/deplyment.md` for deployment
 
 ## Overview
 
