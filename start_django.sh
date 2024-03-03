@@ -10,3 +10,4 @@ gunicorn tms.wsgi:application --bind 0.0.0.0:80 --workers 5
 
 # gunicorn tms.wsgi:application --bind 0.0.0.0:80 --workers 5
 # python manage.py runserver 0.0.0.0:8000 --settings tms.settings_prod
+# python manage.py runserver 0.0.0.0:8000 --settings tms.settings_dev
