@@ -41,10 +41,15 @@ graph LR;
 ## Deployment Architecture
 
 ```mermaid
-graph LR;
-    A[Docker Containers] --> B[GitHub Container Registry];
+graph TD;
+    A[Docker Containers] --> B[GitHub];
     B --> C[CI/CD Pipeline];
-    C --> D[Deployment Environment];
+    C --> D[Testing];
+    D --> E[Deployment];
+    E --> F[Staging Environment];
+    F --> G[Manual Testing];
+    G --> H[Approval];
+    H --> I[Production Deployment];
 ```
 
 - **Containerization**: The application is packaged into Docker containers to ensure consistency across different environments and simplify deployment.
