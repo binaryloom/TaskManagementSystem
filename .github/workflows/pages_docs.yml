@@ -1,7 +1,7 @@
 name: Deploy docs to gh-pages
 
 on:
-  - push
+  - release
 
 jobs:
   build_deploy:
