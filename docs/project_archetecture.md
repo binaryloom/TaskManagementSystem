@@ -47,7 +47,8 @@ graph TD;
     feature_request --> |approved| main_checkout["Checkout from Main Branch"];
     main_checkout --> |development| dev_commit[Development Commit];
     dev_commit --> |deploy test| test_env{Test Environment}
-    test_env --> |failed| test_env
+    test_env --> |failed| dev_commit;
+    test_env --> |passed| pull_request["Pull request To Main"];
 ```
 
 - **Containerization**: The application is packaged into Docker containers to ensure consistency across different environments and simplify deployment.
