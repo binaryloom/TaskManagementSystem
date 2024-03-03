@@ -7,26 +7,21 @@ The Task Management System follows a typical client-server architecture, with a 
 ```mermaid
 graph TD;
     django_frontend["Django Frontend"] --> django_backend["Django Backend"];
-    api_server["API SERVER (DRF)"] --> django_backend;
+    api_server["Django REST Framework (DRF)"] --> django_backend;
+    django_admin["Django Admin Panel"] --> django_backend;
     django_backend --> views["Views and Serializers"];
-    views["Views and Serializers"];
-    D["Django Admin Panel"] --> B;
-    B --> E["Django Model (ORM)"];
-    E --> F["Database Server"];
+
+    views --> orm_layer["Models"];
+    orm_layer --> F["Database"];
 
 ```
 
-B --> C["Database"];
-B --> D["Models"];
-B --> E["Views and Serializers"];
-B --> F["Customized Django Admin Panel"];
-
 - **Django Frontend**: The frontend is built using Django, a high-level Python web framework that facilitates rapid development and clean, pragmatic design.
 - **Django REST Framework (DRF)**: DRF is used to build the RESTful API endpoints that handle communication between the frontend and backend.
+- **Django Admin Panel**: A customized Django admin panel is developed to provide administrative access for managing users, boards, lists, tasks, and other application entities.
 - **Database**: Django ORM is utilized to interact with the underlying relational database. PostgreSQL is the preferred choice for its robustness and scalability, but other databases supported by Django can also be used.
 - **Models**: The backend consists of Django models that define the structure of the database schema. These models include User, Board, List, and Task, as outlined in the Database Schema section.
 - **Views and Serializers**: Views are implemented using Django views or viewsets, while serializers handle the conversion of Django model instances to JSON format for API responses.
-- **Customized Django Admin Panel**: A customized Django admin panel is developed to provide administrative access for managing users, boards, lists, tasks, and other application entities.
 
 ## Frontend Architecture
 
