@@ -166,3 +166,4 @@ docs/_build
 static_files/
 src_tmp/
 node_modules
+static
