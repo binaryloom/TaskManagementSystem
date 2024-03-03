@@ -1,10 +1,10 @@
-## Deployment Guide
+# Deployment Guide
 
 1. **Download and Install Docker**: If you haven't already, download and install Docker Desktop from the [official website](https://www.docker.com/products/docker-desktop).
 
 2. **Create Deployment Folder**: Make a folder in the desired location where you want to deploy the Task Management System.
 
-3. **Copy Docker Compose File**: Copy and past the bellow section Docker Compose file (`docker-compose.yml`) into the deployment folder you created in step 2.
+3. **Copy Docker Compose File**: Copy and past the section bellow to Docker Compose file (`docker-compose.yml`) into the deployment folder you created in step 2.
 
    ```yml
    version: "3.7"
