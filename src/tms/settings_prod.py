@@ -13,8 +13,8 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": environ["APP_DB_DATABASE"],
         "USER": environ["APP_DB_USER"],
-        "PASSWORD": environ["CACHE_HOST"],
-        "HOST": environ["APP_DB_PASSWORD"],
+        "PASSWORD": environ["APP_DB_PASSWORD"],
+        "HOST": environ["APP_DB_HOST"],
         "PORT": "5432",
     }
 }
