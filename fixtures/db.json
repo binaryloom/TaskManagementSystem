@@ -1,0 +1,252 @@
+[
+  {
+    "model": "task_management.board",
+    "pk": 1,
+    "fields": {
+      "status": true,
+      "created_at": "2024-02-29T20:39:53.918Z",
+      "updated_at": "2024-02-29T20:39:53.918Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "name": "test_board"
+    }
+  },
+  {
+    "model": "task_management.board",
+    "pk": 2,
+    "fields": {
+      "status": true,
+      "created_at": "2024-02-29T20:40:17.889Z",
+      "updated_at": "2024-02-29T20:40:17.889Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "name": "board_2"
+    }
+  },
+  {
+    "model": "task_management.board",
+    "pk": 3,
+    "fields": {
+      "status": false,
+      "created_at": "2024-02-29T20:51:56.346Z",
+      "updated_at": "2024-03-01T12:06:24.893Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "name": "user1_board"
+    }
+  },
+  {
+    "model": "task_management.board",
+    "pk": 4,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-01T10:36:19.967Z",
+      "updated_at": "2024-03-01T10:37:04.395Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "name": "qa board updated"
+    }
+  },
+  {
+    "model": "task_management.board",
+    "pk": 5,
+    "fields": {
+      "status": false,
+      "created_at": "2024-03-01T12:38:32.081Z",
+      "updated_at": "2024-03-01T12:40:23.218Z",
+      "created_by": 3,
+      "updated_by": 3,
+      "name": "u2_board_updated"
+    }
+  },
+  {
+    "model": "task_management.list",
+    "pk": 1,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-01T09:41:15.394Z",
+      "updated_at": "2024-03-01T09:41:15.394Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "name": "list 1",
+      "assigned_board": 2
+    }
+  },
+  {
+    "model": "task_management.list",
+    "pk": 2,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-01T09:41:28.426Z",
+      "updated_at": "2024-03-01T09:41:28.426Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "name": "list 2",
+      "assigned_board": 2
+    }
+  },
+  {
+    "model": "task_management.list",
+    "pk": 3,
+    "fields": {
+      "status": false,
+      "created_at": "2024-03-01T09:44:46.023Z",
+      "updated_at": "2024-03-01T12:06:18.998Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "name": "list 3",
+      "assigned_board": 3
+    }
+  },
+  {
+    "model": "task_management.list",
+    "pk": 4,
+    "fields": {
+      "status": false,
+      "created_at": "2024-03-01T09:46:12.680Z",
+      "updated_at": "2024-03-01T12:06:15.303Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "name": "list 4",
+      "assigned_board": 1
+    }
+  },
+  {
+    "model": "task_management.list",
+    "pk": 5,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-01T10:36:30.236Z",
+      "updated_at": "2024-03-01T10:37:17.032Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "name": "qa list updated",
+      "assigned_board": 4
+    }
+  },
+  {
+    "model": "task_management.list",
+    "pk": 6,
+    "fields": {
+      "status": false,
+      "created_at": "2024-03-01T12:38:45.724Z",
+      "updated_at": "2024-03-01T12:41:09.440Z",
+      "created_by": 3,
+      "updated_by": 3,
+      "name": "u2_list_updated",
+      "assigned_board": 5
+    }
+  },
+  {
+    "model": "task_management.task",
+    "pk": 1,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-01T09:41:52.660Z",
+      "updated_at": "2024-03-01T09:41:52.660Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "title": "task 1",
+      "description": "",
+      "assigned_list": 2,
+      "due_date": "2024-03-01",
+      "assigned_to": [1]
+    }
+  },
+  {
+    "model": "task_management.task",
+    "pk": 2,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-01T09:42:17.831Z",
+      "updated_at": "2024-03-01T10:18:54.233Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "title": "task 2",
+      "description": "\"\"\"This is the base class model for all of the database tables.\r\n\r\n    Contains:\r\n        created_on = Datetime of creation.\r\n        updated_on = Last modification datetime.\r\n        created_by = Created by which user.\r\n        updated_by = User who lastly modified.\r\n        status = Status of a record active or not.\r\n\r\n    Usage:\r\n        class <CLASS_NAME> (BaseClass):\r\n            # model definition\r\n    \"\"\"",
+      "assigned_list": 1,
+      "due_date": "2024-03-01",
+      "assigned_to": [1]
+    }
+  },
+  {
+    "model": "task_management.task",
+    "pk": 3,
+    "fields": {
+      "status": false,
+      "created_at": "2024-03-01T09:45:03.514Z",
+      "updated_at": "2024-03-01T12:06:03.398Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "title": "task 3",
+      "description": "",
+      "assigned_list": 3,
+      "due_date": "2024-03-01",
+      "assigned_to": [1]
+    }
+  },
+  {
+    "model": "task_management.task",
+    "pk": 4,
+    "fields": {
+      "status": false,
+      "created_at": "2024-03-01T09:45:13.871Z",
+      "updated_at": "2024-03-01T12:05:32.545Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "title": "task 4",
+      "description": "",
+      "assigned_list": 3,
+      "due_date": null,
+      "assigned_to": []
+    }
+  },
+  {
+    "model": "task_management.task",
+    "pk": 5,
+    "fields": {
+      "status": false,
+      "created_at": "2024-03-01T09:46:33.731Z",
+      "updated_at": "2024-03-01T12:06:08.242Z",
+      "created_by": 2,
+      "updated_by": 2,
+      "title": "task 5",
+      "description": "",
+      "assigned_list": 4,
+      "due_date": null,
+      "assigned_to": []
+    }
+  },
+  {
+    "model": "task_management.task",
+    "pk": 6,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-01T10:42:07.371Z",
+      "updated_at": "2024-03-01T10:42:07.371Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "title": "qa task",
+      "description": "this is qa task",
+      "assigned_list": 5,
+      "due_date": "2024-03-01",
+      "assigned_to": [1, 2]
+    }
+  },
+  {
+    "model": "task_management.task",
+    "pk": 7,
+    "fields": {
+      "status": false,
+      "created_at": "2024-03-01T12:39:14.521Z",
+      "updated_at": "2024-03-01T12:41:14.559Z",
+      "created_by": 3,
+      "updated_by": 3,
+      "title": "u2_task",
+      "description": "model = User\r\n    form_class = SignUpForm\r\n    template_name = 'registration/signup.html'  # Specify your template for registration\r\n    success_url = reverse_lazy('login')",
+      "assigned_list": 6,
+      "due_date": "2024-03-01",
+      "assigned_to": [1, 2, 3]
+    }
+  }
+]
