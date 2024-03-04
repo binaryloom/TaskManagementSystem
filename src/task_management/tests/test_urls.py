@@ -4,5 +4,5 @@ from django.urls import resolve, reverse
 
 class TestURL(TestCase):
     def test_url_resolved(self):
-        # url = resolve("task_management:boardlist_view")
-        assert 1 == 1
+        response = self.client.get(reverse("task_management:boardlist_view"))
+        self.assertEqual(response.status_code, 200)
