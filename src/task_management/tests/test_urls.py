@@ -9,4 +9,5 @@ class TestURL(TestCase):
     def test_url_resolved(self):
         self.client.login(username="testuser", password="password123")
         response = self.client.get(reverse("task_management:boardlist_view"))
+        print(response.func)
         self.assertEqual(response.status_code, 200)
