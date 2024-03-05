@@ -30,7 +30,8 @@ jobs:
 
       - name: Run database migrations
         run: |
-          python manage.py makemigrations  
+          cd src
+          python manage.py makemigrations
           python manage.py migrate
 
       - name: Run unit tests
