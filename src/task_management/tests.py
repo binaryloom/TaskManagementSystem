@@ -9,9 +9,15 @@ class TestModel(TestCase):
     def setUp(self):
         self.boards = Board.objects.all()
         self.lists = Board.objects.all()
-        self.boards = Board.objects.all()
+        self.tasks = Board.objects.all()
 
     def test_board(self):
+        self.assertEqual(self.board.name, "board")
+
+    def test_list(self):
+        self.assertEqual(self.board.name, "board")
+
+    def test_tasks(self):
         self.assertEqual(self.board.name, "board")
 
     # def setUp(self):
