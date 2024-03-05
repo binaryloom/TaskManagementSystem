@@ -5,7 +5,7 @@ on:
 
 jobs:
   django_unitest:
-    runs-on: maverick
+    runs-on: [self-hosted, linux, ARM64]
     permissions:
       contents: read
 
