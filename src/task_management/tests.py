@@ -6,7 +6,10 @@ from task_management.models import Board, List, Task
 class TestModel(TestCase):
     fixtures = ["user.json", "task_management.json"]
 
-    def test_board
+    def test_board(self):
+        boards = Board.objects.all()
+        print(boards)
+        self.assertEqual(1, 1)
 
     # def setUp(self):
     #     self.obj = Board.objects.get(pk=1)
