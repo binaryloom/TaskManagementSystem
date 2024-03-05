@@ -5,11 +5,12 @@ on:
 
 jobs:
   django_unitest:
-    name: Run Tests
     runs-on: mavrick
+    permissions:
+      contents: read
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Set up Python
