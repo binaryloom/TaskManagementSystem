@@ -29,11 +29,12 @@ jobs:
           pipenv lock && pipenv install --system --deploy
 
       - name: Run database migrations
+        working-directory: src
         run: |
-          cd src
           python manage.py makemigrations
           python manage.py migrate
 
       - name: Run unit tests
+        working-directory: src
         run: |
-          pipenv run python manage.py test
+          python manage.py test
