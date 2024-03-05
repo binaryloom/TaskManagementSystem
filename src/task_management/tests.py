@@ -3,18 +3,19 @@ from django.test import TestCase
 from task_management.models import Board, List, Task
 
 
-class TestBoardModel(TestCase):
-    # fixtures = ["task_management.json"]
+class TestModel(TestCase):
+    fixtures = ["user.json", "task_management.json"]
 
-    def setUp(self):
-        self.obj = Board.objects.get(pk=1)
+    def test_board
 
-    def test_fixture_data_usage(self):
-        self.assertEqual(self.obj.name, "board")
+    # def setUp(self):
+    #     self.obj = Board.objects.get(pk=1)
 
-    def tearDown(self):
+    # def test_fixture_data_usage(self):
+    #     self.assertEqual(self.obj.name, "board")
 
-        self.obj.delete()
+    # def tearDown(self):
+    #     self.obj.delete()
 
 
 # class TestModel(TestCase):
