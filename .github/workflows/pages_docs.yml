@@ -1,10 +1,11 @@
 name: Sphinx Documentation
 
 on:
-  - push
+  release:
+    types: [created]
 
 jobs:
-  build:
+  ghpages_deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
