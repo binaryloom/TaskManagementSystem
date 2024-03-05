@@ -5,7 +5,7 @@ from user.models import User
 
 
 class TestModel(TestCase):
-    databases = {"test_db.sqlite3"}
+    databases = {"test_conn"}
     fixtures = ["user.json", "task_management.json"]
 
     def setUp(self):
@@ -27,20 +27,3 @@ class TestModel(TestCase):
         List.objects.all().delete()
         Task.objects.all().delete()
         User.objects.all().delete()
-
-    # def setUp(self):
-    #     self.obj = Board.objects.get(pk=1)
-
-    # def test_fixture_data_usage(self):
-    #     self.assertEqual(self.obj.name, "board")
-
-    # def tearDown(self):
-    #     self.obj.delete()
-
-
-# class TestModel(TestCase):
-#     def setUp(self):
-#         return super().setUp()
-
-#     def test_obj(self):
-#         assert 1 == 1
