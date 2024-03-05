@@ -4,20 +4,16 @@ from task_management.models import Board, List, Task
 
 
 class TestBoardModel(TestCase):
-    fixtures = ["task_management.json"]
+    fixtures = ["user.json", "task_management.json"]
 
     def setUp(self):
-        # Load data from the fixture into test case
-        self.obj = MyModel.objects.get(pk=1)
+        self.obj = Board.objects.get(pk=1)
 
     def test_fixture_data_usage(self):
-        # Use the loaded data for testing
-        self.assertEqual(self.obj.name, "Test")
-
-    # Add more test methods as needed
+        self.assertEqual(self.obj.name, "board")
 
     def tearDown(self):
-        # Remove the data after the test is executed
+
         self.obj.delete()
 
 
