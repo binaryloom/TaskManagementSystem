@@ -4,7 +4,7 @@ from task_management.models import Board, List, Task
 
 
 class TestBoardModel(TestCase):
-    fixtures = ["user.json", "task_management.json"]
+    # fixtures = ["task_management.json"]
 
     def setUp(self):
         self.obj = Board.objects.get(pk=1)
