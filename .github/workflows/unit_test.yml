@@ -5,7 +5,8 @@ on:
 
 jobs:
   django_unitest:
-    runs-on: [Linux, x64, Self-hosted]
+    # runs-on: [Linux, x64, Self-hosted]
+    runs-on: ubuntu-latest
     permissions:
       contents: read
 
