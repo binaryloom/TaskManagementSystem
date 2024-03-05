@@ -4,9 +4,9 @@ on:
   - push
 
 jobs:
-  test:
+  django_unitest:
     name: Run Tests
-    runs-on: ubuntu-latest
+    runs-on: mavrick
 
     steps:
       - name: Checkout code
