@@ -1,6 +1,7 @@
 from django.test import TestCase
 
 from task_management.models import Board, List, Task
+from user.models import User
 
 
 class TestModel(TestCase):
