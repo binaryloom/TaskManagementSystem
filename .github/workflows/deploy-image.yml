@@ -40,7 +40,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: |
-            ${{ steps.meta.outputs.tags }},latest
-            ${{ github.event.release.tag_name }}
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
