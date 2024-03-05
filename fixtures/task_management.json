@@ -1,0 +1,88 @@
+[
+  {
+    "model": "task_management.board",
+    "pk": 1,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-04T21:35:56.299Z",
+      "updated_at": "2024-03-04T21:35:56.299Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "name": "board"
+    }
+  },
+  {
+    "model": "task_management.list",
+    "pk": 1,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-04T21:36:04.944Z",
+      "updated_at": "2024-03-04T21:36:04.944Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "name": "list 1",
+      "assigned_board": 1
+    }
+  },
+  {
+    "model": "task_management.list",
+    "pk": 2,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-04T21:36:17.243Z",
+      "updated_at": "2024-03-04T21:36:17.243Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "name": "list 2",
+      "assigned_board": 1
+    }
+  },
+  {
+    "model": "task_management.task",
+    "pk": 1,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-04T21:37:00.204Z",
+      "updated_at": "2024-03-04T21:37:18.551Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "title": "task 1",
+      "description": "this is task 1",
+      "assigned_list": 1,
+      "due_date": "2024-03-25",
+      "assigned_to": [1]
+    }
+  },
+  {
+    "model": "task_management.task",
+    "pk": 2,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-04T21:38:13.909Z",
+      "updated_at": "2024-03-04T21:38:13.909Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "title": "task 2",
+      "description": "this is task 2",
+      "assigned_list": 1,
+      "due_date": "2024-03-26",
+      "assigned_to": [1]
+    }
+  },
+  {
+    "model": "task_management.task",
+    "pk": 3,
+    "fields": {
+      "status": true,
+      "created_at": "2024-03-04T21:38:50.149Z",
+      "updated_at": "2024-03-04T21:38:50.149Z",
+      "created_by": 1,
+      "updated_by": 1,
+      "title": "task 3",
+      "description": "this is task 3 from list 2",
+      "assigned_list": 2,
+      "due_date": "2024-05-28",
+      "assigned_to": [1]
+    }
+  }
+]
