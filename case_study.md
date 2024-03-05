@@ -1,6 +1,6 @@
 # Task Management System Case Study
 
-[![Deploy docs to gh-pages](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml/badge.svg)](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml) [![Docker image publication](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/deploy-image.yml/badge.svg)](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/deploy-image.yml)
+[![Deploy docs to gh-pages](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml/badge.svg)](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/pages_docs.yml) [![Docker image publication](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/deploy-image.yml/badge.svg)](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/deploy-image.yml) [![Run Django unitest](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/unit_test.yml/badge.svg)](https://github.com/binaryloom/TaskManagementSystem/actions/workflows/unit_test.yml)
 
 **Note:** This case study and the project is a demonstration project created to showcase my technical skills in software development, web technologies, and project management.
 
