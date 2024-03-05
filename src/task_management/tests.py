@@ -8,17 +8,17 @@ class TestModel(TestCase):
 
     def setUp(self):
         self.boards = Board.objects.all()
-        self.lists = Board.objects.all()
-        self.tasks = Board.objects.all()
+        self.lists = List.objects.all()
+        self.tasks = Task.objects.all()
 
     def test_board(self):
-        self.assertEqual(self.board.name, "board")
+        self.assertEqual(self.boards.count(), 1)
 
     def test_list(self):
-        self.assertEqual(self.board.name, "board")
+        self.assertEqual(self.lists.count(), 2)
 
     def test_tasks(self):
-        self.assertEqual(self.board.name, "board")
+        self.assertEqual(self.tasks.count(), 3)
 
     # def setUp(self):
     #     self.obj = Board.objects.get(pk=1)
