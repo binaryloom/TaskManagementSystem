@@ -11,3 +11,4 @@ gunicorn==21.2.0
 myst-parser==2.0.0
 Sphinx==7.2.6
 furo==2024.1.29
+ghp-import==2.1.0
