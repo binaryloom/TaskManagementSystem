@@ -20,6 +20,11 @@ class TestModel(TestCase):
     def test_tasks(self):
         self.assertEqual(self.tasks.count(), 3)
 
+    def tearDown(self):
+        self.boards.delete()
+        self.lists.delete()
+        self.tasks.delete()
+
     # def setUp(self):
     #     self.obj = Board.objects.get(pk=1)
 
