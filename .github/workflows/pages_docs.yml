@@ -4,10 +4,10 @@ on:
   - push
 
 jobs:
-  build:
+  ghpages_deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
 
     steps:
       - name: Checkout repository
