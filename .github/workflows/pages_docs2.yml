@@ -1,0 +1,17 @@
+name: Deploy docs to gh-pages
+
+on:
+  - push
+
+jobs:
+  ghpages_deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - id: deployment
+        uses: sphinx-notes/pages@v3
