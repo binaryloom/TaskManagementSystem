@@ -14,7 +14,7 @@ class TestModel(TestCase):
         self.tasks = Task.objects.all()
 
     def test_board(self):
-        print(settings.BASE_DIR)
+        print(settings.FIXTURE_DIRS[0])
         self.assertEqual(self.boards.count(), 1)
 
     def test_list(self):
