@@ -7,10 +7,11 @@ class TestModel(TestCase):
     fixtures = ["user.json", "task_management.json"]
 
     def setUp(self):
-        self.board = Board.objects.get(pk=1)
+        self.boards = Board.objects.all()
+        self.lists = Board.objects.all()
+        self.boards = Board.objects.all()
 
     def test_board(self):
-        # board = Board.objects.get(pk=1)
         self.assertEqual(self.board.name, "board")
 
     # def setUp(self):
