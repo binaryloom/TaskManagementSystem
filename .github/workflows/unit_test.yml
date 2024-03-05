@@ -5,7 +5,7 @@ on:
 
 jobs:
   django_unitest:
-    runs-on: mavrick
+    runs-on: maverick
     permissions:
       contents: read
 
