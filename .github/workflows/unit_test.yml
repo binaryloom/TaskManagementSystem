@@ -25,7 +25,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pipenv install --dev
+          pipenv install
+
+      - name: Run database migrations
+        run: |
+          pipenv run python manage.py migrate
 
       - name: Run tests
         run: |
