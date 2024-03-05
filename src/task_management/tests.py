@@ -10,8 +10,8 @@ class TestModel(TestCase):
         self.board = Board.objects.get(pk=1)
 
     def test_board(self):
-        board = Board.objects.get(pk=1)
-        self.assertEqual(board.name, "board")
+        # board = Board.objects.get(pk=1)
+        self.assertEqual(self.board.name, "board")
 
     # def setUp(self):
     #     self.obj = Board.objects.get(pk=1)
