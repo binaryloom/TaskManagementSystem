@@ -3,8 +3,8 @@ from django.test import TestCase
 from task_management.models import Board, List, Task
 
 
-class MyTestCase(TestCase):
-    fixtures = ["myapp_fixture.json"]
+class TestBoardModel(TestCase):
+    fixtures = ["task_management.json"]
 
     def setUp(self):
         # Load data from the fixture into test case
