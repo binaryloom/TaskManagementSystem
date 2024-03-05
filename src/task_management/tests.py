@@ -22,9 +22,10 @@ class TestModel(TestCase):
         self.assertEqual(self.tasks.count(), 3)
 
     def tearDown(self):
-        self.boards.delete()
-        self.lists.delete()
-        self.tasks.delete()
+        Board.objects.all().delete()
+        List.objects.all().delete()
+        Task.objects.all().delete()
+        User.objects.all().delete()
 
     # def setUp(self):
     #     self.obj = Board.objects.get(pk=1)
