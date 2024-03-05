@@ -81,17 +81,12 @@ WSGI_APPLICATION = "tms.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "dev_conn": {
+    "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": DEV_DIR / "dev_db.sqlite3",
-    },
-    "test_conn": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": DEV_DIR / "test_db.sqlite3",
-    },
+    }
 }
 
-DATABASES["default"] = DATABASES["dev_conn"]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

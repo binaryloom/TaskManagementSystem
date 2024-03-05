@@ -5,7 +5,7 @@ from user.models import User
 
 
 class TestModel(TestCase):
-    databases = {"test_conn"}
+
     fixtures = ["user.json", "task_management.json"]
 
     def setUp(self):
