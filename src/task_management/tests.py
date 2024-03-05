@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.test import TestCase
 
 from task_management.models import Board, List, Task
@@ -5,7 +6,6 @@ from user.models import User
 
 
 class TestModel(TestCase):
-
     fixtures = ["user.json", "task_management.json"]
 
     def setUp(self):
@@ -14,6 +14,7 @@ class TestModel(TestCase):
         self.tasks = Task.objects.all()
 
     def test_board(self):
+        print(settings.BASE_DIR)
         self.assertEqual(self.boards.count(), 1)
 
     def test_list(self):
