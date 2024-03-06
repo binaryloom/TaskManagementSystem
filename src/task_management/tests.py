@@ -94,25 +94,25 @@ class TestUrl(TestCase):
         )
 
     def test_list(self):
-        response = self.client.get(reverse("task_management:boardlist_view"))
+        response = self.client.get(reverse("task_management:listlist_view"))
         self.assertEqual(response.status_code, 200)
         tmp_form = {"name": generate_str()}
         response = self.client.post(
-            reverse("task_management:boardcreate_view"), data=tmp_form
+            reverse("task_management:listcreate_view"), data=tmp_form
         )
         self.assertEqual(response.status_code, 302)
         self.assertEqual(
-            Board.objects.count(), count_json_obj(self.task_json, str(Board._meta)) + 1
+            List.objects.count(), count_json_obj(self.task_json, str(List._meta)) + 1
         )
-        tmp_object = Board.objects.last()
+        tmp_object = List.objects.last()
         self.assertEqual(tmp_object.name, tmp_form["name"])
         tmp_form = {"name": generate_str()}
         response = self.client.post(
-            reverse("task_management:boardupdate_view", kwargs={"pk": tmp_object.pk}),
+            reverse("task_management:listupdate_view", kwargs={"pk": tmp_object.pk}),
             data=tmp_form,
         )
         self.assertEqual(response.status_code, 302)
-        tmp_object = Board.objects.last()
+        tmp_object = List.objects.last()
         self.assertEqual(tmp_object.name, tmp_form["name"])
 
         tmp_child_form = {"name": generate_str()}
