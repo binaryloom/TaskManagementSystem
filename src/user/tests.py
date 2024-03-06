@@ -29,6 +29,13 @@ class TestModel(TestCase):
 
 
 class TestUrl(TestCase):
+    fixtures = ["user.json"]
+
+    def setUp(self):
+        with open(join(settings.FIXTURE_DIRS[0], self.fixtures[0]), "r") as tmp_file:
+            self.json_data = load(tmp_file)
+        print(self.json_data)
+
     def test_dashboard(self):
         response = self.client.get(reverse("user:dashboard_view"))
         self.assertEqual(response.status_code, 200)
