@@ -58,7 +58,7 @@ class TestUrl(TestCase):
         response = self.client.get(reverse("task_management:boardlist_view"))
         self.assertEqual(response.status_code, 200)
 
-    def test_boardcreate(self):
+    def test_boardcreate_delete(self):
         tmp_form = {"name": generate_str(8)}
         response = self.client.post(
             reverse("task_management:boardcreate_view"), data=tmp_form
@@ -67,3 +67,5 @@ class TestUrl(TestCase):
         self.assertEqual(
             Board.objects.count(), count_json_obj(self.task_json, str(Board._meta)) + 1
         )
+        tmp_object = Board.objects.last()
+        self.assertEqual(tmp_object.name, tmp_form["name"])
