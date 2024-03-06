@@ -1,6 +1,8 @@
+import os
 from json import load
 from os.path import join
 
+from django import setup
 from django.conf import settings
 from django.test import TestCase
 from django.urls import reverse
@@ -8,6 +10,9 @@ from django.urls import reverse
 from abstract.utils import count_json_obj, generate_str
 from task_management.models import Board, List, Task
 from user.models import User
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tms.settings")
+setup()
 
 
 class TestModel(TestCase):
