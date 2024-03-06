@@ -14,7 +14,6 @@
   "[config_files]": {
     "editor.formatOnSave": false
   },
-  "python.djangoTestRunner.prefixCommand": "cd src &&",
   "[html][django-html][handlebars][hbs][mustache][jinja][jinja-html][nj][njk][nunjucks][twig]": {
     "editor.defaultFormatter": "monosans.djlint"
   },
@@ -78,4 +77,7 @@
   "python.testing.unittestArgs": ["-v", "-s", "./src", "-p", "test*.py"],
   "python.testing.pytestEnabled": false,
   "python.testing.unittestEnabled": true
+  // "python.testing.unittestArgs": ["-v", "-s", "./src", "-p", "test*.py"],
+  // "python.testing.pytestEnabled": false,
+  // "python.testing.unittestEnabled": true
 }
