@@ -57,7 +57,7 @@ class TestUrl(TestCase):
     def test_board(self):
         response = self.client.get(reverse("task_management:boardlist_view"))
         self.assertEqual(response.status_code, 200)
-        tmp_form = {"name": generate_str(8)}
+        tmp_form = {"name": generate_str()}
         response = self.client.post(
             reverse("task_management:boardcreate_view"), data=tmp_form
         )
@@ -67,6 +67,10 @@ class TestUrl(TestCase):
         )
         tmp_object = Board.objects.last()
         self.assertEqual(tmp_object.name, tmp_form["name"])
+        response = self.client.post(
+            reverse("boardupdate_view", kwargs={"pk": tmp_object.pk}),
+            data=form_data,
+        )
         response = self.client.post(
             reverse("task_management:boarddelete_view", kwargs={"pk": tmp_object.pk})
         )
