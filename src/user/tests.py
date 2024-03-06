@@ -14,11 +14,9 @@ class TestModel(TestCase):
 
     def setUp(self):
         with open(join(settings.FIXTURE_DIRS[0], self.fixtures[0]), "r") as tmp_file:
-            self.json_data = load(tmp_file[0].fields)
+            self.json_data = load(tmp_file)
 
     def test_user(self):
-
-        print()
         self.assertEqual(
             User.objects.all().count(),
             count_json_obj(self.json_data, str(User._meta)),
@@ -34,9 +32,11 @@ class TestUrl(TestCase):
     def setUp(self):
         with open(join(settings.FIXTURE_DIRS[0], self.fixtures[0]), "r") as tmp_file:
             self.json_data = load(tmp_file)
-        print(self.json_data)
 
     def test_dashboard(self):
+        self.client.login(
+            username=self.json_data[0]["fields"]["username"], password="password"
+        )
         response = self.client.get(reverse("user:dashboard_view"))
         self.assertEqual(response.status_code, 200)
 
