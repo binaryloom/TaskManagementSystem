@@ -75,17 +75,16 @@ class TestUrl(TestCase):
         self.assertEqual(response.status_code, 302)
         tmp_object = Board.objects.last()
         self.assertEqual(tmp_object.name, tmp_form["name"])
-
         tmp_child_form = {"name": generate_str()}
-
         response = self.client.post(
             reverse(
                 "task_management:boardlistcreate_view", kwargs={"pk": tmp_object.pk}
             ),
             data=tmp_child_form,
         )
-        self.assertEqual(response.status_code, 302)
-
+        self.assertEqual(response.status_code, 200)
+        tmp_child_object = List.objects.last()
+        self.assertEqual(tmp_child_object.name, tmp_child_form["name"])
         response = self.client.post(
             reverse("task_management:boarddelete_view", kwargs={"pk": tmp_object.pk})
         )
