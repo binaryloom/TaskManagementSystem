@@ -45,7 +45,10 @@ class TestUrl(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_logout(self):
-        response = self.client.get(reverse("user:logout_view"))
+        self.client.login(
+            username=self.json_data[0]["fields"]["username"], password="password"
+        )
+        response = self.client.post(reverse("user:logout_view"))
         self.assertEqual(response.status_code, 200)
 
     def test_registration(self):
