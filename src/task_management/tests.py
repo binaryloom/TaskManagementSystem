@@ -14,26 +14,24 @@ class TestModel(TestCase):
 
     def setUp(self):
         with open(join(settings.FIXTURE_DIRS[0], self.fixtures[1]), "r") as tmp_file:
-            self.json_data = load(tmp_file)
+            self.task_json = load(tmp_file)
 
     def test_board(self):
-
-        print()
         self.assertEqual(
             Board.objects.all().count(),
-            count_json_obj(self.json_data, str(Board._meta)),
+            count_json_obj(self.task_json, str(Board._meta)),
         )
 
     def test_list(self):
         self.assertEqual(
             List.objects.all().count(),
-            count_json_obj(self.json_data, str(List._meta)),
+            count_json_obj(self.task_json, str(List._meta)),
         )
 
     def test_tasks(self):
         self.assertEqual(
             Task.objects.all().count(),
-            count_json_obj(self.json_data, str(Task._meta)),
+            count_json_obj(self.task_json, str(Task._meta)),
         )
 
     def tearDown(self):
@@ -41,3 +39,13 @@ class TestModel(TestCase):
         List.objects.all().delete()
         Task.objects.all().delete()
         User.objects.all().delete()
+
+
+class TestUrl(TestCase):
+    fixtures = ["user.json", "task_management.json"]
+
+    def setUp(self):
+        with open(join(settings.FIXTURE_DIRS[0], self.fixtures[0]), "r") as tmp_file:
+            self.user_json = load(tmp_file)
+        with open(join(settings.FIXTURE_DIRS[0], self.fixtures[1]), "r") as tmp_file:
+            self.task_json = load(tmp_file)

@@ -14,12 +14,12 @@ class TestModel(TestCase):
 
     def setUp(self):
         with open(join(settings.FIXTURE_DIRS[0], self.fixtures[0]), "r") as tmp_file:
-            self.json_data = load(tmp_file)
+            self.user_json = load(tmp_file)
 
     def test_user(self):
         self.assertEqual(
             User.objects.all().count(),
-            count_json_obj(self.json_data, str(User._meta)),
+            count_json_obj(self.user_json, str(User._meta)),
         )
 
     def tearDown(self):
@@ -31,11 +31,11 @@ class TestUrl(TestCase):
 
     def setUp(self):
         with open(join(settings.FIXTURE_DIRS[0], self.fixtures[0]), "r") as tmp_file:
-            self.json_data = load(tmp_file)
+            self.user_json = load(tmp_file)
 
     def test_dashboard(self):
         self.client.login(
-            username=self.json_data[0]["fields"]["username"], password="password"
+            username=self.user_json[0]["fields"]["username"], password="password"
         )
         response = self.client.get(reverse("user:dashboard_view"))
         self.assertEqual(response.status_code, 200)
@@ -46,7 +46,7 @@ class TestUrl(TestCase):
 
     def test_logout(self):
         self.client.login(
-            username=self.json_data[0]["fields"]["username"], password="password"
+            username=self.user_json[0]["fields"]["username"], password="password"
         )
         response = self.client.post(reverse("user:logout_view"))
         self.assertEqual(response.status_code, 302)
