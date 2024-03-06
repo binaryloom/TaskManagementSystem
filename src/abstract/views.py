@@ -118,6 +118,7 @@ class ListView(LoginRequiredMixin, generic.ListView):
 
     paginate_by = 12
     template_name = "default/list.html"
+    ordering = ["-updated_by"]
     child_header = None
 
     def get_queryset(self):
