@@ -76,5 +76,7 @@
   ],
   "python.testing.pytestArgs": ["src"],
   "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true
+  "python.testing.pytestEnabled": true,
+  "pythonTestExplorer.testFramework": "pytest",
+  "python.testing.cwd": "src"
 }
