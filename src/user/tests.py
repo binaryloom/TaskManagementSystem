@@ -30,5 +30,21 @@ class TestModel(TestCase):
 
 class TestUrl(TestCase):
     def test_login(self):
+        response = self.client.get(reverse("user:dashboard_view"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_login(self):
         response = self.client.get(reverse("user:login_view"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_login(self):
+        response = self.client.get(reverse("user:logout_view"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_login(self):
+        response = self.client.get(reverse("user:registration_view"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_login(self):
+        response = self.client.get(reverse("user:healthcheck_view"))
         self.assertEqual(response.status_code, 200)
