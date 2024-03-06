@@ -74,9 +74,12 @@
     "whitenoise",
     "yourapp"
   ],
+  "python.testing.pytestArgs": ["src"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
   // "python.testing.unittestArgs": ["-v", "-s", "./src", "-p", "test*.py"],
   // "python.testing.unittestEnabled": true
   // "python.testing.unittestArgs": ["-v", "-s", "./src", "-p", "test*.py"],
-  "python.testing.pytestEnabled": true
+  // "python.testing.pytestEnabled": true
   // "python.testing.unittestEnabled": true
 }
