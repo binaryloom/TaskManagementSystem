@@ -50,10 +50,15 @@ class TestUrl(TestCase):
             self.user_json = load(tmp_file)
         with open(join(settings.FIXTURE_DIRS[0], self.fixtures[1]), "r") as tmp_file:
             self.task_json = load(tmp_file)
-
-    def test_boardlist(self):
         self.client.login(
             username=self.user_json[0]["fields"]["username"], password="password"
         )
+
+    def test_boardlist(self):
         response = self.client.get(reverse("task_management:boardlist_view"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_boardcreate(self):
+        tmp_form = {"field1": "value1", "field2": "value2"}
+        response = self.client.get(reverse("task_management:boardcreate_view"))
         self.assertEqual(response.status_code, 200)
