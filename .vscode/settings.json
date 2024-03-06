@@ -78,5 +78,5 @@
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "pythonTestExplorer.testFramework": "pytest",
-  "python.testing.cwd": "src"
+  "python.testing.cwd": "./src/"
 }
