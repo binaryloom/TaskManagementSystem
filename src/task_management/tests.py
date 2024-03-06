@@ -54,11 +54,9 @@ class TestUrl(TestCase):
             username=self.user_json[0]["fields"]["username"], password="password"
         )
 
-    def test_boardlist(self):
+    def test_board(self):
         response = self.client.get(reverse("task_management:boardlist_view"))
         self.assertEqual(response.status_code, 200)
-
-    def test_boardcreate_delete(self):
         tmp_form = {"name": generate_str(8)}
         response = self.client.post(
             reverse("task_management:boardcreate_view"), data=tmp_form
@@ -69,10 +67,10 @@ class TestUrl(TestCase):
         )
         tmp_object = Board.objects.last()
         self.assertEqual(tmp_object.name, tmp_form["name"])
-        delete_response = self.client.post(
+        response = self.client.post(
             reverse("task_management:boarddelete_view", kwargs={"pk": tmp_object.pk})
         )
-        self.assertEqual(delete_response.status_code, 302)
+        self.assertEqual(response.status_code, 302)
         self.assertEqual(
             Board.objects.count(), count_json_obj(self.task_json, str(Board._meta))
         )
