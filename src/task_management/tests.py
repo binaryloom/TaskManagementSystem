@@ -118,15 +118,15 @@ class TestUrl(TestCase):
         tmp_child_form = {"name": generate_str()}
         response = self.client.post(
             reverse(
-                "task_management:boardlistcreate_view", kwargs={"pk": tmp_object.pk}
+                "task_management:listtaskcreate_view", kwargs={"pk": tmp_object.pk}
             ),
             data=tmp_child_form,
         )
         self.assertEqual(response.status_code, 200)
         response = self.client.post(
-            reverse("task_management:boarddelete_view", kwargs={"pk": tmp_object.pk})
+            reverse("task_management:listdelete_view", kwargs={"pk": tmp_object.pk})
         )
         self.assertEqual(response.status_code, 302)
         self.assertEqual(
-            Board.objects.count(), count_json_obj(self.task_json, str(Board._meta))
+            List.objects.count(), count_json_obj(self.task_json, str(List._meta))
         )
