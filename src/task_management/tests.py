@@ -69,10 +69,12 @@ class TestUrl(TestCase):
         self.assertEqual(tmp_object.name, tmp_form["name"])
         tmp_form = {"name": generate_str()}
         response = self.client.post(
-            reverse("boardupdate_view", kwargs={"pk": tmp_object.pk}),
+            reverse("task_management:boardupdate_view", kwargs={"pk": tmp_object.pk}),
             data=tmp_form,
         )
         self.assertEqual(response.status_code, 302)
+        tmp_object = Board.objects.last()
+        self.assertEqual(tmp_object.name, tmp_form["name"])
         response = self.client.post(
             reverse("task_management:boarddelete_view", kwargs={"pk": tmp_object.pk})
         )
