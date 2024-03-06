@@ -49,7 +49,8 @@ class TestUrl(TestCase):
             username=self.json_data[0]["fields"]["username"], password="password"
         )
         response = self.client.post(reverse("user:logout_view"))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse("user:login_view"), status_code=302)
 
     def test_registration(self):
         response = self.client.get(reverse("user:registration_view"))
@@ -58,3 +59,6 @@ class TestUrl(TestCase):
     def test_healthcheck(self):
         response = self.client.get(reverse("user:healthcheck_view"))
         self.assertEqual(response.status_code, 200)
+
+    def tearDown(self):
+        User.objects.all().delete()
