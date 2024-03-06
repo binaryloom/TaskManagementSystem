@@ -60,5 +60,7 @@ class TestUrl(TestCase):
 
     def test_boardcreate(self):
         tmp_form = {"name": generate_str(8)}
-        response = self.client.get(reverse("task_management:boardcreate_view"))
+        response = self.client.post(
+            reverse("task_management:boardcreate_view"), data=tmp_form
+        )
         self.assertEqual(response.status_code, 200)
