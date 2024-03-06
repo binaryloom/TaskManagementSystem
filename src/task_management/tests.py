@@ -69,3 +69,10 @@ class TestUrl(TestCase):
         )
         tmp_object = Board.objects.last()
         self.assertEqual(tmp_object.name, tmp_form["name"])
+        delete_response = self.client.post(
+            reverse("task_management:boarddelete_view", kwargs={"pk": tmp_object.pk})
+        )
+        self.assertEqual(delete_response.status_code, 302)
+        self.assertEqual(
+            Board.objects.count(), count_json_obj(self.task_json, str(Board._meta))
+        )
