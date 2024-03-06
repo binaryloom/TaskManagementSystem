@@ -3,6 +3,7 @@ from os.path import join
 
 from django.conf import settings
 from django.test import TestCase
+from django.urls import reverse
 
 from abstract.utils import count_json_obj
 from user.models import User
@@ -25,3 +26,9 @@ class TestModel(TestCase):
 
     def tearDown(self):
         User.objects.all().delete()
+
+
+class TestUrl(TestCase):
+    def test_login(self):
+        response = self.client.get(reverse("user:login_view"))
+        self.assertEqual(response.status_code, 200)
