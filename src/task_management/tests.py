@@ -5,7 +5,7 @@ from django.conf import settings
 from django.test import TestCase
 from django.urls import reverse
 
-from abstract.utils import count_json_obj
+from abstract.utils import count_json_obj, generate_str
 from task_management.models import Board, List, Task
 from user.models import User
 
@@ -59,6 +59,6 @@ class TestUrl(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_boardcreate(self):
-        tmp_form = {"field1": "value1", "field2": "value2"}
+        tmp_form = {"name": generate_str(8)}
         response = self.client.get(reverse("task_management:boardcreate_view"))
         self.assertEqual(response.status_code, 200)
