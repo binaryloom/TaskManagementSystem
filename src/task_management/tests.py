@@ -63,4 +63,7 @@ class TestUrl(TestCase):
         response = self.client.post(
             reverse("task_management:boardcreate_view"), data=tmp_form
         )
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(
+            Board.objects.count(), count_json_obj(self.task_json, str(Board._meta)) + 1
+        )
