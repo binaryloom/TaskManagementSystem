@@ -3,6 +3,7 @@ from os.path import join
 
 from django.conf import settings
 from django.test import TestCase
+from django.urls import reverse
 
 from abstract.utils import count_json_obj
 from task_management.models import Board, List, Task
@@ -49,3 +50,10 @@ class TestUrl(TestCase):
             self.user_json = load(tmp_file)
         with open(join(settings.FIXTURE_DIRS[0], self.fixtures[1]), "r") as tmp_file:
             self.task_json = load(tmp_file)
+
+    def test_boardlist(self):
+        self.client.login(
+            username=self.user_json[0]["fields"]["username"], password="password"
+        )
+        response = self.client.get(reverse("task_management:boardlist_view"))
+        self.assertEqual(response.status_code, 200)
