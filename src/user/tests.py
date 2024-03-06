@@ -14,7 +14,7 @@ class TestModel(TestCase):
 
     def setUp(self):
         with open(join(settings.FIXTURE_DIRS[0], self.fixtures[0]), "r") as tmp_file:
-            self.json_data = load(tmp_file)
+            self.json_data = load(tmp_file[0].fields)
 
     def test_user(self):
 
