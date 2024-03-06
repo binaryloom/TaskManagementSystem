@@ -22,7 +22,7 @@ def generate_str(str_length: int = 8):
     Generate a random string of specified length.
 
     Parameters:
-        str_length (int): Length of the generated random string.
+        str_length (int, optional): Length of the generated random string. Defaults to 8.
 
     Returns:
         str: Random string of specified length.
