@@ -73,5 +73,21 @@
     "viewsets",
     "whitenoise",
     "yourapp"
-  ]
+  ],
+  "python.testing.pytestArgs": ["src"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
+  // "pythonTestExplorer.testFramework": null
+  // "python.testing.cwd": "src/"
+
+  // "python.testing.pytestArgs": ["src"],
+  // "python.testing.unittestEnabled": false,
+  // "python.testing.pytestEnabled": true,
+  // "pythonTestExplorer.testFramework": "pytest",
+  // "python.testing.cwd": "./src/"
+  // "python.testing.unittestEnabled": false,
+  // "python.testing.nosetestsEnabled": false,
+  // "python.testing.pytestEnabled": true,
+  // "pythonTestExplorer.testFramework": "pytest",
+  // "python.testing.pytestArgs": ["src"]
 }
